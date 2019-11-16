@@ -1,4 +1,4 @@
-package ddocdoc.action;
+package ddocdoc.member.action;
 
 public class ActionForward {
 	
