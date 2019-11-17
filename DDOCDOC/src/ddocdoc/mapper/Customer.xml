@@ -8,12 +8,12 @@
 	<cache />
 	
 	<insert id="insertCustomer" parameterType="Customer">
-	insert into dd_customer values('COO' || customer_seq.nextval, #{cus_id}, #{cus_pw}, #{cus_name}, #{cus_addr}, #{cus_email}, '05/03/23')
+	insert into dd_customer values('COO' || customer_seq.nextval, #{cus_id, jdbcType=VARCHAR}, #{cus_pw, jdbcType=VARCHAR}, #{cus_name, jdbcType=VARCHAR}, #{cus_addr, jdbcType=VARCHAR}, #{cus_email, jdbcType=VARCHAR}, '05/03/23')
 	
 	</insert>
 	
 	<select id="loginCustomer" parameterType="Login" resultType="Customer">
-	select * from dd_customer where cus_id = #{loginId} and cus_pw = #{loginPw}
+	select * from dd_customer where cus_id = #{loginId, jdbcType=VARCHAR} and cus_pw = #{loginPw, jdbcType=VARCHAR}
 	
 	
 	</select>
