@@ -30,8 +30,8 @@ public class JoinAction implements Action {
 		
 		int re = sc.insertCustomer(customer);
 		
-		forward.setPath("/loginForm.jsp");
-		forward.setRedirect(false);
+		forward.setPath("loginForm.do");
+		forward.setRedirect(true);
 		
 		
 		return forward;

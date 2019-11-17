@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.DetailCustomerAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
@@ -64,6 +65,13 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("loginForm.do")) {
     		action = new LoginFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("detailCustomer.do")) {
+    		action = new DetailCustomerAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
