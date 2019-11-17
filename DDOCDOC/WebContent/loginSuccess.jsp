@@ -15,5 +15,9 @@
 
 ${customer.cus_name }
 
+<form action="detailCustomer.do" method = "post">
+	<input type = "submit" value="회원 상세정보">
+</form>
+
 </body>
 </html>
