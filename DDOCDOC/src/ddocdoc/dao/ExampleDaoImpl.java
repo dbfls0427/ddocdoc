@@ -1,4 +1,4 @@
-package ddocdoc.member.dao;
+package ddocdoc.dao;
 
 public class ExampleDaoImpl implements ExampleDao{
 

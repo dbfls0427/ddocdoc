@@ -1,4 +1,4 @@
-package ddocdoc.member.controller;
+package ddocdoc.controller;
 
 public class ExampleController {
 

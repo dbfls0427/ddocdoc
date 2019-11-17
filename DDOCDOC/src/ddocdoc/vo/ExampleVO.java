@@ -1,4 +1,4 @@
-package ddocdoc.member.vo;
+package ddocdoc.vo;
 
 public class ExampleVO {
 
