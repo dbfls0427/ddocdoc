@@ -1,4 +1,4 @@
-package ddocdoc.member.action;
+package ddocdoc.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
