@@ -1,0 +1,144 @@
+package ddocdoc.dao;
+
+import java.io.InputStream;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import ddocdoc.mapper.HospitalMapper;
+import ddocdoc.vo.HospitalVO;
+
+public class HospitalDaoImpl implements HospitalDao{
+	private static HospitalDaoImpl dao = new HospitalDaoImpl();
+	
+	public static HospitalDaoImpl getInstance() {
+		return dao;
+	}
+	
+	//SqlSession 연결
+	public SqlSessionFactory getSessionFactory() {
+		String resource = "mybatis-config.xml";
+		InputStream in = null;
+		try {
+			in = Resources.getResourceAsStream(resource);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return new SqlSessionFactoryBuilder().build(in);
+	}
+	
+	// 병원 정보 등록	
+	public int hospitalInsert(HospitalVO HospitalVO) {
+		int re = -1;
+		SqlSession sqlSession = getSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(HospitalMapper.class).hospitalInsert(HospitalVO);
+			if(re>0) {
+				sqlSession.commit();
+				System.out.println("병원정보등록 성공!");
+			}else {
+				sqlSession.rollback();
+				System.out.println("병원정복등록 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+	// 병원 정보 상세정보
+	public HospitalVO hospitalDetail(String hos_num) {
+		SqlSession sqlSession = getSessionFactory().openSession();
+		HospitalVO hospitalvo = null;
+		
+		try {
+			hospitalvo = sqlSession.getMapper(HospitalMapper.class).hospitalDetail(hos_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return hospitalvo;
+	}
+	
+	// 병원 정보 리스트
+	public List<HospitalVO> hospitalList(){
+		SqlSession sqlSession = getSessionFactory().openSession();
+		List<HospitalVO> list = null;
+		try {
+			list = sqlSession.getMapper(HospitalMapper.class).hospitalList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return list;
+	}
+	
+	// 병원 정보 수정	
+	public int hospitalUpdate(HospitalVO HospitalVO) {
+		int re = -1;
+		SqlSession sqlSession = getSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(HospitalMapper.class).hospitalUpdate(HospitalVO);
+			
+			if(re>0) {
+				sqlSession.commit();
+				System.out.println("병원정보수정 성공!");
+			}else {
+				sqlSession.rollback();
+				System.out.println("병원정복수정 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+	// 병원 정보 삭제
+	public int hospitalDelete(String hos_num) {
+		int re = -1;
+		SqlSession sqlSession = getSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(HospitalMapper.class).hospitalDelete(hos_num);
+			if(re>0) {
+				sqlSession.commit();
+				System.out.println("병원정보삭제 성공!");
+			}else {
+				sqlSession.rollback();
+				System.out.println("병원정보삭제 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+}
