@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.DetailCustomerAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
@@ -50,6 +51,7 @@ public class CustomerController extends HttpServlet {
 				e.printStackTrace();
 			}
     	}else if(command.equals("login.do")) {
+    		System.out.println("경로: " + command);
     		action = new LoginAction();
     		try {
 				forward = action.execute(request, response);
@@ -65,6 +67,7 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("loginForm.do")) {
     		action = new LoginFormAction();
+    		System.out.println("컨트롤러 : " + "폼");
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -72,6 +75,13 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("detailCustomer.do")) {
     		action = new DetailCustomerAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("confirm.do")) {
+    		action = new ConfirmAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
