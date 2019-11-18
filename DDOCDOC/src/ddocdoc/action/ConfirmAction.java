@@ -18,7 +18,7 @@ public class ConfirmAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
 		CustomerService sc = CustomerServiceImpl.getInstance();
-		
+		System.out.println("ConfirmAction");
 		String result = sc.confirmNumber();
 		
 		System.out.println(result);

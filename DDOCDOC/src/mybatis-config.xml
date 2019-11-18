@@ -7,7 +7,7 @@
 	<typeAliases>
 		<typeAlias type="ddocdoc.vo.CustomerVO" alias="Customer"/>
 		<typeAlias type="ddocdoc.vo.LoginVO" alias="Login"/>
-	
+		<typeAlias type="ddocdoc.vo.HospitalVO" alias="HospitalVO"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -24,6 +24,9 @@
 	
 	<mappers>
 		<mapper resource="ddocdoc/mapper/Customer.xml"/>
+	
+      <mapper resource="ddocdoc/mapper/Hospital.xml"/>
+
 	</mappers>
 	
 </configuration>

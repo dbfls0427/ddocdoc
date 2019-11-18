@@ -81,6 +81,7 @@ public class CustomerController extends HttpServlet {
 				e.printStackTrace();
 			}
     	}else if(command.equals("confirm.do")) {
+    		System.out.println("controller confirm");
     		action = new ConfirmAction();
     		try {
 				forward = action.execute(request, response);
