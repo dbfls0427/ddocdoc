@@ -24,7 +24,13 @@
 	
 	<mappers>
 		<mapper resource="ddocdoc/mapper/Customer.xml"/>
+<<<<<<< HEAD
 		<mapper resource="ddocdoc/mapper/Hospital.xml"/>
+=======
+	
+      <mapper resource="ddocdoc/mapper/Hospital.xml"/>
+
+>>>>>>> refs/remotes/origin/yuntae
 	</mappers>
 	
 </configuration>
