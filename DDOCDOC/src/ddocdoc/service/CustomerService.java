@@ -10,4 +10,7 @@ public interface CustomerService {
 	
 	// 고객 로그인
 	public CustomerVO loginCustomer(HttpServletRequest request);
+
+	// 인증번호
+	public String confirmNumber();
 }
