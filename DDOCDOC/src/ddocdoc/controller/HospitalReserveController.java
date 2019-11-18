@@ -14,10 +14,10 @@ import ddocdoc.action.ActionForward;
  * Servlet implementation class Hos_res_Controller
  */
 @WebServlet("/Hos_res/*")
-public class Hos_res_Controller extends HttpServlet {
+public class HospitalReserveController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
-    public Hos_res_Controller() {
+    public HospitalReserveController() {
         super();
     }
 
