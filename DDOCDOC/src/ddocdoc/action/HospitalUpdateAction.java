@@ -21,7 +21,7 @@ public class HospitalUpdateAction implements Action {
 		service.hospitalUpdate(request);
 		
 		forward.setRedirect(true);
-		forward.setPath("/doc/hospital/hospitalDetail.do?seq="+hos_num);
+		forward.setPath("/DDOCDOC/hospital/hospitalDetail.do?seq="+hos_num);
 		return forward;
 	}
 

@@ -9,7 +9,7 @@
 <body>
 <h3>병원정보수정</h3>
 
-<form action="/doc/hospital/hospitalUpdate.do" method="post">
+<form action="/DDOCDOC/hospital/hospitalUpdate.do" method="post">
 	<input type="hidden" value="${hos_num}" name="hos_num">
 	병원종류 <select name="hos_type">
 		      <option value="내과">내과</option>

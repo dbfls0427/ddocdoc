@@ -10,7 +10,7 @@
 </head>
 <body>
 <h3>병원정보 목록</h3>
-<a href="/doc/hospital/hospitalInsertForm.do">병원정보 입력</a><br>
+<a href="/DDOCDOC/hospital/hospitalInsertForm.do">병원정보 입력</a><br>
 
 
 <table border="1">
@@ -26,7 +26,7 @@
 				<tr>
 				<td>${hospitalvo.hos_num }</td>
 				<td>${hospitalvo.hos_type }</td>
-				<td><a href="/doc/hospital/hospitalDetail.do?seq=${hospitalvo.hos_num }">${hospitalvo.hos_name }</a></td>
+				<td><a href="/DDOCDOC/hospital/hospitalDetail.do?seq=${hospitalvo.hos_num }">${hospitalvo.hos_name }</a></td>
 		</c:forEach>
 
 

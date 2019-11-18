@@ -19,7 +19,7 @@ public class HospitalInsertAction implements Action {
 		
 		forward.setRedirect(true);
 		
-		forward.setPath("/doc/hospital/hospitalList.do");
+		forward.setPath("/DDOCDOC/hospital/hospitalList.do");
 		
 		
 		return forward;

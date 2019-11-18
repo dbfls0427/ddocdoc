@@ -32,11 +32,11 @@
 
 </table>
 
-<a href="/doc/hospital/hospitalList.do">리스트</a> <br>
+<a href="/DDOCDOC/hospital/hospitalList.do">리스트</a> <br>
  
-<a href="/doc/hospital/hospitalUpdateForm.do?seq=${hospitalvo.hos_num }">수정</a> <br>
+<a href="/DDOCDOC/hospital/hospitalUpdateForm.do?seq=${hospitalvo.hos_num }">수정</a> <br>
 
-<a href="/doc/hospital/hospitalDelete.do?seq=${hospitalvo.hos_num }">삭제</a> 
+<a href="/DDOCDOC/hospital/hospitalDelete.do?seq=${hospitalvo.hos_num }">삭제</a> 
 
 
 </body>

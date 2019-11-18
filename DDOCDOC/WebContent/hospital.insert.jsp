@@ -9,7 +9,7 @@
 <body>
 <h3>병원정보등록</h3>
 
-<form action="/doc/hospital/hospitalInsert.do" method="post">
+<form action="/DDOCDOC/hospital/hospitalInsert.do" method="post">
 	병원종류 <select name="hos_type">
 		      <option value="내과">내과</option>
 		      <option value="정형외과">정형외과</option>

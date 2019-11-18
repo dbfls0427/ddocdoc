@@ -18,7 +18,7 @@ public class HospitalDeleteAction implements Action {
 		service.hospitalDelete(hos_num);
 		
 		System.out.println("못넘어오니?");
-		forward.setPath("/doc/hospital/hospitalList.do");
+		forward.setPath("/DDOCDOC/hospital/hospitalList.do");
 		
 		System.out.println("이리로촘가려무나 ㅠ");
 		forward.setRedirect(true);
