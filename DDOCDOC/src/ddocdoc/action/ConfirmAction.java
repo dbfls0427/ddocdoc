@@ -22,7 +22,7 @@ public class ConfirmAction implements Action {
 		String result = sc.confirmNumber();
 		
 		System.out.println(result);
-		forward.setPath("join.do");
+		forward.setPath("/joinForm.jsp");
 		forward.setRedirect(false);
 		
 		return forward;
