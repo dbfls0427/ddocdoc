@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
 import ddocdoc.action.ConfirmAction;
+import ddocdoc.action.ConfirmFormAction;
 import ddocdoc.action.DetailCustomerAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
@@ -82,14 +83,20 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("confirm.do")) {
     		System.out.println("controller confirm");
+    		action = new ConfirmFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("confirmaction.do")) {
+    		System.out.println("ÄÁÆß¾×¼Ç±îÁö ¿È");
     		action = new ConfirmAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(command.equals("hos_res.do")) {
-    		
     	}
     	
     	

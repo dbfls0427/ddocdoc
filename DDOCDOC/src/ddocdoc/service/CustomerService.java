@@ -12,5 +12,5 @@ public interface CustomerService {
 	public CustomerVO loginCustomer(HttpServletRequest request);
 
 	// 인증번호
-	public String confirmNumber();
+	public void confirmNumber();
 }

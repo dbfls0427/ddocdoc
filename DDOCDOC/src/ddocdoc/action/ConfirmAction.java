@@ -6,24 +6,30 @@ import javax.servlet.http.HttpServletResponse;
 import ddocdoc.service.CustomerService;
 import ddocdoc.service.CustomerServiceImpl;
 
-
-/**
- * 인증번호 발급
- * @author 김윤태
- *
- */
 public class ConfirmAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
-		CustomerService sc = CustomerServiceImpl.getInstance();
-		System.out.println("ConfirmAction");
-		String result = sc.confirmNumber();
 		
-		System.out.println(result);
-		forward.setPath("/joinForm.jsp");
-		forward.setRedirect(false);
+		String confirm = request.getParameter("confirm");
+		
+		if(CustomerServiceImpl.confirm.getConfirmNum().equals(confirm)) {
+			CustomerServiceImpl.confirm.setCheck(true);
+		}
+		
+		if(CustomerServiceImpl.confirm.isCheck()) {
+			System.out.println("confirm 성공");
+			request.setAttribute("confirm", CustomerServiceImpl.confirm);
+			forward.setPath("/confirmForm.jsp");
+			forward.setRedirect(false);
+		}else{
+			System.out.println("confirm 실패");
+			request.setAttribute("confirm", CustomerServiceImpl.confirm);
+			forward.setPath("/confirmForm.jsp");
+			forward.setRedirect(false);
+		}
+		
 		
 		return forward;
 	}

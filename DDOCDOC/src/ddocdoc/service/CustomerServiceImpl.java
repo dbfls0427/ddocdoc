@@ -10,6 +10,7 @@ import org.json.simple.JSONObject;
 import ddocdoc.dao.CustomerDao;
 import ddocdoc.dao.CustomerDaoImpl;
 import ddocdoc.loginSession.LoginSession;
+import ddocdoc.vo.ConfirmVO;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.LoginVO;
 import ddocdoc.service.Coolsms;
@@ -18,7 +19,7 @@ public class CustomerServiceImpl implements CustomerService{
 	private static CustomerServiceImpl sc = new CustomerServiceImpl();
 	private static CustomerDao dao;
 	LoginSession session = new LoginSession(); //로그인 세션 객체 생성
-	
+	public static ConfirmVO confirm;
 	
 	public static CustomerServiceImpl getInstance() {
 		dao = CustomerDaoImpl.getInstance();
@@ -53,7 +54,7 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	
 	//인증번호
-	public String confirmNumber() {
+	public void confirmNumber() {
 		Random rand = new Random();
 		String numStr = "";
 		
@@ -65,9 +66,11 @@ public class CustomerServiceImpl implements CustomerService{
 		System.out.println("서비스에서" + numStr);
 		sendSMS(numStr, "01087327595");
 		
+		confirm = new ConfirmVO();
+		confirm.setConfirmNum(numStr);
 		
 		
-		return numStr;
+		
 	}
 	
 	//SMS
