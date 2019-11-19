@@ -19,7 +19,8 @@ ${customer.cus_name }
 	<input type = "submit" value="회원 상세정보">
 </form>
 <br>
-<form action="/DDOCDOC/map/hosSearch.html">
+<form action="/DDOCDOC/map/hosSearch.jsp" method="post">
+	<input type="hidden" name="cus_num" value="${customer.cus_num }">
 	<input type = "submit" value="가까운 병원 찾기">
 </form>
 </body>
