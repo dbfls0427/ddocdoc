@@ -8,6 +8,7 @@
 		<typeAlias type="ddocdoc.vo.CustomerVO" alias="Customer"/>
 		<typeAlias type="ddocdoc.vo.LoginVO" alias="Login"/>
 		<typeAlias type="ddocdoc.vo.HospitalVO" alias="HospitalVO"/>
+		<typeAlias type="ddocdoc.vo.ChildHeightVO" alias="ChildHeightVO"/>
 	</typeAliases>
 	
 	<environments default="development">
