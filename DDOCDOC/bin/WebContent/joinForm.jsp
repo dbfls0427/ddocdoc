@@ -14,8 +14,14 @@
 		주소 : <input type = "text" name = "joinAddr"><br>
 		이메일 : <input type = "text" name = "joinEmail"><br>
 		생년월일 : <input type = "text" name = "joinBirth"><br>
+		인증번호 : <input type = "text" name = "confirmNum">
+		
 		<input type = "submit" value = "가입">
+		
+	</form>
 	
+	<form action="confirm.do" method = "post">
+	<input type = "submit" value = "인증번호 받기">
 	
 	</form>
 
