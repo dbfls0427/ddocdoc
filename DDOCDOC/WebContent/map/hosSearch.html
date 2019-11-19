@@ -303,11 +303,12 @@ function displayPlaces(places) {
             });
 
             itemEl.onmouseover =  function () {
-                displayInfowindow(marker, title);
+            	var posit = marker.getPosition();
+                displayInfowindow(marker, title, posit);
             };
 
             itemEl.onmouseout =  function () {
-                infowindow.close();
+                //infowindow.close();
             };
         })(marker, places[i].place_name);
 
