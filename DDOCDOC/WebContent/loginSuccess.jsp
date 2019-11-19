@@ -18,6 +18,9 @@ ${customer.cus_name }
 <form action="detailCustomer.do" method = "post">
 	<input type = "submit" value="회원 상세정보">
 </form>
-
+<br>
+<form action="/DDOCDOC/map/hosSearch.html">
+	<input type = "submit" value="가까운 병원 찾기">
+</form>
 </body>
 </html>
