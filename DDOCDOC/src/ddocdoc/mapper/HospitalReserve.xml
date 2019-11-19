@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="ddocdoc.mapper.HospitalMapper">
+	<cache />
+
+	<!-- 예약등록 -->
+	<insert id="insertHosRes" parameterType="H_Reserve">
+	insert into dd_hos_res values('ROO' || hos_res_seq.nextval, #{hos_res_type}, #{hos_res_sym}, #{hos_res_memo}, sysdate, #{hos_res_time}, 'C001', #{hos_num})
+	</insert>
+	
+	<!-- 병원 번호 가져오기 -->
+	<select id="hosNum" parameterType="String" resultType="String">
+	select hos_num from dd_hospital
+	where hos_name = #{hos_name}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
