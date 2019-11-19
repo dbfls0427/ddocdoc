@@ -19,5 +19,11 @@ ${customer.cus_name }
 	<input type = "submit" value="회원 상세정보">
 </form>
 
+<form action = "hos_res.do" method = "post">
+	<input type = "submit" value = "병원 예약">
+
+</form>
+
+
 </body>
 </html>

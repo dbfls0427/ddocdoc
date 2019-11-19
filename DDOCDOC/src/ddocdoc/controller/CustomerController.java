@@ -88,6 +88,8 @@ public class CustomerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(command.equals("hos_res.do")) {
+    		
     	}
     	
     	
