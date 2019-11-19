@@ -24,7 +24,6 @@
 	
 	<mappers>
 		<mapper resource="ddocdoc/mapper/Customer.xml"/>
-		<mapper resource="ddocdoc/mapper/HospitalReserve.xml"/>
 
 		
       <mapper resource="ddocdoc/mapper/Hospital.xml"/>
