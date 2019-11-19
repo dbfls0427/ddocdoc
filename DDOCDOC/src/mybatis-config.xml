@@ -25,6 +25,7 @@
 	
 	<mappers>
 		<mapper resource="ddocdoc/mapper/Customer.xml"/>
+		<mapper resource="ddocdoc/mapper/ChildHeight.xml"/>
 
 		
       <mapper resource="ddocdoc/mapper/Hospital.xml"/>

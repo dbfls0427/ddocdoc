@@ -1,10 +1,10 @@
-package ddocdoc.mapper;
+package ddocdoc.dao;
 
 import java.util.List;
 
 import ddocdoc.vo.ChildHeightVO;
 
-public interface ChildHeightMapper {
+public interface ChildHeightDao {
 
 	//아이번호 가져오기
 	String selectChildNum(String cus_num);
@@ -14,5 +14,4 @@ public interface ChildHeightMapper {
 	
 	//아이키 전체리스트
 	List<ChildHeightVO> ChildHeightList(String ch_num);
-	
 }

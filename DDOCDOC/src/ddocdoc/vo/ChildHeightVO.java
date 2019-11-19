@@ -1,19 +1,33 @@
 package ddocdoc.vo;
 
-public class ChildHeightVO {
+import java.io.Serializable;
+import java.sql.Date;
+
+public class ChildHeightVO implements Serializable{
 
 	private String he_num;
 	private int he_height;
-	private String cus_num;
+	private Date he_date;
+	private String ch_num;
 	
 	public ChildHeightVO() {}
 	
-	public ChildHeightVO(String he_num, int he_height, String cus_num) {
+	public ChildHeightVO(String he_num, int he_height, String ch_num, Date he_date) {
 		super();
 		this.he_num = he_num;
 		this.he_height = he_height;
-		this.cus_num = cus_num;
+		this.ch_num = ch_num;
+		this.he_date = he_date;
 	}
+	
+	public Date getHe_date() {
+		return he_date;
+	}
+
+	public void setHe_date(Date he_date) {
+		this.he_date = he_date;
+	}
+
 
 	public String getHe_num() {
 		return he_num;
@@ -31,12 +45,12 @@ public class ChildHeightVO {
 		this.he_height = he_height;
 	}
 
-	public String getCus_num() {
-		return cus_num;
+	public String getCh_num() {
+		return ch_num;
 	}
 
-	public void setCus_num(String cus_num) {
-		this.cus_num = cus_num;
+	public void setCh_num(String ch_num) {
+		this.ch_num = ch_num;
 	}
 
 	
