@@ -15,7 +15,7 @@
 		</tr>
 		<c:forEach var="height" items="${list }">
 			<tr>
-				<td>${height.he_height }</td>
+				<td><a href="detail.do?${height.he_num }">${height.he_height }</a></td>
 				<td>${height.he_date }</td>
 			</tr>
 		</c:forEach>
