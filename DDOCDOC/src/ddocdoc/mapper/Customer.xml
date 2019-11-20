@@ -23,7 +23,7 @@
 	</insert>
 	
 	<select id="selectHosNum" parameterType="String" resultType="String">
-	select hos_num from dd_hospital where hos_name = #{hos_name}
+	select hos_num from dd_hospital where hos_name = #{hos_name, jdbcType=VARCHAR}
 	</select>
 	
 	
