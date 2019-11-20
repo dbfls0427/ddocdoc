@@ -417,7 +417,7 @@ function displayPagination(pagination) {
 // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
 // 인포윈도우에 장소명을 표시합니다
 function displayInfowindow(marker, title, posit) {
-    var content = '<div style="padding:5px;">'+title+'<br><a href="../Customer/hos_res.do?hos_name='+title+'&cus_num=${cus_num}" style="color:blue" target="_blank">접수하기</a> <a href="https://map.kakao.com/link/to/'+title+','+posit.getLat()+','+posit.getLng()+'" style="color:blue" target="_blank">길찾기</a></div>';
+    var content = '<div style="padding:5px;">'+title+'<br><a href="../Customer/hos_resform.do?hos_name='+title+'&cus_num=${cus_num}" style="color:blue" target="_blank">접수하기</a> <a href="https://map.kakao.com/link/to/'+title+','+posit.getLat()+','+posit.getLng()+'" style="color:blue" target="_blank">길찾기</a></div>';
     infowindow.setContent(content);
     infowindow.open(map, marker);
 }

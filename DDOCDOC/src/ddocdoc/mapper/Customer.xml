@@ -8,7 +8,7 @@
 	<cache />
 	
 	<insert id="insertCustomer" parameterType="Customer">
-	insert into dd_customer values('COO' || customer_seq.nextval, #{cus_id, jdbcType=VARCHAR}, #{cus_pw, jdbcType=VARCHAR}, #{cus_name, jdbcType=VARCHAR}, #{cus_addr, jdbcType=VARCHAR}, #{cus_email, jdbcType=VARCHAR}, '05/03/23')
+	insert into dd_customer values('C00' || customer_seq.nextval, #{cus_id, jdbcType=VARCHAR}, #{cus_pw, jdbcType=VARCHAR}, #{cus_name, jdbcType=VARCHAR}, #{cus_addr, jdbcType=VARCHAR}, #{cus_email, jdbcType=VARCHAR}, '05/03/23')
 	
 	</insert>
 	
@@ -19,12 +19,46 @@
 	</select>
 	
 	<insert id="insertHospitalRes" parameterType="HospitalResVO">
-	insert into dd_hos_res values('RES00'||hos_res_seq.nextval, #{hos_res_type}, #{hos_res_sym}, #{hos_res_memo}, sysdate, #{hos_res_time}, #{cus_num}, #{hos_num})
+	insert into dd_hos_res values('RES00'||hos_res_seq.nextval, #{hos_res_type}, #{hos_res_sym}, #{hos_res_memo}, to_date(#{hos_res_date},'mm/dd/yyyy'), #{hos_res_time}, #{cus_num}, #{hos_num})
 	</insert>
 	
 	<select id="selectHosNum" parameterType="String" resultType="String">
 	select hos_num from dd_hospital where hos_name = #{hos_name}
 	</select>
+	
+	
+	<!-- 예약 리스트 -->
+	<select id="resList" parameterType="String" resultType="HospitalResVO">
+	select * from dd_hos_res where cus_num = #{cus_num}
+	order by hos_res_num
+	
+	</select>
+	
+	<!-- 병원 정보 추출 -->
+	<select id="detailHospital" parameterType="String" resultType="HospitalVO">
+		select * from dd_hospital where hos_num = #{hos_num}
+	</select>
+	
+	<!-- 병원 이름 추출 -->
+	<select id = "detailNameHospital" parameterType="String" resultType="String">
+	select b.hos_name 
+	from dd_hos_res a, dd_hospital b
+	where a.hos_num = b.hos_num
+	and a.cus_num like #{cus_num}
+	order by hos_res_num
+	</select>
+	
+	<!-- 예약 상세내용 -->
+	<select id="detailRes" parameterType="String" resultType="HospitalResVO">
+	select * from dd_hos_res where hos_res_num = #{hos_res_num}
+	
+	
+	</select>
+	
+	<!-- 예약 취소 -->
+	<delete id="deleteRes" parameterType="String">
+	delete from dd_hos_res where hos_res_num = #{hos_res_num}
+	</delete>
 	
 	
 	
