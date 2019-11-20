@@ -26,6 +26,24 @@
 		where ch_num = #{ch_num}
 	</select>
 	
+	<!-- 아이 키 상세 -->
+	<select id="detailChildHeight" parameterType="String" resultType="ChildHeightVO">
+		select * from dd_child_height
+		where he_num = #{he_num}
+	</select>
+	
+	<!-- 아이 키 수정 -->
+	<update id="updateChildHeight" parameterType="ChildHeightVO">
+		update dd_child_height set he_height = #{he_height}
+		where he_num = #{he_num}
+	</update>
+	
+	<!-- 아이 키 삭제 -->
+	<delete id="deleteChildHeight" parameterType="String">
+		delete from dd_child_height
+		where he_num = #{he_num}
+	</delete>
+	
 </mapper>
 
 

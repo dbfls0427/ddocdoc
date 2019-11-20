@@ -15,4 +15,13 @@ public interface ChildHeightMapper {
 	//아이키 전체리스트
 	List<ChildHeightVO> ChildHeightList(String ch_num);
 	
+	//아이키 상세
+	ChildHeightVO detailChildHeight(String he_num);
+	
+	//아이키 수정
+	int updateChildHeight(ChildHeightVO chvo);
+	
+	//아이키 삭제
+	int deleteChildHeight(String he_num);
+	
 }

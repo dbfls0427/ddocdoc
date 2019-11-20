@@ -16,4 +16,13 @@ public interface ChildHeightService {
 	
 	//아이키 전체리스트
 	List<ChildHeightVO> ChildHeightList(HttpServletRequest request);
+	
+	//아이키 상세
+	ChildHeightVO detailChildHeight(HttpServletRequest request);
+	
+	//아이키 수정
+	int updateChildHeight(HttpServletRequest request);
+	
+	//아이키 삭제
+	int deleteChildHeight(HttpServletRequest request);
 }

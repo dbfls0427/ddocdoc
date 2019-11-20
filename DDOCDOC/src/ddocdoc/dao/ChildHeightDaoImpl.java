@@ -39,6 +39,7 @@ public class ChildHeightDaoImpl implements ChildHeightDao {
 		String ch_num="";
 		try {
 			ch_num = sqlSession.getMapper(ChildHeightMapper.class).selectChildNum(cus_num);
+			System.out.println("아이번호" + ch_num);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -76,6 +77,7 @@ public class ChildHeightDaoImpl implements ChildHeightDao {
 		return re;
 	}
 
+	//아이 키 리스트
 	@Override
 	public List<ChildHeightVO> ChildHeightList(String ch_num) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -92,6 +94,76 @@ public class ChildHeightDaoImpl implements ChildHeightDao {
 		}
 		
 		return list;
+	}
+
+	//아이 키 상세
+	@Override
+	public ChildHeightVO detailChildHeight(String he_num) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		ChildHeightVO chvo = null;
+		try {
+			chvo = sqlSession.getMapper(ChildHeightMapper.class).detailChildHeight(he_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return chvo;
+	}
+
+	//아이 키 수정
+	@Override
+	public int updateChildHeight(ChildHeightVO chvo) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(ChildHeightMapper.class).updateChildHeight(chvo);
+			
+			if(re > 0) {
+				sqlSession.commit();
+				System.out.println("키 수정 성공");
+			}else {
+				sqlSession.rollback();
+				System.out.println("키 수정 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+
+	//아이 키 삭제
+	@Override
+	public int deleteChildHeight(String he_num) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(ChildHeightMapper.class).deleteChildHeight(he_num);
+			
+			if(re > 0) {
+				sqlSession.commit();
+				System.out.println("키 삭제 성공");
+			}else {
+				sqlSession.rollback();
+				System.out.println("키 삭제 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
 	}
 
 }

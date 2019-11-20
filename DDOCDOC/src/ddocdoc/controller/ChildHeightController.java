@@ -14,8 +14,12 @@ import ddocdoc.action.ActionForward;
 import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.DetailCustomerAction;
 import ddocdoc.action.HeightAction;
+import ddocdoc.action.HeightDeleteAction;
+import ddocdoc.action.HeightDetailAction;
 import ddocdoc.action.HeightInsertFormAction;
 import ddocdoc.action.HeightListAction;
+import ddocdoc.action.HeightUpdateAction;
+import ddocdoc.action.HeightUpdateFormAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
@@ -62,13 +66,35 @@ public class ChildHeightController extends HttpServlet {
 				e.printStackTrace();
 			}
     	}else if(command.equals("detailHeight.do")) {
-    		action = new HeightListAction();
+    		action = new HeightDetailAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("updateHeight.do")) {
+    		action = new HeightUpdateAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("updateHeightForm.do")) {
+    		action = new HeightUpdateFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("deleteHeight.do")) {
+    		action = new HeightDeleteAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
     	}
+    	
     	
     	
     	
