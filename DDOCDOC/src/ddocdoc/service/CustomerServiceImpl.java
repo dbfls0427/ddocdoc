@@ -12,6 +12,7 @@ import ddocdoc.dao.CustomerDaoImpl;
 import ddocdoc.loginSession.LoginSession;
 import ddocdoc.vo.ConfirmVO;
 import ddocdoc.vo.CustomerVO;
+import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.LoginVO;
 import ddocdoc.service.Coolsms;
 
@@ -99,6 +100,17 @@ public class CustomerServiceImpl implements CustomerService{
 		}
 	}
 	
+	
+	//병원 번호 출력
+	public String selectHosNum(String hos_name) {
+		return dao.selectHosNum(hos_name);
+	}
+	
+	
+	// 병원 예약 입력
+	public int insertHospitalRes(HospitalResVO hospitalresVO) {
+		return dao.insertHospitalRes(hospitalresVO);
+	}
 	
 
 }

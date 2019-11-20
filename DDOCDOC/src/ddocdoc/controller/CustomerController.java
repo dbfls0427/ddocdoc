@@ -14,6 +14,8 @@ import ddocdoc.action.ActionForward;
 import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.ConfirmFormAction;
 import ddocdoc.action.DetailCustomerAction;
+import ddocdoc.action.HospitalResAction;
+import ddocdoc.action.HospitalResFormAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
@@ -92,6 +94,20 @@ public class CustomerController extends HttpServlet {
     	}else if(command.equals("confirmaction.do")) {
     		System.out.println("ÄÁÆß¾×¼Ç±îÁö ¿È");
     		action = new ConfirmAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hos_resform.do")) {
+    		action = new HospitalResFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hos_res_action.do")) {
+    		action = new HospitalResAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
