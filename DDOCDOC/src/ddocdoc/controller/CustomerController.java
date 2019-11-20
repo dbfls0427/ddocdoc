@@ -17,6 +17,8 @@ import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.ConfirmFormAction;
 import ddocdoc.action.DetailCustomerAction;
 import ddocdoc.action.HospitalResAction;
+import ddocdoc.action.HospitalResDeleteAction;
+import ddocdoc.action.HospitalResDetailAction;
 import ddocdoc.action.HospitalResFormAction;
 import ddocdoc.action.HospitalListAction;
 import ddocdoc.action.JoinAction;
@@ -24,6 +26,7 @@ import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
 import ddocdoc.action.LoginFormAction;
 import ddocdoc.action.LogoutAction;
+import ddocdoc.action.ResListAction;
 
 @WebServlet("/Customer/*")
 public class CustomerController extends HttpServlet {
@@ -121,6 +124,27 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("hospitalList.do")) {
     		action = new HospitalListAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("resList.do")) {
+    		action = new ResListAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("detailRes.do")) {
+    		action = new HospitalResDetailAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("deleteRes.do")) {
+    		action = new HospitalResDeleteAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

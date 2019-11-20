@@ -1,7 +1,10 @@
 package ddocdoc.dao;
 
+import java.util.List;
+
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
+import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
 
 public interface CustomerDao {
@@ -16,5 +19,20 @@ public interface CustomerDao {
 	
 	// 병원 예약 입력
 	public int insertHospitalRes(HospitalResVO hospitalresVO);
+	
+	// 예약 목록 리스트
+	public List<HospitalResVO> resList(String cus_num);
+	
+	// 병원 정보 추출
+	public HospitalVO detailHospital(String hos_num);
+	
+	// 병원 이름 추출
+	public List<String> detailNameHospital(String cus_num);
+	
+	// 예약 상세 정보
+	public HospitalResVO detailRes(String hos_res_num);
+	
+	// 예약 취소
+	public int deleteRes(String hos_res_num);
 	
 }

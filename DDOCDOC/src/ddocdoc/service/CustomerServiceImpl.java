@@ -1,6 +1,7 @@
 package ddocdoc.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import ddocdoc.loginSession.LoginSession;
 import ddocdoc.vo.ConfirmVO;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
+import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
 import ddocdoc.service.Coolsms;
 
@@ -112,5 +114,30 @@ public class CustomerServiceImpl implements CustomerService{
 		return dao.insertHospitalRes(hospitalresVO);
 	}
 	
+	// 예약 목록 리스트
+	public List<HospitalResVO> resList(String cus_num){
+		return dao.resList(cus_num);
+	}
+	
+	
+	// 병원 정보 추출
+	public HospitalVO detailHospital(String hos_num) {
+		return dao.detailHospital(hos_num);
+	}
+	
+	// 병원 이름 추출
+	public List<String> detailNameHospital(String cus_num){
+		return dao.detailNameHospital(cus_num);
+	}
+	
+	// 예약 상세 정보
+	public HospitalResVO detailRes(String hos_res_num) {
+		return dao.detailRes(hos_res_num);
+	}
+	
+	// 예약 취소
+	public int deleteRes(String hos_res_num) {
+		return dao.deleteRes(hos_res_num);
+	}
 
 }
