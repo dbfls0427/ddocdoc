@@ -18,6 +18,15 @@
 	
 	</select>
 	
+	<insert id="insertHospitalRes" parameterType="HospitalResVO">
+	insert into dd_hos_res values('RES00'||hos_res_seq.nextval, #{hos_res_type}, #{hos_res_sym}, #{hos_res_memo}, sysdate, #{hos_res_time}, #{cus_num}, #{hos_num})
+	</insert>
+	
+	<select id="selectHosNum" parameterType="String" resultType="String">
+	select hos_num from dd_hospital where hos_name = #{hos_name, jdbcType=VARCHAR}
+	</select>
+	
+	
 	
 </mapper>
 

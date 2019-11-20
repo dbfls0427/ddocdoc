@@ -2,6 +2,7 @@ package ddocdoc.controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,9 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.ConfirmFormAction;
 import ddocdoc.action.DetailCustomerAction;
+import ddocdoc.action.HospitalResAction;
+import ddocdoc.action.HospitalResFormAction;
+import ddocdoc.action.HospitalListAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
@@ -92,6 +97,30 @@ public class CustomerController extends HttpServlet {
     	}else if(command.equals("confirmaction.do")) {
     		System.out.println("ÄÁÆß¾×¼Ç±îÁö ¿È");
     		action = new ConfirmAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hos_resform.do")) {
+    		action = new HospitalResFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hos_res_action.do")) {
+    		action = new HospitalResAction();
+
+    	}else if(command.equals("childInsertForm.do")) {
+    		action = new ChildInsertFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hospitalList.do")) {
+    		action = new HospitalListAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
