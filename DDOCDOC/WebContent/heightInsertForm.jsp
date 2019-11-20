@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% String cus_num = request.getParameter("cus_num"); %>
+<% String ch_num = request.getParameter("ch_num");
+	request.setAttribute("ch_num", ch_num);%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 <body>
 	<h1>아이 키 등록</h1>
 	<form action="insertChildHeight.do" method="post">
-		<input type="hidden" name="cus_num" value="<%=cus_num%>"/><br>
+		<input type="hidden" name="ch_num" value="${ch_num }"/><br>
 		아이 키 : <input type="text" name="he_height"/> cm<br>
 		등록일 : <input type="text" name="he_date" id="datepicker">
 		<script>

@@ -25,4 +25,7 @@ public interface ChildHeightService {
 	
 	//아이키 삭제
 	int deleteChildHeight(HttpServletRequest request);
+	
+	//아이 키 번호 가져오기
+	String selectHeNum(String ch_num);
 }

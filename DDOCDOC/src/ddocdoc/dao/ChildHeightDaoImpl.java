@@ -166,4 +166,22 @@ public class ChildHeightDaoImpl implements ChildHeightDao {
 		return re;
 	}
 
+	//아이키 번호 가져오기
+	@Override
+	public String selectHeNum(String ch_num) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		String he_num = null;
+		try {
+			he_num = sqlSession.getMapper(ChildHeightMapper.class).selectHeNum(ch_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return he_num;
+	}
+
 }

@@ -24,10 +24,6 @@ ${customer.cus_name }
 	<input type = "submit" value="가까운 병원 찾기">
 </form>
 
-<form action="/DDOCDOC/Height/HeightInsertFormAction.do" method="post">
-	<input type="hidden" name="cus_num" value="${customer.cus_num }">
-	<input type = "submit" value="키 관리">
-</form>
 
 <form action="childInsertForm.do" method = "post">
 	<input type = "submit" value="아이정보등록">

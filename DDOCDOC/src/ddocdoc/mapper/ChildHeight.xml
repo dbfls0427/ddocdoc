@@ -44,6 +44,12 @@
 		where he_num = #{he_num}
 	</delete>
 	
+	<!-- 아이키 유무 -->
+	<select id="selectHeNum" parameterType="String" resultType="String">
+		select he_num from dd_child_height
+		where ch_num = #{ch_num}
+	</select>
+	
 </mapper>
 
 

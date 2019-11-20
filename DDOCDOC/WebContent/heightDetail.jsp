@@ -9,8 +9,8 @@
 <body>
 	<h1>키 : ${height.he_height }</h1>
 	<br><br>
-	<button><a href="updateHeightForm.do?he_num=${height.he_height }">수정</a></button>
-	<button><a href="deleteHeight.do?he_num=${height.he_height }">삭제</a></button>
+	<button><a href="updateHeightForm.do?he_num=${height.he_num }&ch_num=${height.ch_num}">수정</a></button>
+	<button><a href="deleteHeight.do?he_num=${height.he_num }">삭제</a></button>
 
 </body>
 </html>

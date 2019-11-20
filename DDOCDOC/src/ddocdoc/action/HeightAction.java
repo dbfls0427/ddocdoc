@@ -15,10 +15,8 @@ public class HeightAction implements Action {
 		ActionForward forward = new ActionForward();
 		ChildHeightService service = ChildHeightServiceImpl.getInstance();
 		
-		String cus_num = request.getParameter("cus_num");
-		String ch_num= service.selectChildNum(cus_num);
-		
-		request.setAttribute("ch_num", ch_num);
+		String ch_num = request.getParameter("ch_num");
+		System.out.println("HeightAction¿¡¼­ ch_num : " + ch_num);
 		
 		service.insertChildHeight(request);
 		

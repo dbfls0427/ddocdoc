@@ -30,7 +30,9 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 		ChildHeightVO chvo = new ChildHeightVO();
 		
 		chvo.setHe_height(Integer.parseInt(request.getParameter("he_height")));
-		chvo.setCh_num(String.valueOf(request.getAttribute("ch_num")));
+		System.out.println(Integer.parseInt(request.getParameter("he_height")));
+		chvo.setCh_num(request.getParameter("ch_num"));
+		System.out.println("HeightServceImpl에서 ch_num : " +request.getParameter("ch_num"));
 		chvo.setHe_date(Date.valueOf(request.getParameter("he_date")));
 		
 		return dao.insertChildHeight(chvo);
@@ -69,6 +71,12 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 		String he_num = request.getParameter("he_num");
 		
 		return dao.deleteChildHeight(he_num);
+	}
+
+	//아이키번호 가져오기
+	@Override
+	public String selectHeNum(String ch_num) {
+		return dao.selectHeNum(ch_num);
 	}
 
 }

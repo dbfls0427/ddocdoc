@@ -13,12 +13,15 @@ public class HeightUpdateAction implements Action {
 		ActionForward forward = new ActionForward();
 		ChildHeightService service= ChildHeightServiceImpl.getInstance();
 		String he_num = request.getParameter("he_num");
+		String ch_num = request.getParameter("ch_num");
+		
 		System.out.println("updateAction : " +he_num);
+		System.out.println("updateAction¿¡¼­ ch_num : " +ch_num);
 		
 		service.updateChildHeight(request);
 		
-		forward.setPath("detailHeight.do?he_num=" + he_num);
-		forward.setRedirect(true);
+		forward.setPath("HeightList.do?ch_num=" + ch_num);
+		forward.setRedirect(false);
 		
 		return forward;
 	}

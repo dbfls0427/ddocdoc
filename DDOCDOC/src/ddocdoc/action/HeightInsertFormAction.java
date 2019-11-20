@@ -15,19 +15,14 @@ public class HeightInsertFormAction implements Action {
 		ActionForward forward = new ActionForward();
 		ChildHeightService service = ChildHeightServiceImpl.getInstance();
 		
-		String cus_num = request.getParameter("cus_num");
-		System.out.println("insertFormAction : " +cus_num);
+		String ch_num = request.getParameter("ch_num");
+		System.out.println("insertFormAction에서 ch_num : " +ch_num);
 		
-		String ch_num = service.selectChildNum(cus_num);
+		//아이키번호 가져오기
+		//String he_num = service.selectHeNum(ch_num);
 		
-		if(ch_num != null) {
-			forward.setPath("HeightList.do?ch_num="+ch_num);
-			forward.setRedirect(true);
-		}else {
-			forward.setPath("/heightInsertForm.jsp?cus_num="+cus_num);
-			forward.setRedirect(false);
-		}
-		
+		forward.setPath("/heightInsertForm.jsp?ch_num="+ch_num);
+		forward.setRedirect(false);
 		
 		return forward;
 	}

@@ -23,4 +23,7 @@ public interface ChildHeightDao {
 	
 	//아이키 삭제
 	int deleteChildHeight(String he_num);
+	
+	//아이키 번호 가져오기
+	String selectHeNum(String ch_num);
 }
