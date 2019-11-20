@@ -29,8 +29,8 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 	public int insertChildHeight(HttpServletRequest request) {
 		ChildHeightVO chvo = new ChildHeightVO();
 		
-		chvo.setHe_height(Integer.parseInt(request.getParameter("he_height")));
-		System.out.println(Integer.parseInt(request.getParameter("he_height")));
+		chvo.setHe_height(Double.valueOf(request.getParameter("he_height")));
+		System.out.println(Double.valueOf(request.getParameter("he_height")));
 		chvo.setCh_num(request.getParameter("ch_num"));
 		System.out.println("HeightServceImpl¿¡¼­ ch_num : " +request.getParameter("ch_num"));
 		chvo.setHe_date(Date.valueOf(request.getParameter("he_date")));
@@ -60,7 +60,7 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 		ChildHeightVO chvo = new ChildHeightVO();
 		
 		chvo.setHe_num(request.getParameter("he_num"));
-		chvo.setHe_height(Integer.parseInt(request.getParameter("he_height")));
+		chvo.setHe_height(Double.valueOf(request.getParameter("he_height")));
 		
 		return dao.updateChildHeight(chvo);
 	}
