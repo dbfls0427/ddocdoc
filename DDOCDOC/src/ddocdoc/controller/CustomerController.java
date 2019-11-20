@@ -11,11 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.ConfirmFormAction;
 import ddocdoc.action.DetailCustomerAction;
+<<<<<<< HEAD
 import ddocdoc.action.HospitalResAction;
 import ddocdoc.action.HospitalResFormAction;
+=======
+import ddocdoc.action.HospitalListAction;
+>>>>>>> refs/remotes/origin/minhae
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
@@ -108,6 +113,16 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("hos_res_action.do")) {
     		action = new HospitalResAction();
+
+    	}else if(command.equals("childInsertForm.do")) {
+    		action = new ChildInsertFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hospitalList.do")) {
+    		action = new HospitalListAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
