@@ -19,5 +19,9 @@ ${customer.cus_name }
 	<input type = "submit" value="회원 상세정보">
 </form>
 
+<form action="childInsertForm.do" method = "post">
+	<input type = "submit" value="아이정보등록">
+</form>
+
 </body>
 </html>

@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.DetailCustomerAction;
+import ddocdoc.action.HospitalListAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
@@ -83,6 +85,20 @@ public class CustomerController extends HttpServlet {
     	}else if(command.equals("confirm.do")) {
     		System.out.println("controller confirm");
     		action = new ConfirmAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("childInsertForm.do")) {
+    		action = new ChildInsertFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hospitalList.do")) {
+    		action = new HospitalListAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
