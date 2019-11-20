@@ -114,7 +114,11 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("hos_res_action.do")) {
     		action = new HospitalResAction();
-
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     	}else if(command.equals("childInsertForm.do")) {
     		action = new ChildInsertFormAction();
     		try {
