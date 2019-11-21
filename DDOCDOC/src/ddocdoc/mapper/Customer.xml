@@ -19,7 +19,7 @@
 	</select>
 	
 	<insert id="insertHospitalRes" parameterType="HospitalResVO">
-	insert into dd_hos_res values('RES00'||hos_res_seq.nextval, #{hos_res_type}, #{hos_res_sym}, #{hos_res_memo}, to_date(#{hos_res_date},'mm/dd/yyyy'), #{hos_res_time}, #{cus_num}, #{hos_num})
+	insert into dd_hos_res values('RES00'||hos_res_seq.nextval, #{hos_res_type}, #{hos_res_sym}, #{hos_res_memo}, to_date(#{hos_res_date},'mm/dd/yyyy'), #{hos_res_time}, #{cus_num}, #{hos_num}, #{hos_acpt})
 	</insert>
 	
 	<select id="selectHosNum" parameterType="String" resultType="String">
@@ -61,6 +61,17 @@
 	</delete>
 	
 	
+
+	<!-- 대기번호 감소 -->
+	<update id="decreaseWait" parameterType="String">
+		update dd_hospital set hos_wait = hos_wait - 1
+		where hos_num like #{hos_num}
+	</update>
+	
+	<!-- 대기번호 조회 -->
+	<select id="detailWait" parameterType="String" resultType="int">
+	select res_wait from dd_res_wait where hos_res_num = #{hos_res_num}
+	</select>
 	
 </mapper>
 

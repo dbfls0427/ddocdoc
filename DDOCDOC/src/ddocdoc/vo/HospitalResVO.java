@@ -13,6 +13,18 @@ public class HospitalResVO implements Serializable {
 	private String hos_res_time;
 	private String cus_num;
 	private String hos_num;
+	private String hos_acpt;		//병원예약접수
+	
+	
+	public HospitalResVO() {}
+	
+
+	public String getHos_acpt() {
+		return hos_acpt;
+	}
+	public void setHos_acpt(String hos_acpt) {
+		this.hos_acpt = hos_acpt;
+	}
 	public String getHos_res_num() {
 		return hos_res_num;
 	}

@@ -20,6 +20,7 @@ import ddocdoc.action.HospitalResAction;
 import ddocdoc.action.HospitalResDeleteAction;
 import ddocdoc.action.HospitalResDetailAction;
 import ddocdoc.action.HospitalResFormAction;
+import ddocdoc.action.HospitalResSmsAction;
 import ddocdoc.action.HospitalListAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
@@ -149,6 +150,13 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("deleteRes.do")) {
     		action = new HospitalResDeleteAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("resWaitSms.do")) {
+    		action = new HospitalResSmsAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

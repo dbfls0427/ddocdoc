@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.HospitalBooleanAction;
 import ddocdoc.action.HospitalDeleteAction;
 import ddocdoc.action.HospitalInsertAction;
 import ddocdoc.action.HospitalInsertFormAction;
 import ddocdoc.action.HospitalListAction;
 import ddocdoc.action.HospitalUpdateAction;
 import ddocdoc.action.HospitalUpdateFormAction;
-import ddocdoc.action.hospitalDetailAction;
+import ddocdoc.action.HospitalDetailAction;
 
 
 
@@ -61,7 +62,7 @@ public class HospitalController extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if(command.equals("hospitalDetail.do")) {
-			action = new hospitalDetailAction();
+			action = new HospitalDetailAction();
 			try {
 				forward = action.execute(request, response); 
 			} catch (Exception e) {
@@ -85,6 +86,13 @@ public class HospitalController extends HttpServlet {
 			action = new HospitalDeleteAction();
 			try {
 				forward = action.execute(request, response); 
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("boolean_hos_res.do")) {
+			action = new HospitalBooleanAction();
+			try {
+				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

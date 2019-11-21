@@ -18,6 +18,9 @@ public interface CustomerService {
 	// 인증번호
 	public void confirmNumber();
 	
+	// 대기번호 인증
+	public void hospitalResSms(int count);
+	
 	// 병원 번호 출력
 	public String selectHosNum(String hos_name);
 	
@@ -38,4 +41,10 @@ public interface CustomerService {
 	
 	// 예약 취소
 	public int deleteRes(String hos_res_num);
+	
+	// 예약 취소 시 대기번호 감소
+	public int decreaseWait(String hos_num);
+	
+	// 대기번호 조회
+	public int detailWait(String hos_res_num);
 }

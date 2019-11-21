@@ -13,10 +13,10 @@ public class HospitalVO implements Serializable{
 	private int hos_wait;		//병원대기번호
 	private String hos_type;	//병원종류
 	
+	
 	public HospitalVO() {}
-	
-	
-	
+
+
 	public HospitalVO(int seq, String hos_num, String hos_name, String hos_tel, String hos_addr, String hos_time,
 			String hos_info, int hos_wait, String hos_type) {
 		super();
@@ -104,7 +104,6 @@ public class HospitalVO implements Serializable{
 	public void setHos_type(String hos_type) {
 		this.hos_type = hos_type;
 	}
-	
-	
+
 	
 }

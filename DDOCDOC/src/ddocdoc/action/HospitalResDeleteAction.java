@@ -14,8 +14,13 @@ public class HospitalResDeleteAction implements Action {
 		CustomerService sc = CustomerServiceImpl.getInstance();
 		
 		String hos_res_num = request.getParameter("hos_res_num");
+		String hos_num = request.getParameter("hos_num");
 		
+		
+		int decreaseRe = sc.decreaseWait(hos_num);
 		int re = sc.deleteRes(hos_res_num);
+		
+		
 		
 		forward.setPath("resList.do");
 		forward.setRedirect(true);

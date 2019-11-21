@@ -5,9 +5,16 @@
 <mapper namespace="ddocdoc.mapper.PresMapper">
 	<cache />
 	
-	<!-- 처방전 등록 -->
-	<insert id="hospitalInsert" parameterType="HospitalVO">
-		insert into dd_hospital values('H00' || hospital_seq.nextval, #{hos_name}, #{hos_tel},
-			#{hos_addr}, #{hos_time}, #{hos_info}, 0, #{hos_type})
+	<!-- 처방전 등록 
+	<insert id="hospitalInsert" parameterType="PresVO">
+		insert into dd_pres values
+		('P00' || pres_seq.nextval, '05/03/23', #{pres_count}, #{cus_num}, #{phar_num}, #{hos_num})
 	</insert>
+	
+	고객 리스트
+	<select id="customerList" resultType="CustomerVO">
+		select * from dd_customer
+	</select>
+	
+	-->
 </mapper>

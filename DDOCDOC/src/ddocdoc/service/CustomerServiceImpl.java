@@ -31,12 +31,14 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	
 	// 고객 회원가입
+	@Override
 	public int insertCustomer(CustomerVO customer) {
 		return dao.insertCustomer(customer);
 	}
 	
 	
 	// 로그인 확인
+	@Override
 	public CustomerVO loginCustomer(HttpServletRequest request) {
 		LoginVO login = new LoginVO();
 		login.setLoginId(request.getParameter("customerID"));
@@ -57,6 +59,7 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	
 	//인증번호
+	@Override
 	public void confirmNumber() {
 		Random rand = new Random();
 		String numStr = "";
@@ -74,6 +77,13 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		
 		
+	}
+	
+	//대기번호 문자 인증
+	@Override
+	public void hospitalResSms(int count) {
+		String resultCount = Integer.toString(count);
+		sendSMS("고객님의 병원 대기번호는 " + resultCount + "번 입니다. 예약해주셔서 감사드립니다.", "01087327595");
 	}
 	
 	//SMS
@@ -104,40 +114,59 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	
 	//병원 번호 출력
+	@Override
 	public String selectHosNum(String hos_name) {
 		return dao.selectHosNum(hos_name);
 	}
 	
 	
 	// 병원 예약 입력
+	@Override
 	public int insertHospitalRes(HospitalResVO hospitalresVO) {
 		return dao.insertHospitalRes(hospitalresVO);
 	}
 	
 	// 예약 목록 리스트
+	@Override
 	public List<HospitalResVO> resList(String cus_num){
 		return dao.resList(cus_num);
 	}
 	
 	
 	// 병원 정보 추출
+	@Override
 	public HospitalVO detailHospital(String hos_num) {
 		return dao.detailHospital(hos_num);
 	}
 	
 	// 병원 이름 추출
+	@Override
 	public List<String> detailNameHospital(String cus_num){
 		return dao.detailNameHospital(cus_num);
 	}
 	
 	// 예약 상세 정보
+	@Override
 	public HospitalResVO detailRes(String hos_res_num) {
 		return dao.detailRes(hos_res_num);
 	}
 	
 	// 예약 취소
+	@Override
 	public int deleteRes(String hos_res_num) {
 		return dao.deleteRes(hos_res_num);
+	}
+	
+	// 예약 취소 시 대기번호 감소
+	@Override
+	public int decreaseWait(String hos_num) {
+		return dao.decreaseWait(hos_num);
+	}
+	
+	// 대기번호 조회
+	@Override
+	public int detailWait(String hos_res_num) {
+		return dao.detailWait(hos_res_num);
 	}
 
 }

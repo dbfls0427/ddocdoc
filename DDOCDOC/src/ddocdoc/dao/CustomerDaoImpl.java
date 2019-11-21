@@ -35,6 +35,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	
 	
 	// 고객 회원가입
+	@Override
 	public int insertCustomer(CustomerVO customer) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
@@ -59,6 +60,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 	
 	//로그인 확인
+	@Override
 	public CustomerVO loginCustomer(LoginVO login) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		CustomerVO customer = null;
@@ -80,6 +82,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	
 	
 	//병원 번호 출력
+	@Override
 	public String selectHosNum(String hos_name) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		String hos_num = null;
@@ -99,6 +102,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 	
 	//병원 예약 입력
+	@Override
 	public int insertHospitalRes(HospitalResVO hospitalresVO) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
@@ -121,6 +125,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	
 	
 	// 예약 목록 리스트
+	@Override
 	public List<HospitalResVO> resList(String cus_num){
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<HospitalResVO> list = null;
@@ -138,6 +143,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 	
 	// 병원 정보 추출
+	@Override
 	public HospitalVO detailHospital(String hos_num) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		HospitalVO hos = null;
@@ -154,6 +160,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 	
 	//병원 이름 추출
+	@Override
 	public List<String> detailNameHospital(String cus_num){
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<String> list = null;
@@ -171,6 +178,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	
 	
 	// 예약 상세 내용
+	@Override
 	public HospitalResVO detailRes(String hos_res_num) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		HospitalResVO res = null;
@@ -187,6 +195,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 	
 	// 예약 취소
+	@Override
 	public int deleteRes(String hos_res_num) {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
@@ -206,7 +215,44 @@ public class CustomerDaoImpl implements CustomerDao{
 		}
 		return re;
 	}
-
 	
+	// 예약 취소할 때 대기번호 감소
+	@Override
+	public int decreaseWait(String hos_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).decreaseWait(hos_num);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
+	}
+
+	// 대기번호 조회
+	@Override
+	public int detailWait(String hos_res_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int count = 0;
+		try {
+			count = session.getMapper(CustomerMapper.class).detailWait(hos_res_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return count;
+	}
 
 }
