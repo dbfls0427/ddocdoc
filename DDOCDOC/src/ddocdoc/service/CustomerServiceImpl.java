@@ -1,6 +1,7 @@
 package ddocdoc.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,10 @@ import org.json.simple.JSONObject;
 import ddocdoc.dao.CustomerDao;
 import ddocdoc.dao.CustomerDaoImpl;
 import ddocdoc.loginSession.LoginSession;
+import ddocdoc.vo.ConfirmVO;
 import ddocdoc.vo.CustomerVO;
+import ddocdoc.vo.HospitalResVO;
+import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
 import ddocdoc.service.Coolsms;
 
@@ -18,7 +22,7 @@ public class CustomerServiceImpl implements CustomerService{
 	private static CustomerServiceImpl sc = new CustomerServiceImpl();
 	private static CustomerDao dao;
 	LoginSession session = new LoginSession(); //로그인 세션 객체 생성
-	
+	public static ConfirmVO confirm;
 	
 	public static CustomerServiceImpl getInstance() {
 		dao = CustomerDaoImpl.getInstance();
@@ -53,7 +57,7 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	
 	//인증번호
-	public String confirmNumber() {
+	public void confirmNumber() {
 		Random rand = new Random();
 		String numStr = "";
 		
@@ -65,9 +69,11 @@ public class CustomerServiceImpl implements CustomerService{
 		System.out.println("서비스에서" + numStr);
 		sendSMS(numStr, "01087327595");
 		
+		confirm = new ConfirmVO();
+		confirm.setConfirmNum(numStr);
 		
 		
-		return numStr;
+		
 	}
 	
 	//SMS
@@ -97,5 +103,41 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 	
 	
+	//병원 번호 출력
+	public String selectHosNum(String hos_name) {
+		return dao.selectHosNum(hos_name);
+	}
+	
+	
+	// 병원 예약 입력
+	public int insertHospitalRes(HospitalResVO hospitalresVO) {
+		return dao.insertHospitalRes(hospitalresVO);
+	}
+	
+	// 예약 목록 리스트
+	public List<HospitalResVO> resList(String cus_num){
+		return dao.resList(cus_num);
+	}
+	
+	
+	// 병원 정보 추출
+	public HospitalVO detailHospital(String hos_num) {
+		return dao.detailHospital(hos_num);
+	}
+	
+	// 병원 이름 추출
+	public List<String> detailNameHospital(String cus_num){
+		return dao.detailNameHospital(cus_num);
+	}
+	
+	// 예약 상세 정보
+	public HospitalResVO detailRes(String hos_res_num) {
+		return dao.detailRes(hos_res_num);
+	}
+	
+	// 예약 취소
+	public int deleteRes(String hos_res_num) {
+		return dao.deleteRes(hos_res_num);
+	}
 
 }

@@ -1,6 +1,7 @@
 package ddocdoc.dao;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -9,6 +10,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import ddocdoc.mapper.CustomerMapper;
 import ddocdoc.vo.CustomerVO;
+import ddocdoc.vo.HospitalResVO;
+import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
 
 public class CustomerDaoImpl implements CustomerDao{
@@ -74,6 +77,136 @@ public class CustomerDaoImpl implements CustomerDao{
 		}
 		return customer;
 	}
+	
+	
+	//병원 번호 출력
+	public String selectHosNum(String hos_name) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		String hos_num = null;
+		System.out.println("1. dao에서 " + hos_name);
+		hos_name = hos_name.trim();
+		try {
+			hos_num = session.getMapper(CustomerMapper.class).selectHosNum(hos_name);
+			System.out.println("2. dao에서 " + hos_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return hos_num;
+	}
+	
+	//병원 예약 입력
+	public int insertHospitalRes(HospitalResVO hospitalresVO) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).insertHospitalRes(hospitalresVO);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
+	}
+	
+	
+	// 예약 목록 리스트
+	public List<HospitalResVO> resList(String cus_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<HospitalResVO> list = null;
+		try {
+			list = session.getMapper(CustomerMapper.class).resList(cus_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return list;
+		
+	}
+	
+	// 병원 정보 추출
+	public HospitalVO detailHospital(String hos_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		HospitalVO hos = null;
+		try {
+			hos = session.getMapper(CustomerMapper.class).detailHospital(hos_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return hos;
+	}
+	
+	//병원 이름 추출
+	public List<String> detailNameHospital(String cus_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<String> list = null;
+		try {
+			list = session.getMapper(CustomerMapper.class).detailNameHospital(cus_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return list;
+	}
+	
+	
+	// 예약 상세 내용
+	public HospitalResVO detailRes(String hos_res_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		HospitalResVO res = null;
+		try {
+			res = session.getMapper(CustomerMapper.class).detailRes(hos_res_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return res;
+	}
+	
+	// 예약 취소
+	public int deleteRes(String hos_res_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).deleteRes(hos_res_num);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
+	}
+
 	
 
 }

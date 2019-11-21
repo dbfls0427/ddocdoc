@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import ddocdoc.dao.HospitalDao;
 import ddocdoc.dao.HospitalDaoImpl;
 import ddocdoc.vo.CustomerVO;
-import ddocdoc.vo.HosResVO;
+import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 
 public class HospitalServiceImpl implements HospitalService {
@@ -74,8 +74,8 @@ public class HospitalServiceImpl implements HospitalService {
 
 	// 병원 예약 환자 리스트
 	@Override
-	public List<HosResVO> hosResList(String hos_num) {
-		List<HosResVO> list = dao.hosResList(hos_num);
+	public List<HospitalResVO> hosResList(String hos_num) {
+		List<HospitalResVO> list = dao.hosResList(hos_num);
 		for(int i = 0; i <list.size(); i++) {
 			System.out.println(list.get(i).getHos_res_num() + " " + list.get(i).getHos_acpt());
 		}
@@ -109,7 +109,7 @@ public class HospitalServiceImpl implements HospitalService {
 	@Override
 	public int booleanHosRes(HttpServletRequest request) throws Exception {
 		request.setCharacterEncoding("utf-8");
-		HosResVO hosres = new HosResVO();
+		HospitalResVO hosres = new HospitalResVO();
 		hosres.setHos_res_num(request.getParameter("hos_res_num"));
 		int re = dao.booleanHosRes(hosres);
 		

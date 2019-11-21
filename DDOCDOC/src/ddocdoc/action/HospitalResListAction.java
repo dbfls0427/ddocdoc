@@ -1,5 +1,7 @@
 package ddocdoc.action;
 
+
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,26 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.service.HospitalService;
 import ddocdoc.service.HospitalServiceImpl;
+import ddocdoc.vo.HospitalVO;
 
-public class HospitalBooleanAction implements Action {
+public class HospitalResListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HospitalService service = HospitalServiceImpl.getInstance();
 		ActionForward forward = new ActionForward();
+		HospitalService sc = HospitalServiceImpl.getInstance();
 		
-		// 병원 예약 접수
-		String hos_res_num = request.getParameter("hos_res_num");
-		int hosResvo = service.booleanHosRes(request);
-				
-		request.setAttribute("boolean", hosResvo);
-		System.out.println("hos_res_num"+hos_res_num);
+		List<HospitalVO> list = sc.hospitalList();
 		
+		request.setAttribute("list", list);
 		
-		
-		
-		forward.setPath("/hospitalBooleanList.jsp");
-		forward.setRedirect(false);
+		forward.setPath("/hos_res/hos_res_list.jsp");
+		forward.setRedirect(true);
 		
 		return forward;
 	}

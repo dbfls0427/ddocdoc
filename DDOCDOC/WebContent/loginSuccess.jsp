@@ -18,6 +18,17 @@ ${customer.cus_name }
 <form action="detailCustomer.do" method = "post">
 	<input type = "submit" value="회원 상세정보">
 </form>
+<br>
+<form action="/DDOCDOC/map/hosSearch.jsp" method="post">
+	<input type="hidden" name="cus_num" value="${customer.cus_num }">
+	<input type = "submit" value="가까운 병원 찾기">
+</form>
+
+<form action="resList.do" method = "post">
+	<input type = "submit" value = "예약 내역">
+
+</form>
+
 
 <form action="childInsertForm.do" method = "post">
 	<input type = "submit" value="아이정보등록">

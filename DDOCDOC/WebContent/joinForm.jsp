@@ -5,6 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function joinMember() {
+		window.open("<%= request.getContextPath()%>/confirmForm.jsp", "confirm", "width=640, height=400")
+	}
+
+</script>
 </head>
 <body>
 	<form action="joinAction.do" method = "post">
@@ -20,11 +26,14 @@
 		
 	</form>
 	
+	<button><a href = "javascript:joinMember()">인증번호</a></button>
+	
+	<!-- <form action="confirm.do" method = "post">
+	<input type = "submit" value = "인증번호 받기">
+	</form>
 	<form action="confirm.do" method = "post">
 	<input type = "submit" value = "인증번호 받기">
-	
-	</form>
-
+	</form> -->
 
 </body>
 </html>

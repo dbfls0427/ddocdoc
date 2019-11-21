@@ -10,7 +10,8 @@
 		<typeAlias type="ddocdoc.vo.HospitalVO" alias="HospitalVO"/>
 		<typeAlias type="ddocdoc.vo.ChildVO" alias="ChildVO"/>
 		<typeAlias type="ddocdoc.vo.PresVO" alias="PresVO"/>
-		<typeAlias type="ddocdoc.vo.HosResVO" alias="HosResVO"/>
+		<typeAlias type="ddocdoc.vo.ChildHeightVO" alias="ChildHeightVO"/>
+		<typeAlias type="ddocdoc.vo.HospitalResVO" alias="HospitalResVO"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -19,7 +20,7 @@
 			<dataSource type="JNDI">
 				<property name="data_source" value="java:comp/env/jdbc/oracle"/>
 				<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
-				<property name="username" value="project"/>
+				<property name="username" value="ddocdoc"/>
 				<property name="password" value="1234"/>
 			</dataSource>
 		</environment>		
@@ -30,6 +31,7 @@
         <mapper resource="ddocdoc/mapper/Hospital.xml"/>
         <mapper resource="ddocdoc/mapper/Child.xml"/>
         <mapper resource="ddocdoc/mapper/Pres.xml"/>
+		<mapper resource="ddocdoc/mapper/ChildHeight.xml"/>
 	</mappers>
 	
 </configuration>

@@ -2,6 +2,7 @@ package ddocdoc.controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,13 +14,19 @@ import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
 import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ConfirmAction;
+import ddocdoc.action.ConfirmFormAction;
 import ddocdoc.action.DetailCustomerAction;
+import ddocdoc.action.HospitalResAction;
+import ddocdoc.action.HospitalResDeleteAction;
+import ddocdoc.action.HospitalResDetailAction;
+import ddocdoc.action.HospitalResFormAction;
 import ddocdoc.action.HospitalListAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
 import ddocdoc.action.LoginFormAction;
 import ddocdoc.action.LogoutAction;
+import ddocdoc.action.ResListAction;
 
 @WebServlet("/Customer/*")
 public class CustomerController extends HttpServlet {
@@ -84,7 +91,29 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("confirm.do")) {
     		System.out.println("controller confirm");
+    		action = new ConfirmFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("confirmaction.do")) {
+    		System.out.println("ÄÁÆß¾×¼Ç±îÁö ¿È");
     		action = new ConfirmAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hos_resform.do")) {
+    		action = new HospitalResFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hos_res_action.do")) {
+    		action = new HospitalResAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -99,6 +128,27 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("hospitalList.do")) {
     		action = new HospitalListAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("resList.do")) {
+    		action = new ResListAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("detailRes.do")) {
+    		action = new HospitalResDetailAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("deleteRes.do")) {
+    		action = new HospitalResDeleteAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

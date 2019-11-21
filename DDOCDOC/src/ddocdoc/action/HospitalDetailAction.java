@@ -9,7 +9,7 @@ import ddocdoc.loginSession.LoginSession;
 import ddocdoc.service.HospitalService;
 import ddocdoc.service.HospitalServiceImpl;
 import ddocdoc.vo.CustomerVO;
-import ddocdoc.vo.HosResVO;
+import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 
 public class HospitalDetailAction implements Action {
@@ -28,7 +28,7 @@ public class HospitalDetailAction implements Action {
 		request.setAttribute("hospitalvo", hospitalvo);
 		
 		// 병원 예약 환자 리스트
-		List<HosResVO> HosResVO = service.hosResList(hos_num);
+		List<HospitalResVO> HosResVO = service.hosResList(hos_num);
 		
 		
 		request.setAttribute("HosResVO", HosResVO);

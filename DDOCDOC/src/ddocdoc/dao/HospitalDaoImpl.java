@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import ddocdoc.mapper.CustomerMapper;
 import ddocdoc.mapper.HospitalMapper;
 import ddocdoc.vo.CustomerVO;
-import ddocdoc.vo.HosResVO;
+import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 
 public class HospitalDaoImpl implements HospitalDao{
@@ -146,9 +146,9 @@ public class HospitalDaoImpl implements HospitalDao{
 	
 	// 병원 예약 환자 리스트
 	@Override
-	public List<HosResVO> hosResList(String hos_num) {
+	public List<HospitalResVO> hosResList(String hos_num) {
 		SqlSession slqSession = getSessionFactory().openSession();
-		List<HosResVO> list = null;
+		List<HospitalResVO> list = null;
 		
 		try {
 			list = slqSession.getMapper(HospitalMapper.class).hosResList(hos_num);
@@ -186,7 +186,7 @@ public class HospitalDaoImpl implements HospitalDao{
 	
 	// 병원 예약 접수
 	@Override
-	public int booleanHosRes(HosResVO HosResVO) {
+	public int booleanHosRes(HospitalResVO HosResVO) {
 		int re = -1;
 		SqlSession sqlSession = getSessionFactory().openSession();
 		
