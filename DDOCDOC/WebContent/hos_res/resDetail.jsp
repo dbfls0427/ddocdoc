@@ -14,8 +14,9 @@
 	메모 : ${res.hos_res_memo }<br>
 	예약날짜 : ${res.hos_res_date }<br>
 	예약시간 : ${res.hos_res_time }<br>
-	<button><a href = "deleteRes.do?hos_res_num=${res.hos_res_num }">예약취소</a></button>
-	
+	대기번호 : ${count}<br>
+	<button><a href = "deleteRes.do?hos_res_num=${res.hos_res_num }&hos_num=${res.hos_num}">예약취소</a></button>
+	<button><a href = "resWaitSms.do?count=${count}&hos_res_num=${res.hos_res_num}">대기 번호 문자로 받기</a></button>
 
 
 </body>

@@ -69,6 +69,7 @@
 			<td>진료시간</td>
 			<td>병원예약번호</td>
 			<td> 예약접수 </td>
+			<td> 예약상태 </td>
 		</tr>
 	
 	
@@ -81,7 +82,8 @@
 				<td>진료날짜${hosresvo.hos_res_date }</td>
 				<td>진료시간${hosresvo.hos_res_time }</td>
 				<td>${hosresvo.hos_res_num }</td>
-				<td><a href="/DDOCDOC/hospital/boolean_hos_res.do?hos_res_num=${hosresvo.hos_res_num}">예약</a></td>
+				<td><a href="/DDOCDOC/hospital/boolean_hos_res.do?hos_res_num=${hosresvo.hos_res_num}&seq=${hosresvo.hos_num}">예약</a></td>
+				<td>${hosresvo.hos_acpt }</td>
 			</tr>
 		</c:forEach>
 	</table>

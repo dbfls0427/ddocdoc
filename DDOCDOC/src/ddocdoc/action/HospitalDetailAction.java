@@ -30,6 +30,9 @@ public class HospitalDetailAction implements Action {
 		// 병원 예약 환자 리스트
 		List<HospitalResVO> HosResVO = service.hosResList(hos_num);
 		
+		for(int i = 0; i < HosResVO.size(); i++) {
+			System.out.println("detailaction에서 " + HosResVO.get(i).getHos_res_num() + HosResVO.get(i).getHos_acpt());
+		}
 		
 		request.setAttribute("HosResVO", HosResVO);
 		

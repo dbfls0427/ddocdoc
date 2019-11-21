@@ -13,6 +13,7 @@ import ddocdoc.mapper.HospitalMapper;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
+import ddocdoc.vo.HospitalWaitVO;
 
 public class HospitalDaoImpl implements HospitalDao{
 	private static HospitalDaoImpl dao = new HospitalDaoImpl();
@@ -152,6 +153,10 @@ public class HospitalDaoImpl implements HospitalDao{
 		
 		try {
 			list = slqSession.getMapper(HospitalMapper.class).hosResList(hos_num);
+			for(int i = 0; i < list.size(); i++) {
+				System.out.println("dao에서 : " + list.get(i).getHos_res_num() + " " + list.get(i).getHos_acpt());
+			}
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -212,7 +217,66 @@ public class HospitalDaoImpl implements HospitalDao{
 	}
 	
 	
-	
+	// 대기번호 증가
+	@Override
+	public int increaseWait(String hos_num) {
+		SqlSession sqlSession = getSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(HospitalMapper.class).increaseWait(hos_num);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
 	 
+	// 대기번호 데이터 저장
+	@Override
+	public int insertWaitData(HospitalWaitVO waitVO) {
+		SqlSession sqlSession = getSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(HospitalMapper.class).insertWaitData(waitVO);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	// 해당 병원 대기번호 발급
+	@Override
+	public int hospitalWait(String hos_num) {
+		SqlSession sqlSession = getSessionFactory().openSession();
+		int count = 0;
+		try {
+			count = sqlSession.getMapper(HospitalMapper.class).hospitalWait(hos_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return count;
+	}
+	
 	
 }

@@ -12,6 +12,7 @@
 		<typeAlias type="ddocdoc.vo.PresVO" alias="PresVO"/>
 		<typeAlias type="ddocdoc.vo.ChildHeightVO" alias="ChildHeightVO"/>
 		<typeAlias type="ddocdoc.vo.HospitalResVO" alias="HospitalResVO"/>
+		<typeAlias type="ddocdoc.vo.HospitalWaitVO" alias="HospitalWaitVO"/>
 	</typeAliases>
 	
 	<environments default="development">

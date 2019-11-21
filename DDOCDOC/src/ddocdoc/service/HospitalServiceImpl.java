@@ -9,6 +9,7 @@ import ddocdoc.dao.HospitalDaoImpl;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
+import ddocdoc.vo.HospitalWaitVO;
 
 public class HospitalServiceImpl implements HospitalService {
 	private static HospitalServiceImpl service = new HospitalServiceImpl();
@@ -75,18 +76,13 @@ public class HospitalServiceImpl implements HospitalService {
 	// 병원 예약 환자 리스트
 	@Override
 	public List<HospitalResVO> hosResList(String hos_num) {
+		boolean check;
+		
 		List<HospitalResVO> list = dao.hosResList(hos_num);
 		for(int i = 0; i <list.size(); i++) {
-			System.out.println(list.get(i).getHos_res_num() + " " + list.get(i).getHos_acpt());
+			System.out.println("서비스에서 : " + list.get(i).getHos_res_num() + " " + list.get(i).getHos_acpt());
 		}
 		
-		for(int i = 0; i < list.size(); i++) {
-			if(list.get(i).getHos_acpt().equals("0")) {
-				list.get(i).setHos_acpt("예약 접수대기 중");
-			}else {
-				list.get(i).setHos_acpt("예약 접수 완료");
-			}
-		}
 		return list;
 	}
 	
@@ -144,10 +140,22 @@ public class HospitalServiceImpl implements HospitalService {
 //	}
 
 
+	// 대기번호 증가
+	@Override
+	public int increaseWait(String hos_num) {
+		return dao.increaseWait(hos_num);
+	}
 	
+	// 대기번호 데이터 저장
+	@Override
+	public int insertWaitData(HospitalWaitVO waitVO) {
+		return dao.insertWaitData(waitVO);
+	}
 	
-	
-	
-	
+	// 해당 병원 대기번호 발급
+	@Override
+	public int hospitalWait(String hos_num) {
+			return dao.hospitalWait(hos_num);
+		}
 	
 }
