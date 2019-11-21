@@ -2,6 +2,7 @@ package ddocdoc.controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.ConfirmFormAction;
 import ddocdoc.action.DetailCustomerAction;
@@ -18,6 +20,8 @@ import ddocdoc.action.HospitalResAction;
 import ddocdoc.action.HospitalResDeleteAction;
 import ddocdoc.action.HospitalResDetailAction;
 import ddocdoc.action.HospitalResFormAction;
+import ddocdoc.action.HospitalResSmsAction;
+import ddocdoc.action.HospitalListAction;
 import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
@@ -116,6 +120,20 @@ public class CustomerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(command.equals("childInsertForm.do")) {
+    		action = new ChildInsertFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("hospitalList.do")) {
+    		action = new HospitalListAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     	}else if(command.equals("resList.do")) {
     		action = new ResListAction();
     		try {
@@ -139,6 +157,13 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("customerUpdate.do")) {
     		action = new HospitalResDeleteAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("resWaitSms.do")) {
+    		action = new HospitalResSmsAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

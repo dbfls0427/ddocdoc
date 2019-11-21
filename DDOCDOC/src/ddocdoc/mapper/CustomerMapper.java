@@ -32,4 +32,10 @@ public interface CustomerMapper {
 	
 	//예약 취소
 	int deleteRes(String hos_res_num);
+	
+	// 예약 취소할 때 대기번호 감소
+	int decreaseWait(String hos_num);
+	
+	// 대기번호 조회
+	int detailWait(String hos_res_num);
 }

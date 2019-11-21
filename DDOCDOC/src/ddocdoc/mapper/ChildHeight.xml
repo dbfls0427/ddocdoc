@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="ddocdoc.mapper.ChildHeightMapper">
+	<cache />
+	
+	<!-- 아이번호 가져오기 -->
+	<select id="selectChildNum" parameterType="String" resultType="String">
+	select ch_num
+	from dd_child
+	where cus_num = #{cus_num}
+	</select>
+	
+	<!-- 아이 키 등록 -->
+	<insert id="insertChildHeight" parameterType="ChildHeightVO">
+		insert into dd_child_height
+		values('HE00'||height_seq.nextval, #{he_height}, #{ch_num}, #{he_date})
+	</insert>
+	
+	<!-- 아이 키 전체리스트 -->
+	<select id="ChildHeightList" parameterType="String" resultType="ChildHeightVO">
+		select * from dd_child_height
+		where ch_num = #{ch_num}
+	</select>
+	
+	<!-- 아이 키 상세 -->
+	<select id="detailChildHeight" parameterType="String" resultType="ChildHeightVO">
+		select * from dd_child_height
+		where he_num = #{he_num}
+	</select>
+	
+	<!-- 아이 키 수정 -->
+	<update id="updateChildHeight" parameterType="ChildHeightVO">
+		update dd_child_height set he_height = #{he_height}
+		where he_num = #{he_num}
+	</update>
+	
+	<!-- 아이 키 삭제 -->
+	<delete id="deleteChildHeight" parameterType="String">
+		delete from dd_child_height
+		where he_num = #{he_num}
+	</delete>
+	
+	<!-- 아이키 유무 -->
+	<select id="selectHeNum" parameterType="String" resultType="String">
+		select he_num from dd_child_height
+		where ch_num = #{ch_num}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -19,9 +19,12 @@ public class HospitalResDetailAction implements Action {
 		String hos_res_num = request.getParameter("hos_res_num");
 		
 		HospitalResVO res = sc.detailRes(hos_res_num);
+		int count = sc.detailWait(hos_res_num);
+		
 		
 		request.setAttribute("res", res);
 		request.setAttribute("cus_name", ((CustomerVO)LoginSession.loginSession.getAttribute("customer")).getCus_name());
+		request.setAttribute("count", count);
 		
 		forward.setPath("/hos_res/resDetail.jsp");
 		forward.setRedirect(false);

@@ -10,6 +10,14 @@
 </head>
 <body>
 <h3>병원정보 목록</h3>
+
+<!--  
+세션:
+<p>${customer.cus_num }</p>
+<p>${customer.cus_name }</p>
+-->
+
+
 <a href="/DDOCDOC/hospital/hospitalInsertForm.do">병원정보 입력</a><br>
 
 

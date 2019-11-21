@@ -7,6 +7,7 @@ import ddocdoc.loginSession.LoginSession;
 import ddocdoc.service.CustomerService;
 import ddocdoc.service.CustomerServiceImpl;
 import ddocdoc.vo.CustomerVO;
+import ddocdoc.vo.HospitalVO;
 
 public class LoginAction implements Action {
 
@@ -24,11 +25,19 @@ public class LoginAction implements Action {
 			request.setAttribute("customer", (CustomerVO)LoginSession.loginSession.getAttribute("customer"));
 			forward.setPath("/loginSuccess.jsp");
 			forward.setRedirect(false);
-		}else{
+			
+			if(customer.getCus_id().equals("admin") && customer.getCus_pw().equals("123")) {
+				System.out.println("admin모드입니다.");
+				request.setAttribute("customer", (CustomerVO)LoginSession.loginSession.getAttribute("customer"));
+				forward.setPath("hospitalList.do");
+				forward.setRedirect(true);
+			}
+		} else {
 			forward.setPath("/loginForm.jsp");
 			System.out.println("로그인 실패");
 			forward.setRedirect(false);
 		}
+		
 		
 		
 		return forward;
