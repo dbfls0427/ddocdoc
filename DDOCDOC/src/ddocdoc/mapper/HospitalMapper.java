@@ -2,6 +2,8 @@ package ddocdoc.mapper;
 
 import java.util.List;
 
+import ddocdoc.vo.CustomerVO;
+import ddocdoc.vo.HosResVO;
 import ddocdoc.vo.HospitalVO;
 
 public interface HospitalMapper {
@@ -19,4 +21,14 @@ public interface HospitalMapper {
 	
 	// 병원 정보 삭제
 	int hospitalDelete(String hos_num);
+	
+	// 병원 예약 정보 리스트
+	List<HosResVO> hosResList(String hos_num);
+	
+	// 예약 환자 이름 추출
+//	List<CustomerVO> hosResNameCustomer(String cus_num);
+	
+	// 병원 예약 접수
+	int booleanHosRes(HosResVO HosResVO);
+	
 }

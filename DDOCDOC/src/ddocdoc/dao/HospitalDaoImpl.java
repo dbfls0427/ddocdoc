@@ -8,7 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import ddocdoc.mapper.CustomerMapper;
 import ddocdoc.mapper.HospitalMapper;
+import ddocdoc.vo.CustomerVO;
+import ddocdoc.vo.HosResVO;
 import ddocdoc.vo.HospitalVO;
 
 public class HospitalDaoImpl implements HospitalDao{
@@ -140,5 +143,76 @@ public class HospitalDaoImpl implements HospitalDao{
 		
 		return re;
 	}
+	
+	// 병원 예약 환자 리스트
+	@Override
+	public List<HosResVO> hosResList(String hos_num) {
+		SqlSession slqSession = getSessionFactory().openSession();
+		List<HosResVO> list = null;
+		
+		try {
+			list = slqSession.getMapper(HospitalMapper.class).hosResList(hos_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(slqSession != null) {
+				slqSession.close();
+			}
+		}
+		
+		return list;
+	}
+
+	// 예약 환자 이름 추출
+	/*
+	@Override
+	public List<CustomerVO> hosResNameCustomer(String cus_num) {
+		SqlSession sqlSession = getSessionFactory().openSession();
+		List<CustomerVO> list = null;
+		
+		try {
+			list = sqlSession.getMapper(HospitalMapper.class).hosResNameCustomer(cus_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+				
+		return list;
+	}
+	*/
+	
+	// 병원 예약 접수
+	@Override
+	public int booleanHosRes(HosResVO HosResVO) {
+		int re = -1;
+		SqlSession sqlSession = getSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(HospitalMapper.class).booleanHosRes(HosResVO);
+			
+			if(re>0) {
+				sqlSession.commit();
+				System.out.println("병원예약접수 성공!");
+			}else {
+				sqlSession.rollback();
+				System.out.println("병원예약접수 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+	
+	
+	 
 	
 }

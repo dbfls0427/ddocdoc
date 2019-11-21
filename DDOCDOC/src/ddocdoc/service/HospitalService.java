@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import ddocdoc.vo.CustomerVO;
+import ddocdoc.vo.HosResVO;
 import ddocdoc.vo.HospitalVO;
 
 
@@ -24,4 +26,12 @@ public interface HospitalService {
 	// 병원 정보 삭제 서비스
 	public int hospitalDelete(String hos_num);
 	
+	// 병원 예약 환자 리스트
+	public List<HosResVO> hosResList(String hos_num);
+	
+	// 예약 환자 이름 추출
+	//public List<CustomerVO> hosResNameCustomer(HttpServletRequest request)throws Exception;
+	
+	// 병원 예약 접수
+	public int booleanHosRes(HttpServletRequest request)throws Exception;
 }
