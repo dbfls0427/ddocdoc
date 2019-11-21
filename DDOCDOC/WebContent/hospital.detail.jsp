@@ -50,6 +50,7 @@
 <!-- <p>현재예약환자 인원수:  <span>    <span>명</p>-->
 
 <div style="display:flex;">
+<!--  
 	<table border="1">
 		<tr>고객명</tr>
 		<c:forEach var="nameVO" items="${CustomerVO }">
@@ -58,6 +59,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+-->
 	
 	<table border="1">
 		<tr>
@@ -75,12 +77,12 @@
 	
 		<c:forEach var="hosresvo" items="${HosResVO }">
 			<tr>
-				<td>고객번호${hosresvo.cus_num }</td>
+				<td>${hosresvo.cus_num }</td>
 				<td>${hosresvo.hos_res_type }</td>
 				<td>${hosresvo.hos_res_sym }</td>
 				<td>${hosresvo.hos_res_memo }</td>
-				<td>진료날짜${hosresvo.hos_res_date }</td>
-				<td>진료시간${hosresvo.hos_res_time }</td>
+				<td>${hosresvo.hos_res_date }</td>
+				<td>${hosresvo.hos_res_time }</td>
 				<td>${hosresvo.hos_res_num }</td>
 				<td><a href="/DDOCDOC/hospital/boolean_hos_res.do?hos_res_num=${hosresvo.hos_res_num}&seq=${hosresvo.hos_num}">예약</a></td>
 				<td>${hosresvo.hos_acpt }</td>
