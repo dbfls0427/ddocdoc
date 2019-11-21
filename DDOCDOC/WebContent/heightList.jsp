@@ -38,6 +38,7 @@
 	<%for(int i=0; i<height.length; i++){%>
 		height.push('<%=height[i]%>')
 		date.push('<%=date[i]%>')
+		document.write(<%=height[i]%>);
 	<%}%>
 	
     // 성장그래프
@@ -112,7 +113,7 @@
 <body>
 	<% String ch_num = request.getParameter("ch_num"); %>
 	<br><br>
-	<button><a href="HeightInsertFormAction.do?ch_num=<%=ch_num%>">키 등록</a></button>
+	<button><a href="HeightInsertFormAction.do?ch_num=<%=ch_num%>&ch_name=<%=ch_name%>">키 등록</a></button>
 	<table border="1">
 		<tr>
 			<td>입력 키</td>

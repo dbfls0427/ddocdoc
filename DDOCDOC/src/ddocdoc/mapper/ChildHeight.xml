@@ -24,6 +24,7 @@
 	<select id="ChildHeightList" parameterType="String" resultType="ChildHeightVO">
 		select * from dd_child_height
 		where ch_num = #{ch_num}
+		order by he_date
 	</select>
 	
 	<!-- 아이 키 상세 -->
