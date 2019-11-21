@@ -15,7 +15,8 @@ public class HeightDeleteAction implements Action {
 		
 		service.deleteChildHeight(request);
 		
-		forward.setPath("/heightList.jsp");
+		String ch_num = request.getParameter("ch_num");
+		forward.setPath("HeightList.do?ch_num="+ch_num);
 		forward.setRedirect(false);
 		
 		return forward;
