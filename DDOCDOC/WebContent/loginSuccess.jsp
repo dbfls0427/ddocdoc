@@ -29,10 +29,15 @@ ${customer.cus_name }
 
 </form>
 
+<br>
 
-<form action="childInsertForm.do" method = "post">
-	<input type = "submit" value="아이정보등록">
+<form action="/DDOCDOC/child.index.html" method = "post">
+	<input type = "submit" value="아이관리">
 </form>
+
+
+
+
 
 </body>
 </html>
