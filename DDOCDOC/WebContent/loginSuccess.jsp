@@ -24,6 +24,11 @@ ${customer.cus_name }
 	<input type = "submit" value="가까운 병원 찾기">
 </form>
 
+<form action="resList.do" method = "post">
+	<input type = "submit" value = "예약 내역">
+
+</form>
+
 
 <form action="childInsertForm.do" method = "post">
 	<input type = "submit" value="아이정보등록">

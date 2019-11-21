@@ -29,6 +29,7 @@ public class HospitalResAction implements Action {
 		res.setHos_res_type(request.getParameter("res_type"));
 		res.setHos_res_sym(request.getParameter("res_sym"));
 		res.setHos_res_memo(request.getParameter("res_memo"));
+		res.setHos_res_date(request.getParameter("res_date"));
 		System.out.println(request.getParameter("res_date"));
 		res.setHos_res_time(request.getParameter("res_time"));
 		res.setCus_num(cus_num);

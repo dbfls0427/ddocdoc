@@ -8,7 +8,8 @@ public class HospitalResVO implements Serializable {
 	private String hos_res_type;
 	private String hos_res_sym;
 	private String hos_res_memo;
-	private Date hos_res_date;
+	private String hos_res_date;
+	
 	private String hos_res_time;
 	private String cus_num;
 	private String hos_num;
@@ -36,12 +37,7 @@ public class HospitalResVO implements Serializable {
 	public void setHos_res_memo(String hos_res_memo) {
 		this.hos_res_memo = hos_res_memo;
 	}
-	public Date getHos_res_date() {
-		return hos_res_date;
-	}
-	public void setHos_res_date(Date hos_res_date) {
-		this.hos_res_date = hos_res_date;
-	}
+
 	public String getHos_res_time() {
 		return hos_res_time;
 	}
@@ -60,6 +56,11 @@ public class HospitalResVO implements Serializable {
 	public void setHos_num(String hos_num) {
 		this.hos_num = hos_num;
 	}
-	
+	public String getHos_res_date() {
+		return hos_res_date;
+	}
+	public void setHos_res_date(String hos_res_date) {
+		this.hos_res_date = hos_res_date;
+	}
 	
 }
