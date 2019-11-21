@@ -8,11 +8,15 @@ public class ChildHeightVO implements Serializable{
 	private String he_num;
 	private Double he_height;
 	private Date he_date;
-
 	private String ch_num;
 	
 	public ChildHeightVO() {}
 	
+	public ChildHeightVO(Double he_height, Date he_date) {
+		super();
+		this.he_height = he_height;
+		this.he_date = he_date;
+	}
 	public ChildHeightVO(String he_num, Double he_height) {
 		super();
 		this.he_num = he_num;
