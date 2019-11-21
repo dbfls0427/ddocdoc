@@ -30,10 +30,16 @@ public class HeightListAction implements Action {
 				chvo.setHe_date(list.get(i).getHe_date());
 				height_list.add(chvo);
 			}
-			request.setAttribute("height_list", height_list);
-				
+			
+		request.setAttribute("height_list", height_list);
+		String ch_name = request.getParameter("ch_name");
 		
-		forward.setPath("/heightList.jsp?height_list="+height_list);
+		//표준키 가져오기
+		Float st_height = service.selectStHeight(request);
+		
+		
+			
+		forward.setPath("/heightList.jsp?height_list="+height_list+"&st_height=" + st_height+"&ch_name=" + ch_name);
 		forward.setRedirect(false);
 		
 		return forward;
