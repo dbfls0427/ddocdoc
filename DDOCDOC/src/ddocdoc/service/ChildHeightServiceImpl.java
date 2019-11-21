@@ -79,4 +79,11 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 		return dao.selectHeNum(ch_num);
 	}
 
+	//표준키 가져오기
+	@Override
+	public Float selectStHeight(HttpServletRequest request) {
+		String ch_num = request.getParameter("ch_num");
+		return dao.selectStHeight(ch_num);
+	}
+
 }

@@ -28,4 +28,7 @@ public interface ChildHeightService {
 	
 	//아이 키 번호 가져오기
 	String selectHeNum(String ch_num);
+	
+	//표준키 가져오기
+	Float selectStHeight(HttpServletRequest request);
 }
