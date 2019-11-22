@@ -8,6 +8,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
+	request.setCharacterEncoding("utf-8");
+
 	List<ChildHeightVO> h_list =(ArrayList<ChildHeightVO>)request.getAttribute("height_list"); 
 	int size = h_list.size();
 	String ch_name = request.getParameter("ch_name");
@@ -88,15 +90,15 @@
     }
  
     function drawChart2() {
-	  var ch_name = '<%=ch_name%>';
+	  
       var data = google.visualization.arrayToDataTable([
-        ['또래의 평균 키', ch_name, '평균 키'],
-        ['키 분석', height[height.length-1], <%=st_height%>]
+        ['또래의 평균 키', '<%=ch_name%>', '평균 키'],
+        ['키 분석', <%=height[height.length-1]%>, <%=st_height%>]
       ]);
 
       var options = {
         chart: {
-          title: ch_name+'의 또래 평균 키는 ' + <%=st_height%> + ' cm입니다',
+          title: '<%=ch_name%>의 또래 평균 키는 ' + <%=st_height%> + ' cm입니다',
           subtitle: '',
         }
       };

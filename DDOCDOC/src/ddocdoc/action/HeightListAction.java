@@ -17,6 +17,9 @@ public class HeightListAction implements Action {
 		ActionForward forward = new ActionForward();
 		ChildHeightService service = ChildHeightServiceImpl.getInstance();
 		
+		request.setCharacterEncoding("utf-8");
+		 response.setContentType("text/html;charset=UTF-8");
+		
 		//아이의 키 리스트 가져오기
 		List<ChildHeightVO> list = service.ChildHeightList(request);
 		request.setAttribute("list", list);
