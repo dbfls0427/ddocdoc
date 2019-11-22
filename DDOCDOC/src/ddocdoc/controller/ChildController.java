@@ -16,6 +16,8 @@ import ddocdoc.action.ChildDetailAction;
 import ddocdoc.action.ChildInsertAction;
 import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ChildListAction;
+import ddocdoc.action.ChildUpdateAction;
+import ddocdoc.action.ChildUpdateFormAction;
 
 @WebServlet("/child/*")
 public class ChildController extends HttpServlet {
@@ -64,6 +66,20 @@ public class ChildController extends HttpServlet {
 			}
 		} else if(command.equals("childDelete.do")) {
 			action = new ChildDeleteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("childUpdateForm.do")) {
+			action = new ChildUpdateFormAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("childUpdate.do")) {
+			action = new ChildUpdateAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

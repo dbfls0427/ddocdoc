@@ -99,8 +99,26 @@ public class ChildDaoImpl implements ChildDao {
 	// 아이정보 수정
 	@Override
 	public int updateChild(ChildVO ChildVO) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession sqlSession = getSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(ChildMapper.class).updateChild(ChildVO);
+			if(re>0) {
+				sqlSession.commit();
+				System.out.println("아이정보수정 성공!");
+			}else {
+				sqlSession.rollback();
+				System.out.println("아이정보수정 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
 	}
 
 	// 아이정보 삭제

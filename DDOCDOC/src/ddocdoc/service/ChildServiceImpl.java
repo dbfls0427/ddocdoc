@@ -55,8 +55,22 @@ public class ChildServiceImpl implements ChildService {
 	// 아이정보 수정 서비스
 	@Override
 	public int updateChild(HttpServletRequest request) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		request.setCharacterEncoding("utf-8");
+		
+		ChildVO childVO = new ChildVO();
+		childVO.setCh_num(request.getParameter("ch_num"));
+		childVO.setCh_name(request.getParameter("ch_name"));
+		int ch_age = Integer.parseInt(request.getParameter("ch_age"));
+		childVO.setCh_age(ch_age);
+		 String s = request.getParameter("ch_birth");
+	    java.util.Date birth = new java.util.Date(s);
+	    java.sql.Date ch_birth = new java.sql.Date(birth.getTime());
+	    childVO.setCh_birth(ch_birth);
+	    childVO.setCh_gender(request.getParameter("ch_gender"));
+	    
+	    int re = dao.updateChild(childVO);
+		
+		return re;
 	}
 
 	// 아이정보 삭제 서비스
