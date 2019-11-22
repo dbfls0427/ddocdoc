@@ -11,7 +11,7 @@
 	<form action="updateHeight.do" method="post">
 		<input type="hidden" name="he_num" value="${he_num }">
 		<input type="hidden" name="ch_num" value="${ch_num }">
-		<input type="hidden" name="ch_num" value="<%=request.getParameter("ch_name")%>">
+		<input type="hidden" name="ch_name" value="${ch_name }">
 		<input type="text" name="he_height"><br><br>
 		<input type="submit" value="수정하기">
 	</form>

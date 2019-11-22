@@ -30,5 +30,8 @@ public interface ChildHeightService {
 	String selectHeNum(String ch_num);
 	
 	//표준키 가져오기
-	Float selectStHeight(HttpServletRequest request);
+	Float selectStHeight(HttpServletRequest request, String genderTable);
+	
+	//아이 성별 가져오기
+	String selectGender(HttpServletRequest request);
 }

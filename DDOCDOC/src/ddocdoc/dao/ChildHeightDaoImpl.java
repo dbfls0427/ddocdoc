@@ -1,6 +1,7 @@
 package ddocdoc.dao;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -186,12 +187,15 @@ public class ChildHeightDaoImpl implements ChildHeightDao {
 
 	//표준 키 가져오기
 	@Override
-	public Float selectStHeight(String ch_num) {
+	public Float selectStHeight(HashMap<String, String> map) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		Float st_height = null;
 		
+		System.out.println("dao에서는~~~~~~~~~~");
+		System.out.println(map.get("gender_tb"));
+		System.out.println(map.get("ch_num"));
 		try {
-			st_height = sqlSession.getMapper(ChildHeightMapper.class).selectStHeight(ch_num);
+			st_height = sqlSession.getMapper(ChildHeightMapper.class).selectStHeight(map);
 			System.out.println("표준키 :>>>" + st_height);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -202,6 +206,26 @@ public class ChildHeightDaoImpl implements ChildHeightDao {
 		}
 		
 		return st_height;
+	}
+
+	//아이 성별 가져오기
+	@Override
+	public String selectGender(String ch_num) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		String gender = null;
+		
+		try {
+			gender = sqlSession.getMapper(ChildHeightMapper.class).selectGender(ch_num);
+			System.out.println("성별 :>>>" + gender);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return gender;
 	}
 
 }

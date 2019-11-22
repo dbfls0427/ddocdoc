@@ -12,8 +12,8 @@
 <body>
 	<h1>키 : ${height.he_height }</h1>
 	<br><br>
-	<button><a href="updateHeightForm.do?he_num=${height.he_num }&ch_num=${height.ch_num}&ch_name=<%=ch_name%>">수정</a></button>
-	<button><a href="deleteHeight.do?he_num=${height.he_num }&ch_num=${height.ch_num}&ch_name=<%=ch_name%>">삭제</a></button>
+	<button><a href="updateHeightForm.do?he_num=${height.he_num }&ch_num=${ch_num}&ch_name=${ch_name}">수정</a></button>
+	<button><a href="deleteHeight.do?he_num=${height.he_num }&ch_num=${height.ch_num}&ch_name=${ch_name}">삭제</a></button>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 package ddocdoc.service;
 
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -81,9 +82,24 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 
 	//표준키 가져오기
 	@Override
-	public Float selectStHeight(HttpServletRequest request) {
+	public Float selectStHeight(HttpServletRequest request, String genderTable) {
 		String ch_num = request.getParameter("ch_num");
-		return dao.selectStHeight(ch_num);
+		//파라미터 담을 해시맵
+		HashMap<String, String> map= new HashMap<String, String>();
+		map.put("ch_num", ch_num);
+		map.put("gender_tb", genderTable);
+		System.out.println("service에서는~~~~~~~~~~");
+		System.out.println(map.get("gender_tb"));
+		System.out.println(map.get("ch_num"));
+		
+		return dao.selectStHeight(map);
+	}
+
+	//아이 성별 가져오기
+	@Override
+	public String selectGender(HttpServletRequest request) {
+		String ch_num = request.getParameter("ch_num");
+		return dao.selectGender(ch_num);
 	}
 
 }

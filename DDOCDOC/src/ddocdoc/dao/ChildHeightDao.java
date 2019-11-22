@@ -1,5 +1,6 @@
 package ddocdoc.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import ddocdoc.vo.ChildHeightVO;
@@ -28,5 +29,8 @@ public interface ChildHeightDao {
 	String selectHeNum(String ch_num);
 	
 	//표준키 가져오기
-	Float selectStHeight(String ch_num);
+	Float selectStHeight(HashMap<String, String> map);
+	
+	//아이생일 가져오기
+	String selectGender(String ch_num);
 }

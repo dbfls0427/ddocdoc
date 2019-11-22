@@ -52,16 +52,16 @@
 	</select>
 		
   	<!-- 표준키 가져오기 -->
- <select id="selectStHeight" parameterType="String" resultType="float">
+ <select id="selectStHeight" parameterType="hashmap" resultType="float">
 		select st_height
-		from DD_BOY_ST_HEIGHT
+		from ${gender_tb}
 		where ( select TRUNC(SYSDATE) - ch_birth
              from dd_child
              where ch_num = #{ch_num}) BETWEEN st_min_birth and st_max_birth
 	</select> 
 	
 	<!-- 아이 성별 가져오기 -->
-	<select id="selectGender" parameterType="String">
+	<select id="selectGender" parameterType="String" resultType="String">
 		select ch_gender
 		from dd_child
 		where ch_num = #{ch_num}

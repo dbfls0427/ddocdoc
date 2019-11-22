@@ -26,8 +26,11 @@
 		date[i] = transFormat.format(h_list.get(i).getHe_date());
 		height[i] = h_list.get(i).getHe_height();
 	}
-
+	
+	String ch_num= request.getParameter("ch_num");
+	//out.println("여기 list에서 아이번호는~~~~~~~`" + ch_num);
 	request.setAttribute("height", height);
+	request.setAttribute("ch_num", ch_num);
 %>
 <!DOCTYPE html>
 <html>
@@ -113,7 +116,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% String ch_num = request.getParameter("ch_num"); %>
 	<br><br>
 	<button><a href="HeightInsertFormAction.do?ch_num=<%=ch_num%>&ch_name=<%=ch_name%>">키 등록</a></button>
 	<table border="1">
@@ -123,7 +125,7 @@
 		</tr>
 		<c:forEach var="height" items="${list }">
 			<tr>
-				<td><a href="detailHeight.do?he_num=${height.he_num }&ch_name=<%=ch_name%>">${height.he_height }</a></td>
+				<td><a href="detailHeight.do?he_num=${height.he_num }&ch_name=<%=ch_name%>&ch_num=${ch_num}">${height.he_height }</a></td>
 				<td>${height.he_date }</td>
 			</tr>
 		</c:forEach>

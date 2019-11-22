@@ -20,7 +20,7 @@
 	<h1>아이 키 등록</h1>
 	<form action="insertChildHeight.do" method="post">
 		<input type="hidden" name="ch_num" value="${ch_num }"/><br>
-		<input type="hidden" name="ch_name" value="<%=request.getParameter("ch_name")%>"/><br>
+		<input type="hidden" name="ch_name" value="${ch_name }"/><br>
 		아이 키 : <input type="text" name="he_height"/> cm<br>
 		등록일 : <input type="text" name="he_date" id="datepicker">
 		<script>

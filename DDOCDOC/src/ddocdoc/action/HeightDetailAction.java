@@ -20,6 +20,8 @@ public class HeightDetailAction implements Action {
 		chvo = service.detailChildHeight(request);
 		
 		request.setAttribute("height", chvo);
+		request.setAttribute("ch_name",request.getParameter("ch_name"));
+		request.setAttribute("ch_num",request.getParameter("ch_num"));
 		
 		forward.setPath("/heightDetail.jsp");
 		forward.setRedirect(false);

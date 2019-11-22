@@ -1,6 +1,7 @@
 package ddocdoc.action;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,11 +38,20 @@ public class HeightListAction implements Action {
 		request.setAttribute("height_list", height_list);
 		String ch_name = request.getParameter("ch_name");
 		
+		//성별 가져오기
+		String gender = service.selectGender(request);
 		//표준키 가져오기
-		Float st_height = service.selectStHeight(request);
+		Float st_height = null;
+		String genderTable = null;
+		if(gender.equals("여")) {
+			genderTable = "dd_girl_st_height";
+		}else {
+			genderTable = "dd_boy_st_height";
+		}
+		System.out.println("액션에서 테이블이름~~~~" + genderTable);
 		
-		
-			
+		st_height = service.selectStHeight(request,genderTable);
+
 		forward.setPath("/heightList.jsp?height_list="+height_list+"&st_height=" + st_height+"&ch_name=" + ch_name);
 		forward.setRedirect(false);
 		
