@@ -18,10 +18,9 @@ public class HospitalDetailAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HospitalService service = HospitalServiceImpl.getInstance();
 		ActionForward forward = new ActionForward();
-		
+		System.out.println("hospitaldetailAction넘어옴~!");
 		
 		String hos_num = request.getParameter("seq");
-//		String cus_num = (String)(LoginSession.loginSession.getAttribute("cus_num"));
 		
 		// 병원 상세보기
 		HospitalVO hospitalvo = service.hospitalDetail(hos_num);
@@ -35,12 +34,6 @@ public class HospitalDetailAction implements Action {
 		}
 		
 		request.setAttribute("HosResVO", HosResVO);
-		
-		// 예약 환자 이름 추출
-		//List<CustomerVO> CustomerVO = service.hosResNameCustomer(request);
-		//request.setAttribute("CustomerVO", CustomerVO);
-		//String hos_num = request.getParameter("hos_num"); 
-		// hos_num 이름중복
 		
 		
 		

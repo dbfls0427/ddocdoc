@@ -20,8 +20,6 @@ import ddocdoc.action.HospitalUpdateAction;
 import ddocdoc.action.HospitalUpdateFormAction;
 import ddocdoc.action.HospitalDetailAction;
 
-
-
 @WebServlet("/hospital/*")
 public class HospitalController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

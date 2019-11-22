@@ -41,6 +41,7 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	// 병원정보 상세보기 서비스
 	public HospitalVO hospitalDetail(String hos_num) {
+		System.out.println("디테일 서비스 넘어옴");
 	    HospitalVO hospitalvo = dao.hospitalDetail(hos_num);
 		
 		return hospitalvo;
