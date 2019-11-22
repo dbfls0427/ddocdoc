@@ -5,7 +5,7 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="ddocdoc.vo.CustomerVO" alias="Customer"/>
+		<typeAlias type="ddocdoc.vo.CustomerVO" alias="CustomerVO"/>
 		<typeAlias type="ddocdoc.vo.LoginVO" alias="Login"/>
 		<typeAlias type="ddocdoc.vo.HospitalVO" alias="HospitalVO"/>
 		<typeAlias type="ddocdoc.vo.ChildVO" alias="ChildVO"/>
