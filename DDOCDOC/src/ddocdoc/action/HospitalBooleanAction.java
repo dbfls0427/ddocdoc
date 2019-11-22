@@ -2,6 +2,7 @@ package ddocdoc.action;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,7 +19,7 @@ public class HospitalBooleanAction implements Action {
 		HospitalService service = HospitalServiceImpl.getInstance();
 		ActionForward forward = new ActionForward();
 		
-		// º´¿ø ¿¹¾à Á¢¼ö
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		String hos_res_num = request.getParameter("hos_res_num");
 		String seq = request.getParameter("seq");
 		
@@ -34,7 +35,7 @@ public class HospitalBooleanAction implements Action {
 		waitVO.setHos_num(seq);
 		waitVO.setHos_res_num(hos_res_num);
 		waitVO.setRes_wait(service.hospitalWait(seq));
-		System.out.println("¼­ºñ½ºwaitVO¿¡¼­ : " + waitVO.getCus_num() + " " + waitVO.getHos_num() + " " + waitVO.getRes_wait());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½waitVOï¿½ï¿½ï¿½ï¿½ : " + waitVO.getCus_num() + " " + waitVO.getHos_num() + " " + waitVO.getRes_wait());
 		int re2 = service.insertWaitData(waitVO);
 		
 		

@@ -3,6 +3,7 @@ package ddocdoc.controller;
 import java.io.IOException;
 
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -61,7 +62,7 @@ public class CustomerController extends HttpServlet {
 				e.printStackTrace();
 			}
     	}else if(command.equals("login.do")) {
-    		System.out.println("°æ·Î: " + command);
+    		System.out.println("ï¿½ï¿½ï¿½: " + command);
     		action = new LoginAction();
     		try {
 				forward = action.execute(request, response);
@@ -77,7 +78,7 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("loginForm.do")) {
     		action = new LoginFormAction();
-    		System.out.println("ÄÁÆ®·Ñ·¯ : " + "Æû");
+    		System.out.println("ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ : " + "ï¿½ï¿½");
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -99,7 +100,7 @@ public class CustomerController extends HttpServlet {
 				e.printStackTrace();
 			}
     	}else if(command.equals("confirmaction.do")) {
-    		System.out.println("ÄÁÆß¾×¼Ç±îÁö ¿È");
+    		System.out.println("ï¿½ï¿½ï¿½ß¾×¼Ç±ï¿½ï¿½ï¿½ ï¿½ï¿½");
     		action = new ConfirmAction();
     		try {
 				forward = action.execute(request, response);
