@@ -47,4 +47,10 @@ public interface CustomerService {
 	
 	// 대기번호 조회
 	public int detailWait(String hos_res_num);
+	
+	// 회원정보 수정
+	public int customerUpdate(CustomerVO customer);
+	
+	// 회원 탈퇴
+	public int customerDelete(String cus_num);
 }

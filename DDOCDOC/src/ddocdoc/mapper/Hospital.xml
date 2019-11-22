@@ -65,11 +65,11 @@
 	<update id="increaseWait" parameterType="String">
 		update dd_hospital set hos_wait = hos_wait + 1
 		where hos_num like #{hos_num}
-	</update>
+	</update>  
 	
 	<!-- 대기번호 데이터 저장 -->
-	<insert id="insertWaitData" parameterType = "HospitalWaitVO" >
-		insert into dd_res_wait values(#{cus_num}, #{hos_num}, #{res_wait}, #{hos_res_num})
+	<insert id="insertWaitData" parameterType = "HospitalWaitVO" > 
+		insert into dd_res_wait values(#{cus_num}, #{hos_num}, #{res_wait} ,#{hos_res_num})
 	</insert>
 	
 	<!-- 해당 병원 대기번호 발급 -->

@@ -245,6 +245,7 @@ public class CustomerDaoImpl implements CustomerDao{
 		int count = 0;
 		try {
 			count = session.getMapper(CustomerMapper.class).detailWait(hos_res_num);
+			System.out.println("다오에서 : " + count);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -253,6 +254,53 @@ public class CustomerDaoImpl implements CustomerDao{
 			}
 		}
 		return count;
+	}
+	
+	
+	// 회원정보 수정
+	@Override
+	public int customerUpdate(CustomerVO customer) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).customerUpdate(customer);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
+	}
+	
+	
+	
+	//회원 탈퇴
+	@Override
+	public int customerDelete(String cus_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).customerDelete(cus_num);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
 	}
 
 }

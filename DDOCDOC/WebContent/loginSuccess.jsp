@@ -34,5 +34,9 @@ ${customer.cus_name }
 	<input type = "submit" value="아이정보등록">
 </form>
 
+<form action="myPageForm.do" method="post">
+	<input type = "submit" value = "마이페이지">
+</form>
+
 </body>
 </html>
