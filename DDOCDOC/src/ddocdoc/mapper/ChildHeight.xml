@@ -60,6 +60,12 @@
              where ch_num = #{ch_num}) BETWEEN st_min_birth and st_max_birth
 	</select> 
 	
+	<!-- 아이 성별 가져오기 -->
+	<select id="selectGender" parameterType="String">
+		select ch_gender
+		from dd_child
+		where ch_num = #{ch_num}
+	</select>
 </mapper>
 
 
