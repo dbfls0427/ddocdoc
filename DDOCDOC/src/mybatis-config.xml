@@ -13,6 +13,7 @@
 		<typeAlias type="ddocdoc.vo.ChildHeightVO" alias="ChildHeightVO"/>
 		<typeAlias type="ddocdoc.vo.HospitalResVO" alias="HospitalResVO"/>
 		<typeAlias type="ddocdoc.vo.HospitalWaitVO" alias="HospitalWaitVO"/>
+		<typeAlias type="ddocdoc.vo.PharmacyVO" alias="PharmacyVO"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -30,9 +31,12 @@
 	<mappers>
 		<mapper resource="ddocdoc/mapper/Customer.xml"/>
         <mapper resource="ddocdoc/mapper/Hospital.xml"/>
-        <mapper resource="ddocdoc/mapper/Child.xml"/>
         <mapper resource="ddocdoc/mapper/Pres.xml"/>
 		<mapper resource="ddocdoc/mapper/ChildHeight.xml"/>
+		<mapper resource="ddocdoc/mapper/Child.xml"/>
+		<mapper resource="ddocdoc/mapper/Pharmacy.xml"/>
+      <mapper resource="ddocdoc/mapper/Hospital.xml"/>
+
 	</mappers>
 	
 </configuration>

@@ -24,6 +24,7 @@
 	<select id="ChildHeightList" parameterType="String" resultType="ChildHeightVO">
 		select * from dd_child_height
 		where ch_num = #{ch_num}
+		order by he_date
 	</select>
 	
 	<!-- 아이 키 상세 -->
@@ -49,6 +50,21 @@
 		select he_num from dd_child_height
 		where ch_num = #{ch_num}
 	</select>
+		
+  	<!-- 표준키 가져오기 -->
+ <select id="selectStHeight" parameterType="String" resultType="float">
+		select st_height
+		from DD_BOY_ST_HEIGHT
+		where ( select  CASE WHEN TRUNC(SYSDATE) - ch_birth &lt;= 30 THEN
+		                 TRUNC(SYSDATE) - ch_birth + 1 || '일'
+		            WHEN MONTHS_BETWEEN(TRUNC(SYSDATE), ch_birth) &lt; 12 THEN
+		                 TRUNC(MONTHS_BETWEEN(TRUNC(SYSDATE), ch_birth)) || '개월'
+		            ELSE
+		                 TRUNC(MONTHS_BETWEEN(TRUNC(SYSDATE), ch_birth) / 12 ) || '세'
+		       END AGE
+		  from dd_child
+		  where ch_num = #{ch_num}) BETWEEN st_min_birth and st_max_birth
+	</select> 
 	
 </mapper>
 

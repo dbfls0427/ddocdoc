@@ -29,8 +29,8 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 	public int insertChildHeight(HttpServletRequest request) {
 		ChildHeightVO chvo = new ChildHeightVO();
 		
-		chvo.setHe_height(Integer.parseInt(request.getParameter("he_height")));
-		System.out.println(Integer.parseInt(request.getParameter("he_height")));
+		chvo.setHe_height(Double.valueOf(request.getParameter("he_height")));
+		System.out.println(Double.valueOf(request.getParameter("he_height")));
 		chvo.setCh_num(request.getParameter("ch_num"));
 		System.out.println("HeightServceImpl에서 ch_num : " +request.getParameter("ch_num"));
 		chvo.setHe_date(Date.valueOf(request.getParameter("he_date")));
@@ -60,7 +60,7 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 		ChildHeightVO chvo = new ChildHeightVO();
 		
 		chvo.setHe_num(request.getParameter("he_num"));
-		chvo.setHe_height(Integer.parseInt(request.getParameter("he_height")));
+		chvo.setHe_height(Double.valueOf(request.getParameter("he_height")));
 		
 		return dao.updateChildHeight(chvo);
 	}
@@ -77,6 +77,13 @@ public class ChildHeightServiceImpl implements ChildHeightService {
 	@Override
 	public String selectHeNum(String ch_num) {
 		return dao.selectHeNum(ch_num);
+	}
+
+	//표준키 가져오기
+	@Override
+	public Float selectStHeight(HttpServletRequest request) {
+		String ch_num = request.getParameter("ch_num");
+		return dao.selectStHeight(ch_num);
 	}
 
 }

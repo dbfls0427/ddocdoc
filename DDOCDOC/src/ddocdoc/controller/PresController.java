@@ -2,6 +2,7 @@ package ddocdoc.controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,6 +43,7 @@ public class PresController extends HttpServlet  {
 			
 		}
 		
+		/*
 		if(forward != null) {
 			if(forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
@@ -51,6 +53,7 @@ public class PresController extends HttpServlet  {
 				dispacher.forward(request, response);
 			}
 		}
+		*/
 	}
 
 	@Override

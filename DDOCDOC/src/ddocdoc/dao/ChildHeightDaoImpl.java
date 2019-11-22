@@ -184,4 +184,24 @@ public class ChildHeightDaoImpl implements ChildHeightDao {
 		return he_num;
 	}
 
+	//표준 키 가져오기
+	@Override
+	public Float selectStHeight(String ch_num) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Float st_height = null;
+		
+		try {
+			st_height = sqlSession.getMapper(ChildHeightMapper.class).selectStHeight(ch_num);
+			System.out.println("표준키 :>>>" + st_height);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return st_height;
+	}
+
 }
