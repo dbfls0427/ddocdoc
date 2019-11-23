@@ -1,5 +1,6 @@
 package ddocdoc.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,9 @@ import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.HospitalWaitVO;
+import ddocdoc.vo.MedicineVO;
+import ddocdoc.vo.PresDetailVO;
+import ddocdoc.vo.PresVO;
 
 public class HospitalServiceImpl implements HospitalService {
 	private static HospitalServiceImpl service = new HospitalServiceImpl();
@@ -159,4 +163,53 @@ public class HospitalServiceImpl implements HospitalService {
 			return dao.hospitalWait(hos_num);
 		}
 	
+	// 약 리스트 서비스
+	@Override
+	public List<MedicineVO> medicineList() {
+		return dao.medicineList();
+	}
+	
+	
+	// 처방전 명세 입력
+	@Override
+	public int insertPreDetail(PresDetailVO presDetail) {
+		return dao.insertPreDetail(presDetail);
+	}
+	
+	
+	// 처방전 약 명세 리스트
+	@Override
+	public List<PresDetailVO> presDetailList(String pres_num){
+		return dao.presDetailList(pres_num);
+	}
+	
+	// 처방전 약 명세 약 이름
+	@Override
+	public List<String> presDetailMedName(String pres_num){
+		return dao.presDetailMedName(pres_num);
+	}
+
+	// 처방전 입력
+	@Override
+	public int insertPres(HttpServletRequest request) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
+		PresVO presVO = new PresVO();
+		presVO.setPres_num(request.getParameter("pres_num"));
+		presVO.setHos_num(request.getParameter("hos_num"));
+		presVO.setPres_count(3);
+		presVO.setCus_num(request.getParameter("cus_num"));
+		presVO.setHos_res_num(request.getParameter("hos_res_num"));
+		
+		return dao.insertPres(presVO);
+	}
+	
+	// presDetail
+	@Override
+	public PresVO presDetail() {
+		return dao.presDetail();
+	}
+	
+	
+
 }

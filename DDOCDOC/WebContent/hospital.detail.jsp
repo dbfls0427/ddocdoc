@@ -2,10 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-<%
 
-%>
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,6 +69,7 @@
 			<td>병원예약번호</td>
 			<td> 예약접수 </td>
 			<td> 예약상태 </td>
+			<td> 처방전 </td>
 		</tr>
 	
 	
@@ -86,6 +84,7 @@
 				<td>${hosresvo.hos_res_num }</td>
 				<td><a href="/DDOCDOC/hospital/boolean_hos_res.do?hos_res_num=${hosresvo.hos_res_num}&seq=${hosresvo.hos_num}">예약</a></td>
 				<td>${hosresvo.hos_acpt }</td>
+				<td><a href="presInsert.do?hos_res_num=${hosresvo.hos_res_num}&cus_num=${hosresvo.cus_num}&hos_num=${hospitalvo.hos_num}">처방전 입력</a><br></td>
 			</tr>
 		</c:forEach>
 	</table>

@@ -25,13 +25,9 @@ public class ResListAction implements Action {
 		
 		List<HospitalResVO> list = sc.resList(cus_num);
 		
-		for(int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).getHos_num());
-		}
+
 		List<String> listName = sc.detailNameHospital(cus_num);
-		for(int i = 0; i < listName.size(); i++) {
-			System.out.println(list.get(i).toString());
-		}
+
 		
 
 		request.setAttribute("list", list);

@@ -23,7 +23,7 @@
 	<!-- 아이 정보 수정 -->
 	<update id="updateChild" parameterType="ChildVO">
 		update dd_child
-		set ch_name = #{ch_name}, ch_age = #{ch_age}, ch_birth = #{ch_birth}, ch_gender = #{ch_gender}
+		set ch_name = #{ch_name, jdbcType=VARCHAR}, ch_age = #{ch_age, jdbcType=NUMERIC}, ch_birth = #{ch_birth, jdbcType=DATE}, ch_gender = #{ch_gender, jdbcType=VARCHAR}
 		where ch_num = #{ch_num}
 	</update>
 	

@@ -12,10 +12,10 @@
 	
 	</insert>
 	
-	<select id="loginCustomer" parameterType="Login" resultType="CustomerVO">
+
+
+	<select id="loginCustomer" parameterType="LoginVO" resultType="CustomerVO">
 	select * from dd_customer where cus_id = #{loginId, jdbcType=VARCHAR} and cus_pw = #{loginPw, jdbcType=VARCHAR}
-	
-	
 	</select>
 	
 	<insert id="insertHospitalRes" parameterType="HospitalResVO">
