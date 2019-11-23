@@ -13,6 +13,9 @@ import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
+import ddocdoc.vo.PayVO;
+import ddocdoc.vo.PresDetailVO;
+import ddocdoc.vo.PresVO;
 
 public class CustomerDaoImpl implements CustomerDao{
 	private static CustomerDaoImpl dao = new CustomerDaoImpl();
@@ -302,5 +305,142 @@ public class CustomerDaoImpl implements CustomerDao{
 		}
 		return re;
 	}
+	
+	
+	
+	// 처방전 보기
+	@Override
+	public PresVO presRealDetail(String hos_res_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		PresVO pres = null;
+		try {
+			pres = session.getMapper(CustomerMapper.class).presRealDetail(hos_res_num);
+			if(pres == null) {
+				return null;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return pres;
+	}
 
+	
+	
+	// 처방전 약 명세 조회 리스트
+	@Override
+	public List<PresDetailVO> cusPresDetailList(String pres_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<PresDetailVO> presDetail = null;
+		try {
+			presDetail = session.getMapper(CustomerMapper.class).cusPresDetailList(pres_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return presDetail;
+	}
+		
+	// 처방전 약 명세 약 이름
+	@Override
+	public List<String> cusPresDetailMedName(String pres_num){
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<String> list = null;
+		try {
+			list = session.getMapper(CustomerMapper.class).cusPresDetailMedName(pres_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return list;
+	}
+	
+	// 결제 하기
+	@Override
+	public int insertPay(PayVO pay) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).insertPay(pay);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
+	}
+	
+	// 결제완료
+	@Override
+	public int updatePay(String pres_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).updatePay(pres_num);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
+	}
+	
+	// 처방전 결제 여부 추출
+	@Override
+	public String selectPayCheck(String pres_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		String check = null;
+		try {
+			check = session.getMapper(CustomerMapper.class).selectPayCheck(pres_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return check;
+	}
+	
+	
+	// 약 가격 추출
+	@Override
+	public int selectPayPrice(String hos_res_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int price = 0;
+		try {
+			price = session.getMapper(CustomerMapper.class).selectPayPrice(hos_res_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return price;
+	}
+	
 }
