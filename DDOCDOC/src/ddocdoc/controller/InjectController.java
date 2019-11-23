@@ -2,6 +2,7 @@ package ddocdoc.controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +14,12 @@ import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
 import ddocdoc.action.HeightAction;
 import ddocdoc.action.HeightInsertFormAction;
+import ddocdoc.action.InjectDeleteAction;
+import ddocdoc.action.InjectDetailAction;
+import ddocdoc.action.InjectInsertAction;
+import ddocdoc.action.InjectInsertFormAction;
 import ddocdoc.action.InjectListAction;
+import ddocdoc.action.InjectUpdateAction;
 
 
 @WebServlet("/Inject/*")
@@ -41,7 +47,48 @@ public class InjectController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(command.equals("InjectInsertFormAction.do")) {
+    		action = new InjectInsertFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("InsertInjAction.do")) {
+    		action = new InjectInsertAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("InjectDetailAction.do")) {
+    		action = new InjectDetailAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("updateInjAction.do")) {
+    		action = new InjectUpdateAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("deleteInjAction.do")) {
+    		action = new InjectDeleteAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     	}
+    	
+    	
+    	
+    	
+    	
+    	
     	
     	if(forward != null) {
     		if(forward.isRedirect()) {

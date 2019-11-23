@@ -9,15 +9,24 @@ public class ChildInjectVO implements Serializable{
 	private String inj_content;
 	private Date inj_date;
 	private String ch_num;
+	private String inj_memo;
 	
 	public ChildInjectVO() {}
 	
-	public ChildInjectVO(String inj_num, String inj_content, Date inj_date, String ch_num) {
+	public ChildInjectVO(String inj_content, Date inj_date, String ch_num, String inj_memo) {
+		super();
+		this.inj_content = inj_content;
+		this.inj_date = inj_date;
+		this.ch_num = ch_num;
+		this.inj_memo = inj_memo;
+	}
+	public ChildInjectVO(String inj_num, String inj_content, Date inj_date, String ch_num, String inj_memo) {
 		super();
 		this.inj_num = inj_num;
 		this.inj_content = inj_content;
 		this.inj_date = inj_date;
 		this.ch_num = ch_num;
+		this.inj_memo = inj_memo;
 	}
 	
 	public String getInj_num() {
@@ -52,5 +61,11 @@ public class ChildInjectVO implements Serializable{
 		this.ch_num = ch_num;
 	}
 
+	public String getInj_memo() {
+		return inj_memo;
+	}
+	public void setInj_memo(String inj_memo) {
+		this.inj_memo = inj_memo;
+	}
 	
 }
