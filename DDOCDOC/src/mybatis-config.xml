@@ -18,6 +18,7 @@
 		<typeAlias type="ddocdoc.vo.InjectInfoVO" alias="InjectVO"/>
 		<typeAlias type="ddocdoc.vo.ChildInjectVO" alias="ChildInjectVO"/>
 		<typeAlias type="ddocdoc.vo.MedicineVO" alias="MedicineVO"/>
+		<typeAlias type="ddocdoc.vo.PayVO" alias="PayVO"/>
 	</typeAliases>
 	
 	<environments default="development">

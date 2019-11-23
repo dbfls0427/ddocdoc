@@ -104,7 +104,7 @@
 	
 	<!-- 버튼:처방전입력 클릭시 처방전 테이블에 값생성 -->
 	<insert id="insertPres" parameterType="PresVO">
-		insert into dd_pres values('P00' || hospital_seq.nextval, SYSDATE, 3, #{cus_num}, #{hos_num}, #{hos_res_num})
+		insert into dd_pres values('P00' || hospital_seq.nextval, SYSDATE, 3, #{cus_num}, #{hos_num}, #{hos_res_num}, '미결제')
 	</insert>
 	
 	<!-- presDetail -->

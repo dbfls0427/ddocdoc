@@ -10,13 +10,12 @@ public class PresVO implements Serializable{
 	private String cus_num;		// 고객번호
 	private String hos_num;		// 병원번호
 	private String hos_res_num; //예약번호
+	private String pay_check; // 결제 여부
 	
 	public PresVO() {}
-	
 
-
-
-	public PresVO(String pres_num, Date pres_date, int pres_count, String cus_num, String hos_num, String hos_res_num) {
+	public PresVO(String pres_num, Date pres_date, int pres_count, String cus_num, String hos_num, String hos_res_num,
+			String pay_check) {
 		super();
 		this.pres_num = pres_num;
 		this.pres_date = pres_date;
@@ -24,11 +23,8 @@ public class PresVO implements Serializable{
 		this.cus_num = cus_num;
 		this.hos_num = hos_num;
 		this.hos_res_num = hos_res_num;
+		this.pay_check = pay_check;
 	}
-
-
-
-
 	public String getPres_num() {
 		return pres_num;
 	}
@@ -68,6 +64,15 @@ public class PresVO implements Serializable{
 	public void setHos_res_num(String hos_res_num) {
 		this.hos_res_num = hos_res_num;
 	}
+
+	public String getPay_check() {
+		return pay_check;
+	}
+
+	public void setPay_check(String pay_check) {
+		this.pay_check = pay_check;
+	}
+
 	
 	
 	

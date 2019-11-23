@@ -31,6 +31,8 @@ import ddocdoc.action.LoginAction;
 import ddocdoc.action.LoginFormAction;
 import ddocdoc.action.LogoutAction;
 import ddocdoc.action.MyPageFormAction;
+import ddocdoc.action.PayAction;
+import ddocdoc.action.PresDetailAction;
 import ddocdoc.action.ResListAction;
 
 @WebServlet("/Customer/*")
@@ -201,7 +203,22 @@ public class CustomerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(command.equals("presDetail.do")) {
+    		action = new PresDetailAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("payAction.do")) {
+    		action = new PayAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     	}
+    	
     	
     	
     	

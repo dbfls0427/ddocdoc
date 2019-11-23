@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
+import ddocdoc.vo.PayVO;
+import ddocdoc.vo.PresDetailVO;
+import ddocdoc.vo.PresVO;
 
 public interface CustomerService {
 	// 고객 회원가입
@@ -53,4 +56,25 @@ public interface CustomerService {
 	
 	// 회원 탈퇴
 	public int customerDelete(String cus_num);
+	
+	// 처방전 보기
+	public PresVO presRealDetail(String hos_res_num);
+	
+	// 처방전 약 명세 조회 리스트
+	public List<PresDetailVO> cusPresDetailList(String pres_num);
+			
+	// 처방전 약 명세 약 이름
+	public List<String> cusPresDetailMedName(String pres_num);
+	
+	// 결제 하기
+	public int insertPay(PayVO pay);
+	
+	// 결제완료
+	public int updatePay(String pres_num);
+	
+	// 처방전 결제 여부 추출
+	public String selectPayCheck(String pres_num);
+	
+	// 약 가격 추출
+	public int selectPayPrice(String hos_res_num);
 }
