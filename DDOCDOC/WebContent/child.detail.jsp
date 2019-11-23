@@ -38,7 +38,7 @@
 	<input type = "submit" value="키 관리">
 </form>
 <br><br>
-<form action="/DDOCDOC/Height/HeightList.do" method="post">
+<form action="/DDOCDOC/Inject/InjectListAction.do" method="post">
 	<input type="hidden" name="ch_num" value="${childVO.ch_num}">
 	<input type="hidden" name="ch_name" value="${childVO.ch_name}">
 	<input type = "submit" value="접종관리">

@@ -14,6 +14,8 @@
 		<typeAlias type="ddocdoc.vo.HospitalResVO" alias="HospitalResVO"/>
 		<typeAlias type="ddocdoc.vo.HospitalWaitVO" alias="HospitalWaitVO"/>
 		<typeAlias type="ddocdoc.vo.PharmacyVO" alias="PharmacyVO"/>
+		<typeAlias type="ddocdoc.vo.InjectInfoVO" alias="InjectVO"/>
+		<typeAlias type="ddocdoc.vo.ChildInjectVO" alias="ChildInjectVO"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -36,6 +38,7 @@
 		<mapper resource="ddocdoc/mapper/Child.xml"/>
 		<mapper resource="ddocdoc/mapper/Pharmacy.xml"/>
       <mapper resource="ddocdoc/mapper/Hospital.xml"/>
+      <mapper resource="ddocdoc/mapper/Inject.xml"/>
 
 	</mappers>
 	
