@@ -47,10 +47,12 @@
 		      <option value="17:30">17:30</option>
 		      <option value="18:00">18:00</option>
 	    </select><br>
+	<input type = "text" name = "res_time"><br>
 	<input type = "hidden" name = "cus_num" value = ${cus_num }><br>
 	<input type = "hidden" name = "hos_name" value = ${hos_name }><br>
 
 	<input type = "submit" name = "예약">
 	</form>
 </body>
+
 </html>

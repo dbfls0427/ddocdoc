@@ -168,5 +168,18 @@ public class CustomerServiceImpl implements CustomerService{
 	public int detailWait(String hos_res_num) {
 		return dao.detailWait(hos_res_num);
 	}
+	
+	// 회원정보 수정
+	@Override
+	public int customerUpdate(CustomerVO customer) {
+		return dao.customerUpdate(customer);
+	}
+	
+	
+	// 회원 탈퇴
+	@Override
+	public int customerDelete(String cus_num) {
+		return dao.customerDelete(cus_num);
+	}
 
 }

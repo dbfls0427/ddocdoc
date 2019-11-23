@@ -15,6 +15,9 @@ import ddocdoc.action.ActionForward;
 import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.ConfirmFormAction;
+import ddocdoc.action.CustomerDeleteAction;
+import ddocdoc.action.CustomerUpdateAction;
+import ddocdoc.action.CustomerUpdateFormAction;
 import ddocdoc.action.DetailCustomerAction;
 import ddocdoc.action.HospitalResAction;
 import ddocdoc.action.HospitalResDeleteAction;
@@ -27,6 +30,7 @@ import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
 import ddocdoc.action.LoginFormAction;
 import ddocdoc.action.LogoutAction;
+import ddocdoc.action.MyPageFormAction;
 import ddocdoc.action.ResListAction;
 
 @WebServlet("/Customer/*")
@@ -42,7 +46,7 @@ public class CustomerController extends HttpServlet {
     	String requestPath = request.getContextPath();
     	String command = requestURI.substring(requestPath.length() + 10);
     	
-    	
+    	System.out.println("command : " + command);
     	Action action = null;
     	ActionForward forward = null;
     	
@@ -155,8 +159,43 @@ public class CustomerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(command.equals("customerUpdate.do")) {
+    		action = new HospitalResDeleteAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     	}else if(command.equals("resWaitSms.do")) {
     		action = new HospitalResSmsAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("myPageForm.do")) {
+    		action = new MyPageFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("customerUpdateForm.do")) {
+    		action = new CustomerUpdateFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("customerMypageUpdate.do")) {
+    		action = new CustomerUpdateAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("customerDelete.do")) {
+    		action = new CustomerDeleteAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
