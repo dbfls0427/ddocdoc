@@ -10,27 +10,39 @@
 <%
 	request.setCharacterEncoding("utf-8");
 
+ 	//아이의 키 목록
 	List<ChildHeightVO> h_list =(ArrayList<ChildHeightVO>)request.getAttribute("height_list"); 
-	int size = h_list.size();
+	int size = 1;
+	//배열이 담겨있을경우만 사이즈변경
+	if(h_list.size()>0){
+		size = h_list.size();
+	}
+	out.println("size는 : " + size);
+	
+	//아이이름 가져오기
 	String ch_name = request.getParameter("ch_name");
 	
 	//표준키
 	float st_height = Float.parseFloat(request.getParameter("st_height"));
 	
+	//date포맷객체 생성
 	SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
+	
+	//아이키와 기록날짜를 담을 배열 생성
+	String[] date = new String[size]; //기록날짜
+	Double[] height = new Double[size]; //키
 
-	String[] date = new String[size];
-	Double[] height = new Double[size];
-
+	
 	for(int i=0; i <h_list.size(); i++){
 		date[i] = transFormat.format(h_list.get(i).getHe_date());
 		height[i] = h_list.get(i).getHe_height();
 	}
+			
+	request.setAttribute("height", height);
 	
 	String ch_num= request.getParameter("ch_num");
-	//out.println("여기 list에서 아이번호는~~~~~~~`" + ch_num);
-	request.setAttribute("height", height);
 	request.setAttribute("ch_num", ch_num);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -39,12 +51,12 @@
     <script type="text/javascript">
     var height = new Array();
 	var date = new Array();
+		<%for(int i=0; i<height.length; i++){%>
+			height.push('<%=height[i]%>')
+			date.push('<%=date[i]%>')
+			document.write(<%=height[i]%>);
+		<%}%>
 	
-	<%for(int i=0; i<height.length; i++){%>
-		height.push('<%=height[i]%>')
-		date.push('<%=date[i]%>')
-		document.write(<%=height[i]%>);
-	<%}%>
 	
     // 성장그래프
     if(height.length > 0){
@@ -91,25 +103,26 @@
     google.charts.load('current', {'packages':['bar']});
     google.charts.setOnLoadCallback(drawChart2);
     }
+    
+	function drawChart2() {
+	      var data = google.visualization.arrayToDataTable([
+	        ['또래의 평균 키', '<%=ch_name%>', '평균 키'],
+	        ['키 분석', <%=height[height.length-1]%>, <%=st_height%>]
+	      ]);
+	
+	      var options = {
+	        chart: {
+	          title: '<%=ch_name%>의 또래 평균 키는 ' + <%=st_height%> + ' cm입니다',
+	          subtitle: '',
+	        }
+	      };
+	
+	      var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+	
+	      chart.draw(data, google.charts.Bar.convertOptions(options));
+	    }
+    
  
-    function drawChart2() {
-	  
-      var data = google.visualization.arrayToDataTable([
-        ['또래의 평균 키', '<%=ch_name%>', '평균 키'],
-        ['키 분석', <%=height[height.length-1]%>, <%=st_height%>]
-      ]);
-
-      var options = {
-        chart: {
-          title: '<%=ch_name%>의 또래 평균 키는 ' + <%=st_height%> + ' cm입니다',
-          subtitle: '',
-        }
-      };
-
-      var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-      chart.draw(data, google.charts.Bar.convertOptions(options));
-    }
   </script>
   
 <meta charset="UTF-8">
