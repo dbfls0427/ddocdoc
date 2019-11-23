@@ -6,6 +6,9 @@ import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.HospitalWaitVO;
+import ddocdoc.vo.MedicineVO;
+import ddocdoc.vo.PresDetailVO;
+import ddocdoc.vo.PresVO;
 
 public interface HospitalMapper {
 	// 병원 정보 등록 
@@ -40,5 +43,24 @@ public interface HospitalMapper {
 	
 	// 해당 병원 대기번호 발급
 	int hospitalWait(String hos_num);
+	
+	
+	// 약 리스트
+	List<MedicineVO> medicineList();
+	
+	// 처방전 명세 입력
+	int insertPreDetail(PresDetailVO presDetail);
+	
+	// 처방전 약 명세 리스트
+	List<PresDetailVO> presDetailList(String pres_num);
+	
+	// 처방전 약 명세 약 이름
+	List<String> presDetailMedName(String pres_num);
+	
+	// 처방전 입력
+	int insertPres(PresVO presVO);
+	
+	// presDetail
+	PresVO presDetail();
 	
 }

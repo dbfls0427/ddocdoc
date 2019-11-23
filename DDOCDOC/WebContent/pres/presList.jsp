@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>똑닥</title>
 </head>
 <body>
-
+<h3>처방전 목록</h3>
 </body>
 </html>

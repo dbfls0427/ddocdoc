@@ -18,6 +18,9 @@ import ddocdoc.action.HospitalInsertFormAction;
 import ddocdoc.action.HospitalListAction;
 import ddocdoc.action.HospitalUpdateAction;
 import ddocdoc.action.HospitalUpdateFormAction;
+import ddocdoc.action.MedicineInsertAction;
+import ddocdoc.action.PresInsertAction;
+import ddocdoc.action.PresInsertFormAction;
 import ddocdoc.action.HospitalDetailAction;
 
 
@@ -91,6 +94,27 @@ public class HospitalController extends HttpServlet {
 			}
 		} else if(command.equals("boolean_hos_res.do")) {
 			action = new HospitalBooleanAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("presInsertForm.do")) {
+			action = new PresInsertFormAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("medInsert.do")) {
+			action = new MedicineInsertAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("presInsert.do")) {
+			action = new PresInsertAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

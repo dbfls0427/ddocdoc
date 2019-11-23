@@ -4,13 +4,31 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class PresVO implements Serializable{
-	private String pres_num;
-	private Date pres_date;
-	private int pres_count;
-	private String cus_num;
-	private String phar_num;
-	private String hos_num;
+	private String pres_num;	// 처방전번호
+	private Date pres_date;		// 발급일
+	private int pres_count;		// 복용횟수
+	private String cus_num;		// 고객번호
+	private String hos_num;		// 병원번호
+	private String hos_res_num; //예약번호
 	
+	public PresVO() {}
+	
+
+
+
+	public PresVO(String pres_num, Date pres_date, int pres_count, String cus_num, String hos_num, String hos_res_num) {
+		super();
+		this.pres_num = pres_num;
+		this.pres_date = pres_date;
+		this.pres_count = pres_count;
+		this.cus_num = cus_num;
+		this.hos_num = hos_num;
+		this.hos_res_num = hos_res_num;
+	}
+
+
+
+
 	public String getPres_num() {
 		return pres_num;
 	}
@@ -35,19 +53,22 @@ public class PresVO implements Serializable{
 	public void setCus_num(String cus_num) {
 		this.cus_num = cus_num;
 	}
-	public String getPhar_num() {
-		return phar_num;
-	}
-	public void setPhar_num(String phar_num) {
-		this.phar_num = phar_num;
-	}
+	
 	public String getHos_num() {
 		return hos_num;
 	}
 	public void setHos_num(String hos_num) {
 		this.hos_num = hos_num;
 	}
-	
 
+	public String getHos_res_num() {
+		return hos_res_num;
+	}
+
+	public void setHos_res_num(String hos_res_num) {
+		this.hos_res_num = hos_res_num;
+	}
+	
+	
 	
 }

@@ -14,6 +14,9 @@ import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.HospitalWaitVO;
+import ddocdoc.vo.MedicineVO;
+import ddocdoc.vo.PresDetailVO;
+import ddocdoc.vo.PresVO;
 
 public class HospitalDaoImpl implements HospitalDao{
 	private static HospitalDaoImpl dao = new HospitalDaoImpl();
@@ -277,6 +280,126 @@ public class HospitalDaoImpl implements HospitalDao{
 		}
 		return count;
 	}
+
+	// 약 리스트
+	@Override
+	public List<MedicineVO> medicineList() {
+		SqlSession sqlSession = getSessionFactory().openSession();
+		List<MedicineVO> list = null;
+		
+		try {
+			list = sqlSession.getMapper(HospitalMapper.class).medicineList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+				
+		return list;
+	}
+	
+	
+	// 처방전 명세 입력
+	@Override
+	public int insertPreDetail(PresDetailVO presDetail) {
+		SqlSession sqlSession = getSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(HospitalMapper.class).insertPreDetail(presDetail);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	// 처방전 약 명세 리스트
+	@Override
+	public List<PresDetailVO> presDetailList(String pres_num){
+		SqlSession sqlSession = getSessionFactory().openSession();
+		List<PresDetailVO> list = null;
+		try {
+			list = sqlSession.getMapper(HospitalMapper.class).presDetailList(pres_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return list;
+	}
+	
+	// 처방전 약 명세 약 이름
+	@Override
+	public List<String> presDetailMedName(String pres_num){
+		SqlSession sqlSession = getSessionFactory().openSession();
+		List<String> list = null;
+		try {
+			list = sqlSession.getMapper(HospitalMapper.class).presDetailMedName(pres_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return list;
+	}
+
+	// 처방전 입력
+	@Override
+	public int insertPres(PresVO presVO) {
+		int re = -1;
+		SqlSession sqlSession = getSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(HospitalMapper.class).insertPres(presVO);
+			if(re>0) {
+				sqlSession.commit();
+				System.out.println("처방전등록 성공!");
+			}else {
+				sqlSession.rollback();
+				System.out.println("처방전등록 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+	// presDetail
+	@Override
+	public PresVO presDetail() {
+		SqlSession sqlSession = getSessionFactory().openSession();
+		PresVO pres = null;
+		try {
+			pres = sqlSession.getMapper(HospitalMapper.class).presDetail();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return pres;
+	}
+	
 	
 	
 }
