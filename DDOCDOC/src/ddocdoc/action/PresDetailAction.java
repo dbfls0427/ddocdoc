@@ -25,6 +25,15 @@ public class PresDetailAction implements Action {
 		String hos_num = request.getParameter("hos_num");
 		
 		PresVO pres = sc.presRealDetail(hos_res_num);
+		if(pres == null) {
+			response.setCharacterEncoding("EUC-KR");
+		     PrintWriter writer = response.getWriter();
+		     writer.println("<script type='text/javascript'>");
+		     writer.println("alert('처방전이 등록되지 않았습니다. 진료 현황을 확인해주세요.');location.href='resList.do';");
+		     writer.println("</script>");
+		     writer.flush();
+			return null;
+		}
 		String pres_num = pres.getPres_num();
 		List<PresDetailVO> list = sc.cusPresDetailList(pres_num);
 		List<String> list2 = sc.cusPresDetailMedName(pres_num);
@@ -34,10 +43,6 @@ public class PresDetailAction implements Action {
 		HospitalVO hos = sc.detailHospital(hos_num);
 		String hos_name = hos.getHos_name();
 		
-		
-		
-		
-		if(pres != null) {
 			request.setAttribute("pres", pres);
 			request.setAttribute("cus_name", ((CustomerVO)LoginSession.loginSession.getAttribute("customer")).getCus_name());
 			request.setAttribute("hos_name", hos_name);
@@ -48,15 +53,7 @@ public class PresDetailAction implements Action {
 			forward.setPath("/pres/presDetail.jsp");
 			forward.setRedirect(false);
 			return forward;
-		}else {
-			response.setCharacterEncoding("EUC-KR");
-		     PrintWriter writer = response.getWriter();
-		     writer.println("<script type='text/javascript'>");
-		     writer.println("alert('처방전이 등록되지 않았습니다. 진료 현황을 확인해주세요.');location.href='resList.do';");
-		     writer.println("</script>");
-		     writer.flush();
-			return null;
-		}
+		
 		
 	}
 
