@@ -9,12 +9,12 @@ public class PharmacyVO implements Serializable{
 	private String phar_addr;	//pharmacy address
 	private String phar_time;	//pharmacy time
 	private String phar_info;	//pharmacy info
-	private String phar_wait;	//pharmacy wait
+	private int phar_wait;	//pharmacy wait
 	
 	public PharmacyVO() {}	
 
 	public PharmacyVO(String phar_num, String phar_name, String phar_tel, String phar_addr, String phar_time,
-			String phar_info, String phar_wait) {
+			String phar_info, int phar_wait) {
 		super();
 		this.phar_num = phar_num;
 		this.phar_name = phar_name;
@@ -86,11 +86,11 @@ public class PharmacyVO implements Serializable{
 		this.phar_info = phar_info;
 	}
 
-	public String getPhar_wait() {
+	public int getPhar_wait() {
 		return phar_wait;
 	}
 
-	public void setPhar_wait(String phar_wait) {
+	public void setPhar_wait(int phar_wait) {
 		this.phar_wait = phar_wait;
 	}
 	

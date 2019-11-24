@@ -9,7 +9,6 @@ public class PharResVO implements Serializable{
 	private String phar_res_memo;
 	private String cus_num;
 	private String phar_num;
-	private int phar_wait;
 	
 	public PharResVO() {}
 	public String getPhar_res_num() {
@@ -50,14 +49,6 @@ public class PharResVO implements Serializable{
 
 	public void setPhar_num(String phar_num) {
 		this.phar_num = phar_num;
-	}
-
-	public int getPhar_wait() {
-		return phar_wait;
-	}
-
-	public void setPhar_wait(int phar_wait) {
-		this.phar_wait = phar_wait;
 	}
 
 	

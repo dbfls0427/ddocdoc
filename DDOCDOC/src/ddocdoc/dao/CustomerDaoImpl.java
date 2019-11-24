@@ -499,7 +499,8 @@ public class CustomerDaoImpl implements CustomerDao{
 		}
 		return list;
 	}
-
+	
+	// 약국 이름 추출
 	@Override
 	public List<String> detailNamePharmacy(String cus_num) {
 		SqlSession session = getSqlSessionFactory().openSession();
@@ -514,6 +515,80 @@ public class CustomerDaoImpl implements CustomerDao{
 			}
 		}
 		return list;
+	}
+	
+	// 약국 예약 상세보기
+	@Override
+	public PharResVO pharResDetail(String phar_res_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		PharResVO res = null;
+		try {
+			res = session.getMapper(CustomerMapper.class).pharResDetail(phar_res_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return res;
+	}
+	
+	
+	// 약국 이름 추출
+	@Override
+	public String selectPharmacyName(String phar_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		String name = null;
+		try {
+			name = session.getMapper(CustomerMapper.class).selectPharmacyName(phar_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return name;
+	}
+	
+	// 약국 대기번호 증가
+	@Override
+	public int increasePharResWait(String phar_res_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).increasePharResWait(phar_res_num);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
+	}
+	
+	// 약국 대기번호 조회
+	@Override
+	public int detailPharWait(String phar_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int count = 0;
+		try {
+			count = session.getMapper(CustomerMapper.class).detailPharWait(phar_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return count;
 	}
 	
 }

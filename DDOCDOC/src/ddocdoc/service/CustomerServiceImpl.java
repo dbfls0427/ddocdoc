@@ -255,5 +255,28 @@ public class CustomerServiceImpl implements CustomerService{
 	public List<String> detailNamePharmacy(String cus_num) {
 		return dao.detailNamePharmacy(cus_num);
 	}
-
+	
+	// 약국 예약 상세보기
+	@Override
+	public PharResVO presDetail(String phar_res_num) {
+		return dao.pharResDetail(phar_res_num);
+	}
+	
+	// 약국 이름 추출
+	@Override
+	public String selectPharmacyName(String phar_num) {
+		return dao.selectPharmacyName(phar_num);
+	}
+	
+	// 약국 대기번호 증가
+	@Override
+	public int increasePharResWait(String phar_res_num) {
+		return dao.increasePharResWait(phar_res_num);
+	}
+	
+	// 약국 대기번호 조회
+	@Override
+	public int detailPharWait(String phar_num) {
+		return dao.detailPharWait(phar_num);
+	}
 }

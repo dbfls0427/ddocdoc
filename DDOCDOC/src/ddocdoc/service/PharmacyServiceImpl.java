@@ -33,7 +33,7 @@ public class PharmacyServiceImpl implements PharmacyService{
 		PharmacyVO.setPhar_time(request.getParameter("phar_time"));
 		PharmacyVO.setPhar_addr(request.getParameter("phar_addr"));
 		PharmacyVO.setPhar_info(request.getParameter("phar_info"));
-		 //PharmacyVO.setPhar_wait(request.getParameter("phar_wait"));
+		 PharmacyVO.setPhar_wait(0);
 		
 		return dao.pharmacyInsert(PharmacyVO); 
 	}
