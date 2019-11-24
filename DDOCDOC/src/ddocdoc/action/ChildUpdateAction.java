@@ -16,11 +16,6 @@ public class ChildUpdateAction implements Action {
 		ActionForward forward = new ActionForward();
 		ChildService service = ChildServiceImpl.getInstance();
 		
-		
-//		ChildDao dao = ChildDaoImpl.getInstance();
-//		ChildVO childvo = new ChildVO();
-//		int re = dao.updateChild(childvo);
-		
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		
@@ -29,8 +24,8 @@ public class ChildUpdateAction implements Action {
 		service.updateChild(request);
 		
 		System.out.println("childUpdateAciton plz go! ");
-		forward.setPath("/DDOCDOC/child/childDetail.do?ch_num=" + ch_num);
-		forward.setRedirect(true);
+		forward.setPath("childDetail.do?ch_num="+ch_num);
+		forward.setRedirect(false);
 		
 		
 		return forward;
