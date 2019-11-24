@@ -13,6 +13,7 @@
 </script>
 </head>
 <body>
+
 	<form action="joinAction.do" method = "post">
 		ID : <input type = "text" name = "joinID"><br>
 		PW : <input type = "text" name = "joinPW"><br>
