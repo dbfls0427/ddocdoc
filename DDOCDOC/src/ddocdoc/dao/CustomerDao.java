@@ -7,6 +7,7 @@ import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
 import ddocdoc.vo.PayVO;
+import ddocdoc.vo.PharResVO;
 import ddocdoc.vo.PresDetailVO;
 import ddocdoc.vo.PresVO;
 
@@ -70,4 +71,16 @@ public interface CustomerDao {
 	
 	// 약 가격 추출
 	public int selectPayPrice(String hos_res_num);
+	
+	// 약국 번호 출력
+	public String selectPharNum(String phar_name);
+	
+	// 약국 예약하기
+	public int insertPharRes(PharResVO pvo);
+	
+	//약국 예약 리스트
+	public List<PharResVO> pharResList(String cus_num);
+	
+	//약국 이름 가져오기
+	public List<String> detailNamePharmacy(String cus_num);
 }

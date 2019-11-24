@@ -17,6 +17,7 @@ import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
 import ddocdoc.vo.PayVO;
+import ddocdoc.vo.PharResVO;
 import ddocdoc.vo.PresDetailVO;
 import ddocdoc.vo.PresVO;
 import ddocdoc.service.Coolsms;
@@ -228,6 +229,31 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public int selectPayPrice(String hos_res_num) {
 		return dao.selectPayPrice(hos_res_num);
+	}
+
+
+	//약국 번호 가져오기
+	@Override
+	public String selectPharNum(String phar_name) {
+		return dao.selectPharNum(phar_name);
+	}
+
+	//약국예약하기
+	@Override
+	public int insertPharRes(PharResVO pvo) {
+		return dao.insertPharRes(pvo);
+	}
+
+	//약국예약 리스트
+	@Override
+	public List<PharResVO> pharResList(String cus_num) {
+		return dao.pharResList(cus_num);
+	}
+
+	//약국 이름 가져오기
+	@Override
+	public List<String> detailNamePharmacy(String cus_num) {
+		return dao.detailNamePharmacy(cus_num);
 	}
 
 }

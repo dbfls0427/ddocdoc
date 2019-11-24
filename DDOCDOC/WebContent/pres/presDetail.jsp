@@ -50,6 +50,10 @@
 		}
 		</script>
 	</form>
+	
+	<form action="/DDOCDOC/map/pharSearch.jsp" method="post">
+		<input type = "submit" value="약국예약">
+	</form>
 
 </body>
 </html>

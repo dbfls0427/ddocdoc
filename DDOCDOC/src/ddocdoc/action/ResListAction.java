@@ -11,6 +11,7 @@ import ddocdoc.service.CustomerServiceImpl;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
+import ddocdoc.vo.PharResVO;
 
 public class ResListAction implements Action {
 
@@ -24,6 +25,13 @@ public class ResListAction implements Action {
 		List<String> listName = sc.detailNameHospital(cus_num);
 		request.setAttribute("list", list);
 		request.setAttribute("hosName", listName);
+		
+		List<PharResVO> pharList = (List<PharResVO>)request.getAttribute("pharList");
+		List<String> pharNameList = (List<String>)request.getAttribute("pharNameList");
+		
+		request.setAttribute("pharList", pharList);
+		request.setAttribute("pharNameList", pharNameList);
+		
 		forward.setPath("/hos_res/resList.jsp");
 		forward.setRedirect(false);
 		
