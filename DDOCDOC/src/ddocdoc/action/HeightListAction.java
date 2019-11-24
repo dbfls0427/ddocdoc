@@ -45,7 +45,7 @@ public class HeightListAction implements Action {
 		String genderTable = null;
 		if(gender.equals("여")) {
 			genderTable = "dd_girl_st_height";
-		}else {
+		}else{
 			genderTable = "dd_boy_st_height";
 		}
 		System.out.println("액션에서 테이블이름~~~~" + genderTable);

@@ -16,6 +16,9 @@ import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
+import ddocdoc.vo.PayVO;
+import ddocdoc.vo.PresDetailVO;
+import ddocdoc.vo.PresVO;
 import ddocdoc.service.Coolsms;
 
 public class CustomerServiceImpl implements CustomerService{
@@ -23,6 +26,8 @@ public class CustomerServiceImpl implements CustomerService{
 	private static CustomerDao dao;
 	LoginSession session = new LoginSession(); //로그인 세션 객체 생성
 	public static ConfirmVO confirm;
+	public static boolean check = true;
+	
 	
 	public static CustomerServiceImpl getInstance() {
 		dao = CustomerDaoImpl.getInstance();
@@ -180,6 +185,49 @@ public class CustomerServiceImpl implements CustomerService{
 	@Override
 	public int customerDelete(String cus_num) {
 		return dao.customerDelete(cus_num);
+	}
+	
+	// 처방전 보기
+	@Override
+	public PresVO presRealDetail(String hos_res_num) {
+		return dao.presRealDetail(hos_res_num);
+	}
+	
+	// 처방전 약 명세 조회 리스트
+	@Override
+	public List<PresDetailVO> cusPresDetailList(String pres_num) {
+		return dao.cusPresDetailList(pres_num);
+	}
+			
+	// 처방전 약 명세 약 이름
+	@Override
+	public List<String> cusPresDetailMedName(String pres_num){
+		return dao.cusPresDetailMedName(pres_num);
+		
+	}
+	
+	// 결제 하기
+	@Override
+	public int insertPay(PayVO pay) {
+		return dao.insertPay(pay);
+	}
+	
+	// 결제완료
+	@Override
+	public int updatePay(String pres_num) {
+		return dao.updatePay(pres_num);
+	}
+	
+	// 처방전 결제 여부 추출
+	@Override
+	public String selectPayCheck(String pres_num) {
+		return dao.selectPayCheck(pres_num);
+	}
+	
+	// 약 가격 추출
+	@Override
+	public int selectPayPrice(String hos_res_num) {
+		return dao.selectPayPrice(hos_res_num);
 	}
 
 }
