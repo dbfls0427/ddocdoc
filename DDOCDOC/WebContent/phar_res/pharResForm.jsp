@@ -45,7 +45,6 @@
 	    </select><br>
 	<input type = "hidden" name = "cus_num" value = ${cus_num }><br>
 	<input type = "hidden" name = "phar_name" value = ${phar_name }><br>
-	${phar_name }
 	<input type = "submit" value = "예약">
 	</form>
 </body>

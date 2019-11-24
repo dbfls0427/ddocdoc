@@ -51,8 +51,6 @@
 	<!-- 예약 상세내용 -->
 	<select id="detailRes" parameterType="String" resultType="HospitalResVO">
 	select * from dd_hos_res where hos_res_num = #{hos_res_num}
-	
-	
 	</select>
 	
 	<!-- 예약 취소 -->
@@ -136,7 +134,7 @@
 	
 	<!-- 약국 예약하기 -->
 	<insert id="insertPharRes" parameterType="PharResVO">
-	insert into dd_phar_res values('PHRES00'||phar_res_seq.nextval, #{phar_res_time}, #{phar_res_memo}, #{cus_num}, #{phar_num}, #{phar_wait})
+	insert into dd_phar_res values('PHRES00'||phar_res_seq.nextval, #{phar_res_time}, #{phar_res_memo}, #{cus_num}, #{phar_num})
 	</insert>
 	
 	<!-- 약국 예약 리스트 -->
@@ -154,6 +152,30 @@
 	order by phar_res_num
 	</select>
 	
+	
+	<!-- 약국 예약 상세내용 -->
+	<select id="pharResDetail" parameterType="String" resultType="PharResVO">
+	select * from dd_phar_res where phar_res_num = #{phar_res_num}
+	</select>
+	
+	<!-- 약국 이름 추출 -->
+	<select id="selectPharmacyName" parameterType="String" resultType="String">
+	select phar_name from dd_pharmacy
+	where phar_num = #{phar_num}
+	</select>
+	
+	
+	<!-- 약국 대기번호 증가 -->
+	<update id="increasePharResWait" parameterType="String">
+		update dd_pharmacy set phar_wait = phar_wait + 1
+		where phar_num like #{phar_num}
+	</update>  
+
+	<!-- 대기번호 조회 -->
+	<select id="detailPharWait" parameterType="String" resultType="int">
+	select phar_wait from dd_pharmacy where phar_num = #{phar_num}
+	</select>
+		
 </mapper>
 
 

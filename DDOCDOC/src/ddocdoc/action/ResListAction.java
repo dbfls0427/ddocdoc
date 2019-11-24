@@ -26,11 +26,10 @@ public class ResListAction implements Action {
 		request.setAttribute("list", list);
 		request.setAttribute("hosName", listName);
 		
-		List<PharResVO> pharList = (List<PharResVO>)request.getAttribute("pharList");
-		List<String> pharNameList = (List<String>)request.getAttribute("pharNameList");
-		
-		request.setAttribute("pharList", pharList);
-		request.setAttribute("pharNameList", pharNameList);
+		List<PharResVO> pharList2 = sc.pharResList(cus_num);
+		List<String> pharNameList2 =sc.detailNamePharmacy(cus_num);
+		request.setAttribute("pharList", pharList2);
+		request.setAttribute("pharNameList", pharNameList2);
 		
 		forward.setPath("/hos_res/resList.jsp");
 		forward.setRedirect(false);

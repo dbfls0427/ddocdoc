@@ -81,4 +81,17 @@ public interface CustomerMapper {
 	
 	//약국 이름 가져오기
 	List<String> detailNamePharmacy(String cus_num);
+	
+	// 약국 예약 상세보기
+	PharResVO pharResDetail(String phar_res_num);
+	
+	// 약국 이름 추출
+	String selectPharmacyName(String phar_num);
+	
+	// 약국 대기번호 증가
+	int increasePharResWait(String phar_res_num);
+	
+	// 약국 대기번호 조회
+	int detailPharWait(String phar_num);
+	
 }

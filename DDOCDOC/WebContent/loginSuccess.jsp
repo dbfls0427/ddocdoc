@@ -26,7 +26,6 @@ ${customer.cus_name }
 
 <form action="resList.do" method = "post">
 	<input type = "submit" value = "예약 내역">
-
 </form>
 
 <br>

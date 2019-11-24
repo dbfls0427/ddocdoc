@@ -14,7 +14,6 @@ public class PharmacyInsertAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		PharmacyService service = PharmacyServiceImpl.getInstance();
-		System.out.println("UpdateAction.java 됨!");
 		
 		
 		service.pharmacyInsert(request);

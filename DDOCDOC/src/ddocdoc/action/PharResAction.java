@@ -27,22 +27,19 @@ public class PharResAction implements Action {
 		System.out.println("PharResAction 에서 " + phar_name);
 		
 		String phar_num = sc.selectPharNum(phar_name);
+		System.out.println("PharResAction에서" + phar_num);
 		
 		PharResVO pvo = new PharResVO();
 		pvo.setCus_num(request.getParameter("cus_num"));
 		pvo.setPhar_num(phar_num);
 		pvo.setPhar_res_memo(request.getParameter("phar_res_memo"));
 		pvo.setPhar_res_time(request.getParameter("phar_res_time"));
-		pvo.setPhar_wait(0);
 		
 		int re = sc.insertPharRes(pvo);
+		int re2 = sc.increasePharResWait(phar_num);
 		List<HospitalResVO> list = sc.resList(cus_num);
-		List<PharResVO> pharList = sc.pharResList(cus_num);
-		List<String> pharNameList =sc.detailNamePharmacy(cus_num);
 		
 		request.setAttribute("list", list);
-		request.setAttribute("pharList", pharList);
-		request.setAttribute("pharNameList", pharNameList);
 		
 		forward.setPath("resList.do");
 		forward.setRedirect(false);
