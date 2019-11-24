@@ -44,7 +44,6 @@ public class PharmacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		System.out.println("insertForm됨!");
     	}else if(command.equals("pharmacyInsert.do")) {
     		action = new PharmacyInsertAction();
     		try {
@@ -52,7 +51,6 @@ public class PharmacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		System.out.println("insert됨!");
     	}else if(command.equals("pharmacyList.do")) {
     		action = new PharmacyListAction();
     		try {
@@ -60,7 +58,6 @@ public class PharmacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		System.out.println("list됨!");
     	}else if(command.equals("pharmacyDetail.do")) {
     		action = new PharmacyDetailAction();
     		try {
@@ -68,7 +65,6 @@ public class PharmacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		System.out.println("detail됨!");
 		}else if(command.equals("pharmacyUpdateForm.do")) {
 			action = new PharmacyUpdateFormAction();
 			try {
@@ -76,7 +72,6 @@ public class PharmacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			System.out.println("updateform 됨!");
 		}else if(command.equals("pharmacyUpdate.do")) {
     		action = new PharmacyUpdateAction();
     		try {
@@ -84,7 +79,6 @@ public class PharmacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		System.out.println("update됨!");
 		}else if(command.equals("pharmacyDelete.do")) {
     		action = new PharmacyDeleteAction();
     		try {
@@ -92,7 +86,6 @@ public class PharmacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		System.out.println("delet됨!");
     }
     	
     	if(forward != null) {

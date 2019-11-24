@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.AdminModeAction;
 import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ConfirmAction;
 import ddocdoc.action.ConfirmFormAction;
@@ -32,6 +33,8 @@ import ddocdoc.action.LoginFormAction;
 import ddocdoc.action.LogoutAction;
 import ddocdoc.action.MyPageFormAction;
 import ddocdoc.action.PayAction;
+import ddocdoc.action.PharResAction;
+import ddocdoc.action.PharResFormAction;
 import ddocdoc.action.PresDetailAction;
 import ddocdoc.action.ResListAction;
 
@@ -212,6 +215,27 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("payAction.do")) {
     		action = new PayAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("adminModeAction.do")) {
+    		action = new AdminModeAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("pharResForm.do")) {
+    		action = new PharResFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("phar_res_action.do")) {
+    		action = new PharResAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

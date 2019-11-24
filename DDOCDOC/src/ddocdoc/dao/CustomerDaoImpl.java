@@ -14,6 +14,7 @@ import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
 import ddocdoc.vo.LoginVO;
 import ddocdoc.vo.PayVO;
+import ddocdoc.vo.PharResVO;
 import ddocdoc.vo.PresDetailVO;
 import ddocdoc.vo.PresVO;
 
@@ -441,6 +442,78 @@ public class CustomerDaoImpl implements CustomerDao{
 			}
 		}
 		return price;
+	}
+
+	//약국번호불러오기
+	@Override
+	public String selectPharNum(String phar_name) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		String phar_num = null;
+		try {
+			phar_num = session.getMapper(CustomerMapper.class).selectPharNum(phar_name);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return phar_num;
+	}
+
+	//약국 예약하기
+	@Override
+	public int insertPharRes(PharResVO pvo) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CustomerMapper.class).insertPharRes(pvo);
+			if(re > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return re;
+	}
+
+	//약국 예약리스트
+	@Override
+	public List<PharResVO> pharResList(String cus_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<PharResVO> list = null;
+		try {
+			list = session.getMapper(CustomerMapper.class).pharResList(cus_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return list;
+	}
+
+	@Override
+	public List<String> detailNamePharmacy(String cus_num) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<String> list = null;
+		try {
+			list = session.getMapper(CustomerMapper.class).detailNamePharmacy(cus_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) {
+				session.close();
+			}
+		}
+		return list;
 	}
 	
 }

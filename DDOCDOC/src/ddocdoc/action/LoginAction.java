@@ -29,7 +29,7 @@ public class LoginAction implements Action {
 			if(customer.getCus_id().equals("admin") && customer.getCus_pw().equals("123")) {
 				System.out.println("admin모드입니다.");
 				request.setAttribute("customer", (CustomerVO)LoginSession.loginSession.getAttribute("customer"));
-				forward.setPath("hospitalList.do");
+				forward.setPath("adminModeAction.do");
 				forward.setRedirect(true);
 			}
 		} else {

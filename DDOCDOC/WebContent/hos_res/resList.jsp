@@ -26,12 +26,25 @@
 				<td><button><a href = "presDetail.do?hos_res_num=${resVO.hos_res_num }&hos_num=${resVO.hos_num}">처방전 보기</a></button></td>
 				
 			</tr>
-		
-		
 		</c:forEach>
+	</table>
+	<br><br>
+	<hr/>
+		<table border = "1">
+		<tr>
+			<td>예약번호</td>
+			<td>약국이름</td>
+			<td>예약시간</td>
+			
+		</tr>
 		
-	
-	
+		<c:forEach var="pResVO" items="${pharList }" varStatus="status">
+			<tr>
+				<td>${pResVO.phar_res_num }</td>
+				<td><a href = "detailRes.do?hos_res_num=${pResVO.phar_res_num}">${pharNameList[status.index] }</td>
+				<td>${pResVO.phar_res_time }</td>
+			</tr>
+		</c:forEach>
 	</table>
 	
 	
