@@ -1,5 +1,6 @@
 package ddocdoc.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,12 +28,8 @@ public class ChildServiceImpl implements ChildService {
 		int ch_age = Integer.parseInt(request.getParameter("ch_age"));
 		ChildVO.setCh_age(ch_age);
 		
+		ChildVO.setCh_birth(Date.valueOf(request.getParameter("ch_birth")));
 		
-	    String s = request.getParameter("ch_birth");
-	    java.util.Date birth = new java.util.Date(s);
-	    java.sql.Date ch_birth = new java.sql.Date(birth.getTime());
-	    ChildVO.setCh_birth(ch_birth);
-	    
 		ChildVO.setCh_gender(request.getParameter("ch_gender"));
 		ChildVO.setCus_num(request.getParameter("cus_num")); 
 		
@@ -62,11 +59,10 @@ public class ChildServiceImpl implements ChildService {
 		childVO.setCh_name(request.getParameter("ch_name"));
 		int ch_age = Integer.parseInt(request.getParameter("ch_age"));
 		childVO.setCh_age(ch_age);
-		 String s = request.getParameter("ch_birth");
-	    java.util.Date birth = new java.util.Date(s);
-	    java.sql.Date ch_birth = new java.sql.Date(birth.getTime());
-	    childVO.setCh_birth(ch_birth);
-	    childVO.setCh_gender(request.getParameter("ch_gender"));
+		
+		childVO.setCh_birth(Date.valueOf(request.getParameter("ch_birth")));
+	    
+		childVO.setCh_gender(request.getParameter("ch_gender"));
 	    
 	    int re = dao.updateChild(childVO);
 		
