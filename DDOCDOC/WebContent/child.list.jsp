@@ -5,6 +5,9 @@
 <%
 	String cus_name = request.getParameter("cus_name");
 	request.setAttribute("cus_name", cus_name);
+	
+    String cus_num =request.getParameter("cus_num");
+    request.setAttribute("cus_num", cus_num);
 %>
 <!DOCTYPE html>
 <html>

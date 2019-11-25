@@ -45,8 +45,8 @@ public class ChildServiceImpl implements ChildService {
 
 	// 아이정보 리스트 서비스
 	@Override
-	public List<ChildVO> childList() {
-		return dao.childList();
+	public List<ChildVO> childList(String cus_num) {
+		return dao.childList(cus_num);
 	}
 
 	// 아이정보 수정 서비스

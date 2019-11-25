@@ -15,7 +15,7 @@ public interface ChildService {
 	public ChildVO childDetail(String ch_num);
 	
 	// 아이정보 리스트 서비스
-	public List<ChildVO> childList();
+	public List<ChildVO> childList(String cus_num);
 	
 	// 아이정보 수정 서비스
 	public int updateChild(HttpServletRequest request) throws Exception;

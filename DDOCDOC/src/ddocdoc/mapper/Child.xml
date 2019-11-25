@@ -17,8 +17,9 @@
 		where ch_num = #{ch_num}
 	</select>
 	<!-- 아이 정보 리스트 -->
-	<select id="childList" resultType="ChildVO">
+	<select id="childList" resultType="ChildVO" parameterType="string">
 		select * from dd_child
+		where cus_num = #{cus_num}
 	</select>
 	<!-- 아이 정보 수정 -->
 	<update id="updateChild" parameterType="ChildVO">

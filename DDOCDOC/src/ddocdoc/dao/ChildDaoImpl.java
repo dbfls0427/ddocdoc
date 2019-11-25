@@ -80,12 +80,13 @@ public class ChildDaoImpl implements ChildDao {
 
 	// 아이정보 리스트
 	@Override
-	public List<ChildVO> childList() {
+	public List<ChildVO> childList(String cus_num) {
 		SqlSession sqlSession = getSessionFactory().openSession();
 		List<ChildVO> list = null;
 		
 		try {
-			list = sqlSession.getMapper(ChildMapper.class).childList();
+			list = sqlSession.getMapper(ChildMapper.class).childList(cus_num);
+			System.out.println("cus_num Dao에서:"+cus_num);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

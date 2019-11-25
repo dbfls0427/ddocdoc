@@ -152,8 +152,8 @@
 	</section>
      	
 	<section class="company-description" style=" display: flex; justify-content: center; margin-bottom: 80px; margin-top: 40px;">
-		<button class="btn btn-warning btn-lg kidsbtn" style="margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do?cus_name=${cus_name }" style="color:#FFF;">아이등록</a><br></button>
-		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF;"><a href="child/childList.do?cus_name=${cus_name }">아이정보리스트</a></button>
+		<button class="btn btn-warning btn-lg kidsbtn" style="margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do?cus_name=${cus_name }&cus_num=${cus_num}" style="color:#FFF;">아이등록</a><br></button>
+		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF;"><a href="child/childList.do?cus_name=${cus_name }&cus_num=${cus_num}">아이정보리스트</a></button>
 	</section>
 
 
