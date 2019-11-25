@@ -17,6 +17,10 @@ public class ChildInsertAction implements Action {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		
+		//jsp에서이름받아오기 위해
+		String cus_name = request.getParameter("cus_name");
+		request.setAttribute("cus_name", cus_name);
+		
 		forward.setRedirect(true);
 		forward.setPath("/DDOCDOC/child/childList.do");
 		

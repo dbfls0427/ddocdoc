@@ -88,52 +88,62 @@
         ==================================================
        MENU: Header Section Start
         ================================================== -->
-        <header id="top-bar" class="navbar-fixed-top animated-header">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- responsive nav button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <!-- /responsive nav button -->
-                    
-                    <!-- logo -->
-                    <div class="navbar-brand">
-                        <a href="../index.html" >
-                            <img src="../images/logo.png" alt="">
-                        </a>
-                    </div>
-                    <!-- /logo -->
-                </div>
-                <!-- main menu -->
-                <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                    <div class="main-menu">
-                        <ul class="nav navbar-nav navbar-right">
-                           <li>
-                                <a href="success.do" >Home</a>
-                            </li>
-                            <li><a href="/DDOCDOC/map/hosSearch.jsp">병원찾기</a></li>
-                            <li><a href="/DDOCDOC/child.index.html">아이관리</a></li>
-                            <li class="dropdown">
+	<header id="top-bar" class="navbar-fixed-top animated-header">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- responsive nav button -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!-- /responsive nav button -->
+
+				<!-- logo -->
+				<div class="navbar-brand">
+					<a href="success.do"> <img src="../images/logo.png" alt="">
+					</a>
+				</div>
+				<!-- /logo -->
+			</div>
+			<!-- main menu -->
+			<nav class="collapse navbar-collapse navbar-right" role="navigation">
+				<div class="main-menu">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="success.do">Home</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">병원찾기 <span class="caret"></span></a>
+							<div class="dropdown-menu">
+								<ul>
+									<li><a href="map.do?cus_num=${customer.cus_num }">병원찾기</a></li>
+									<li><a href="resList.do">예약내역</a></li>
+								</ul>
+							</div></li>
+						<li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name }&cus_num=${customer.cus_num }">아이관리</a></li>
+						<li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="blog-fullwidth.html">Blog Full</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
+                                        <li><a href="detailCustomer.do">QR코드 발급</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="../Customer/loginForm.do">로그인</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- /main nav -->
-            </div>
-         </header>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">${customer.cus_name } 님 <span
+								class="caret"></span></a>
+							<div class="dropdown-menu">
+								<ul>
+									<li><a href="myPageForm.do">마이페이지</a></li>
+								</ul>
+							</div></li>
+						<li><a href="logout.do">로그아웃</a></li>
+					</ul>
+				</div>
+			</nav>
+			<!-- /main nav -->
+		</div>
+	</header>
             
      
         <!-- 

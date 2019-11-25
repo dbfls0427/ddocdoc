@@ -4,7 +4,10 @@
 	request.setCharacterEncoding("utf-8");
 	response.setContentType("text/html;charset=UTF-8");
     String cus_name = request.getParameter("cus_name");
-    request.setAttribute("cus_name", cus_name);%>
+    String cus_num =request.getParameter("cus_num");
+    request.setAttribute("cus_name", cus_name);
+    request.setAttribute("cus_num", cus_num);
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,19 +91,25 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">병원찾기 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="map.do?cus_num=${customer.cus_num }">병원찾기</a></li>
+                                        <li><a href="Customer/map.do?cus_num=${customer.cus_num }">병원찾기</a></li>
                                         <li><a href="resList.do">예약내역</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="/DDOCDOC/child.index.html">아이관리</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">아이관리 <span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li><a href="/DDOCDOC/child.index.jsp">아이 등록</a></li>
+                                        <li><a href="/DDOCDOC/child/childList.do">우리아이 리스트</a></li>
+                                    </ul>
+                                </div>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="blog-fullwidth.html">Blog Full</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
+                                         <li><a href="Customer/detailCustomer.do">QR코드 발급</a></li>
                                     </ul>
                                 </div>
                             </li>
