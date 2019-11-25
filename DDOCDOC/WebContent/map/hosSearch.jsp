@@ -113,7 +113,7 @@
                     <div class="main-menu">
                         <ul class="nav navbar-nav navbar-right">
                            <li>
-                                <a href="../index.html" >Home</a>
+                                <a href="success.do" >Home</a>
                             </li>
                             <li><a href="/DDOCDOC/map/hosSearch.jsp">병원찾기</a></li>
                             <li><a href="/DDOCDOC/child.index.html">아이관리</a></li>

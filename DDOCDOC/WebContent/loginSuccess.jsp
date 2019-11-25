@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html class="no-js">
     <head>
@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" href="favicon.ico">
-        <title>¶Èµü</title>
+        <title>ë˜‘ë”±</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="">
@@ -82,17 +82,17 @@
                                 <a href="success.do" >Home</a>
                             </li>
                              <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">º´¿øÃ£±â <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">ë³‘ì›ì°¾ê¸° <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="map.do?cus_num=${customer.cus_num }">º´¿øÃ£±â</a></li>
-                                        <li><a href="resList.do">¿¹¾à³»¿ª</a></li>
+                                        <li><a href="map.do?cus_num=${customer.cus_num }">ë³‘ì›ì°¾ê¸°</a></li>
+                                        <li><a href="resList.do">ì˜ˆì•½ë‚´ì—­</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="/DDOCDOC/child.index.html">¾ÆÀÌ°ü¸®</a></li>
+                            <li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name } ">ì•„ì´ê´€ë¦¬</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">QRÄÚµå <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">QRì½”ë“œ <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
                                         <li><a href="blog-fullwidth.html">Blog Full</a></li>
@@ -102,14 +102,14 @@
                                 </div>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">${customer.cus_name } ´Ô <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">${customer.cus_name } ë‹˜ <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="myPageForm.do">¸¶ÀÌÆäÀÌÁö</a></li>
+                                        <li><a href="myPageForm.do">ë§ˆì´í˜ì´ì§€</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="logout.do">·Î±×¾Æ¿ô</a></li>
+                            <li><a href="logout.do">ë¡œê·¸ì•„ì›ƒ</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -119,37 +119,37 @@
         
         
 <!--        
-·Î±×ÀÎ ¼º°ø!
+ë¡œê·¸ì¸ ì„±ê³µ!
 
 
 
 <form action="logout.do" method="post">
-	<input type = "submit" value="·Î±×¾Æ¿ô">
+	<input type = "submit" value="ë¡œê·¸ì•„ì›ƒ">
 </form>
 
 ${customer.cus_name }
 
 <form action="detailCustomer.do" method = "post">
-	<input type = "submit" value="È¸¿ø »ó¼¼Á¤º¸">
+	<input type = "submit" value="íšŒì› ìƒì„¸ì •ë³´">
 </form>
 <br>
 <form action="map.do" method="post">
 	<input type="hidden" name="cus_num" value="${customer.cus_num }">
-	<input type = "submit" value="°¡±î¿î º´¿ø Ã£±â">
+	<input type = "submit" value="ê°€ê¹Œìš´ ë³‘ì› ì°¾ê¸°">
 </form>
 
 <form action="resList.do" method = "post">
-	<input type = "submit" value = "¿¹¾à ³»¿ª">
+	<input type = "submit" value = "ì˜ˆì•½ ë‚´ì—­">
 </form>
 
 <br>
 
 <form action="/DDOCDOC/child.index.html" method = "post">
-	<input type = "submit" value="¾ÆÀÌ°ü¸®">
+	<input type = "submit" value="ì•„ì´ê´€ë¦¬">
 </form>
 
 <form action="myPageForm.do" method="post">
-	<input type = "submit" value = "¸¶ÀÌÆäÀÌÁö">
+	<input type = "submit" value = "ë§ˆì´í˜ì´ì§€">
 </form>
 
  --> 
@@ -162,7 +162,7 @@ ${customer.cus_name }
 ================================================== -->
 <section class="works service-page" style="margin-top:80px;">
     <div class="container">
-    <h1>È¯¿µÇÕ´Ï´Ù!   ${customer.cus_name }´Ô</h1>
+    <h1>í™˜ì˜í•©ë‹ˆë‹¤!   ${customer.cus_name }ë‹˜</h1>
         <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Some Of Our Features Works</h2>
             <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">
                 Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
@@ -175,13 +175,13 @@ ${customer.cus_name }
                     </div>
                     <figcaption>
                         <h4>
-                         	È¸¿ø »ó¼¼Á¤º¸
+                         	íšŒì› ìƒì„¸ì •ë³´
                         </h4>
                         <p>
                             Redesigne UI Concept
                         </p>
                         <form action="detailCustomer.do" method = "post">
-							<input type = "submit" value="È¸¿ø »ó¼¼Á¤º¸" class="btn btn-primary">
+							<input type = "submit" value="íšŒì› ìƒì„¸ì •ë³´" class="btn btn-primary">
 						</form>
                     </figcaption>
                 </figure>
@@ -194,13 +194,13 @@ ${customer.cus_name }
                     </div>
                     <figcaption>
                         <h4>
-                         	¿¹¾à ³»¿ª
+                         	ì˜ˆì•½ ë‚´ì—­
                         </h4>
                         <p>
                             Lorem ipsum dolor sit.
                         </p>
                         <form action="resList.do" method = "post">
-							<input type = "submit" value = "¿¹¾à ³»¿ª" class="btn btn-success">
+							<input type = "submit" value = "ì˜ˆì•½ ë‚´ì—­" class="btn btn-success">
 						</form>
                     </figcaption>
                 </figure>
@@ -213,13 +213,13 @@ ${customer.cus_name }
                     </div>
                     <figcaption>
                         <h4>
-                         	 ¾ÆÀÌ°ü¸®
+                         	 ì•„ì´ê´€ë¦¬
                         </h4>
                         <p>
                             Lorem ipsum dolor sit amet.
                         </p>
                         <form action="/DDOCDOC/child.index.html" method = "post">
-							<input type = "submit" value="¾ÆÀÌ°ü¸®" class="btn btn-info">
+							<input type = "submit" value="ì•„ì´ê´€ë¦¬" class="btn btn-info">
 						</form>
                     </figcaption>
                 </figure>
@@ -232,13 +232,13 @@ ${customer.cus_name }
                     </div>
                     <figcaption>
                         <h4>
-                           	 ¸¶ÀÌÆäÀÌÁö
+                           	 ë§ˆì´í˜ì´ì§€
                         </h4>
                         <p>
                             Lorem ipsum dolor.
                         </p>
                         <form action="myPageForm.do" method="post">
-							<input type = "submit" value = "¸¶ÀÌÆäÀÌÁö" class="btn btn-warning">
+							<input type = "submit" value = "ë§ˆì´í˜ì´ì§€" class="btn btn-warning">
 						</form>
                     </figcaption>
                 </figure>
