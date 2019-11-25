@@ -48,9 +48,6 @@
 	font-family: 'Sunflower', sans-serif;
 }
 
-#btn{
-	font-family: 'Jua', sans-serif; 
-}
 
 </style>
 
@@ -164,18 +161,18 @@
 		 </div>
         </section>
 
-		<section id="btn" class="company-description" style="display: flex; justify-content: center; margin-bottom: 80px; margin-top: 50px;">
+		<section id="btn" class="company-description" style="display: flex; justify-content: center; margin-bottom: 80px; margin-top: 50px; margin-left: 30px;">
 		
 			<form action="/DDOCDOC/Height/HeightList.do" method="post">
 				<input type="hidden" name="ch_num" value="${childVO.ch_num}">
 				<input type="hidden" name="ch_name" value="${childVO.ch_name}">
-				<input type = "submit" value="키 관리" class="btn btn-warning btn-lg" style="font-size: 30px; margin-right: 50px;">
+				<input type = "submit" value="키 관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 50px; font-weight: 700">
 			</form>
 			
 			<form action="/DDOCDOC/Inject/InjectListAction.do" method="post">
 				<input type="hidden" name="ch_num" value="${childVO.ch_num}">
 				<input type="hidden" name="ch_name" value="${childVO.ch_name}">
-				<input type = "submit" value="접종관리" class="btn btn-warning btn-lg" style="font-size: 30px; margin-right: 50px;">
+				<input type = "submit" value="접종관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 50px; font-weight: 700">
 			</form>
 		
 		</section>
