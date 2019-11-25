@@ -37,15 +37,22 @@
         <!-- template main css file -->
         <link rel="stylesheet" href="../css/style.css">
         
+<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">      
+<link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">        
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <style>
-/*datepicer 버튼 롤오버 시 손가락 모양 표시*/
-.ui-datepicker-trigger{cursor: pointer;}
-/*datepicer input 롤오버 시 손가락 모양 표시*/
-.hasDatepicker{cursor: pointer;}
+	/*datepicer 버튼 롤오버 시 손가락 모양 표시*/
+	.ui-datepicker-trigger{cursor: pointer;}
+	/*datepicer input 롤오버 시 손가락 모양 표시*/
+	.hasDatepicker{cursor: pointer;}
+	
+	#forming{
+		font-family: 'Jua', sans-serif;
+	}
 </style>
+
 <title>똑닥</title>
 </head>
 <body>
@@ -139,7 +146,7 @@
                 </div>
             </div>
         </section>
-<section  class="company-description" style="display: flex; justify-content: center; margin-bottom: 50px;">
+<section id="forming"  class="company-description" style="display: flex; justify-content: center; margin-bottom: 50px;">
 
 	<form action="/DDOCDOC/child/childInsert.do" method="post" style="width: 450px;">
 		<input type="hidden" name = "cus_name" value="${cus_name }">
