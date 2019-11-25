@@ -154,7 +154,7 @@
 		<form action="customerMypageUpdate.do" method="post">
 			<input type="hidden" name="cus_num" value="${cus_num }"><br>
 			<div class="form-group">
-				<label>ID</label><br><label> ${cus_id }</label>
+				<label>ID</label><br><h3> ${cus_id }</h3>
 			</div>
 			<div class="form-group">
 				<label>PW</label> <input type="text" name="cus_pw"

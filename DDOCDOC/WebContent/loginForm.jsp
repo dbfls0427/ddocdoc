@@ -165,7 +165,7 @@
 						</div>
 						
 						<div id="btnsubWrap">
-							<input type = "submit" value = "로그인"  class="btn btn-primary btn-lg">
+							<input type = "submit" value = "로그인"  class="btn btn-warning btn-lg">
 							<hr>
 						</div>
 					</form>
