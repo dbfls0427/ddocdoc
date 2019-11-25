@@ -68,7 +68,7 @@
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-                        <a href="../index.html" >
+                        <a href="success.do" >
                             <img src="../images/logo.png" alt="">
                         </a>
                     </div>
@@ -79,7 +79,7 @@
                     <div class="main-menu">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="../index.html" >Home</a>
+                                <a href="success.do" >Home</a>
                             </li>
                              <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">병원찾기 <span class="caret"></span></a>

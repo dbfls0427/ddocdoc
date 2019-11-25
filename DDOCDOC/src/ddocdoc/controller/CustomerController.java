@@ -30,6 +30,7 @@ import ddocdoc.action.JoinAction;
 import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
 import ddocdoc.action.LoginFormAction;
+import ddocdoc.action.LoginSuccessAction;
 import ddocdoc.action.LogoutAction;
 import ddocdoc.action.MapAction;
 import ddocdoc.action.MyPageFormAction;
@@ -253,6 +254,13 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("map.do")) {
     		action = new MapAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("success.do")) {
+    		action = new LoginSuccessAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
