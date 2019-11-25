@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="icon" href="favicon.ico">
-<title>¶Èµü</title>
+<title>ë˜‘ë”±</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
@@ -43,7 +43,7 @@
 </style>
 <script type="text/javascript">
 	function next() {
-		if (confirm("Å»ÅğÇÏ½Ã°Ú½À´Ï±î?")) {
+		if (confirm("íƒˆí‡´í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")) {
 			location.href = "customerDelete.do?cus_num=${customer.cus_num}";
 		} else {
 			location.href = "myPageForm.do";
@@ -83,31 +83,31 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="success.do">Home</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">º´¿øÃ£±â <span class="caret"></span></a>
+							data-toggle="dropdown">ë³‘ì›ì°¾ê¸° <span class="caret"></span></a>
 							<div class="dropdown-menu">
 								<ul>
-									<li><a href="map.do?cus_num=${customer.cus_num }">º´¿øÃ£±â</a></li>
-									<li><a href="resList.do">¿¹¾à³»¿ª</a></li>
+									<li><a href="map.do?cus_num=${customer.cus_num }">ë³‘ì›ì°¾ê¸°</a></li>
+									<li><a href="resList.do">ì˜ˆì•½ë‚´ì—­</a></li>
 								</ul>
 							</div></li>
-						<li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name }">¾ÆÀÌ°ü¸®</a></li>
+						<li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name }">ì•„ì´ê´€ë¦¬</a></li>
 						<li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">QRÄÚµå <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">QRì½”ë“œ <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="detailCustomer.do">QRÄÚµå ¹ß±Ş</a></li>
+                                        <li><a href="detailCustomer.do">QRì½”ë“œ ë°œê¸‰</a></li>
                                     </ul>
                                 </div>
                             </li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">${customer.cus_name } ´Ô <span
+							data-toggle="dropdown">${customer.cus_name } ë‹˜ <span
 								class="caret"></span></a>
 							<div class="dropdown-menu">
 								<ul>
-									<li><a href="myPageForm.do">¸¶ÀÌÆäÀÌÁö</a></li>
+									<li><a href="myPageForm.do">ë§ˆì´í˜ì´ì§€</a></li>
 								</ul>
 							</div></li>
-						<li><a href="logout.do">·Î±×¾Æ¿ô</a></li>
+						<li><a href="logout.do">ë¡œê·¸ì•„ì›ƒ</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -150,14 +150,14 @@
 
 			<form action="customerUpdateForm.do" method="post">
 				<input type="hidden" name="cus_num" value="${customer.cus_num}">
-				<input type="submit" value="°³ÀÎ Á¤º¸ ¼öÁ¤" class="btn btn-primary"
+				<input type="submit" value="ê°œì¸ ì •ë³´ ìˆ˜ì •" class="btn btn-primary"
 					style="height: 150px; width: 150px;">
 			</form>
 		</div>
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		<div class="btn-group" role="group" aria-label="...">
 			<button onclick="next()" class="btn btn-primary"
-				style="height: 150px; width: 150px;">È¸¿ø Å»Åğ</button>
+				style="height: 150px; width: 150px;">íšŒì› íƒˆí‡´</button>
 		</div>
 
 
@@ -241,7 +241,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 function next(){
-	 if(confirm("Å»ÅğÇÏ½Ã°Ú½À´Ï±î?"))
+	 if(confirm("íƒˆí‡´í•˜ì‹œê² ìŠµë‹ˆê¹Œ?"))
 	 {
 	   location.href="customerDelete.do?cus_num=${customer.cus_num}"; 
 	 }
@@ -256,10 +256,10 @@ function next(){
 
 	<form action="customerUpdateForm.do" method="post">
 		<input type = "hidden" name = "cus_num" value = "${customer.cus_num}">
-		<input type = "submit" value = "Á¤º¸ ¼öÁ¤"/>
+		<input type = "submit" value = "ì •ë³´ ìˆ˜ì •"/>
 	</form>
 	
-	<button onclick="next()">Å»ÅğÇÏ±â</button>
+	<button onclick="next()">íƒˆí‡´í•˜ê¸°</button>
 
 </body>
 </html> --%>

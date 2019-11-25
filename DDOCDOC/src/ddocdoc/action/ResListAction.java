@@ -28,6 +28,7 @@ public class ResListAction implements Action {
 		
 		List<PharResVO> pharList2 = sc.pharResList(cus_num);
 		List<String> pharNameList2 =sc.detailNamePharmacy(cus_num);
+		
 		request.setAttribute("pharList", pharList2);
 		request.setAttribute("pharNameList", pharNameList2);
 		
