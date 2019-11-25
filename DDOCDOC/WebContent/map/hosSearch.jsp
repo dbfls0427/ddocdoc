@@ -140,7 +140,7 @@
         ================================================== 
             TITLE: Global Page Section Start
         ================================================== -->
-        <section class="global-page-header" style="padding: 100px 0 10px 0;">
+        <section class="global-page-header" style="padding: 100px 0 10px 0; background: #ffe307;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
