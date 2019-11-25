@@ -150,13 +150,13 @@
 
 			<form action="customerUpdateForm.do" method="post">
 				<input type="hidden" name="cus_num" value="${customer.cus_num}">
-				<input type="submit" value="개인 정보 수정" class="btn btn-primary"
+				<input type="submit" value="개인 정보 수정" class="btn btn-warning"
 					style="height: 150px; width: 150px;">
 			</form>
 		</div>
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		<div class="btn-group" role="group" aria-label="...">
-			<button onclick="next()" class="btn btn-primary"
+			<button onclick="next()" class="btn btn-warning"
 				style="height: 150px; width: 150px;">회원 탈퇴</button>
 		</div>
 
