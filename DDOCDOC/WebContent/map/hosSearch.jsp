@@ -1,14 +1,49 @@
+<%@page import="ddocdoc.vo.CustomerVO"%>
+<%@page import="ddocdoc.loginSession.LoginSession"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<% String cus_num = request.getParameter("cus_num"); 
+<%
+	String cus_num = request.getParameter("cus_num");
 	request.setAttribute("cus_num", cus_num);
-%>
+
+%>    
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>키워드로 장소검색하고 목록으로 표출하기</title>
+    <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="favicon.ico">
+        <title>똑딱</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="../plugins/ionicons/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="../plugins/animate-css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="../plugins/slider/slider.css">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="../plugins/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="../plugins/owl-carousel/owl.theme.css">
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="../plugins/facncybox/jquery.fancybox.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="../css/style.css">
+        
     <style>
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
@@ -49,35 +84,114 @@
 </style>
 </head>
 <body>
-<div class="map_wrap">
-    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-
-    <div id="menu_wrap" class="bg_white">
-        <div class="option">
-            <div>
-                <form onsubmit="searchPlaces(); return false;">
-	                    키워드 : <select name="keyword" id="keyword" onchange="changeSelect()">
-	           		<option value="병원" selected="selected">내 주변 병원</option>
-	           		<option value="소아청소년과">소아청소년과</option>
-	           		<option value="이비인후과">이비인후과</option>
-	           		<option value="산부인과">산부인과</option>
-	           		<option value="내과">내과</option>
-	           		<option value="피부과">피부과</option>
-	           		<option value="정형외과">정형외과</option>
-	           		<option value="치과">치과</option>
-	           		<option value="안과">안과</option>
-	           		<option value="응급실">응급실</option>
-	           </select>
-                    <!-- 키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> -->
-                    <button type="submit">검색하기</button> 
-                </form>
+ <!--
+        ==================================================
+       MENU: Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <!-- /responsive nav button -->
+                    
+                    <!-- logo -->
+                    <div class="navbar-brand">
+                        <a href="../index.html" >
+                            <img src="../images/logo.png" alt="">
+                        </a>
+                    </div>
+                    <!-- /logo -->
+                </div>
+                <!-- main menu -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <div class="main-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                           <li>
+                                <a href="../index.html" >Home</a>
+                            </li>
+                            <li><a href="/DDOCDOC/map/hosSearch.jsp">병원찾기</a></li>
+                            <li><a href="/DDOCDOC/child.index.html">아이관리</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li><a href="blog-fullwidth.html">Blog Full</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="../Customer/loginForm.do">로그인</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /main nav -->
             </div>
-        </div>
-        <hr>
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
-    </div>
-</div>
+         </header>
+            
+     
+        <!-- 
+        ================================================== 
+            TITLE: Global Page Section Start
+        ================================================== -->
+        <section class="global-page-header" style="padding: 100px 0 10px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2 style="font-size: 35px;">가까운 병원찾기</h2>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="../index.html">
+                                        <i class="ion-ios-home"></i>
+                                        Home
+                                    </a>
+                                </li>
+                               <!--  <li class="active">가까운 병원찾기</li> -->
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+   <section class="company-description" style="margin-top: 50px;">
+		<div class="map_wrap">
+		    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+		
+		    <div id="menu_wrap" class="bg_white">
+		        <div class="option">
+		            <div>
+		                <form onsubmit="searchPlaces(); return false;">
+			                    키워드 : <select name="keyword" id="keyword" onchange="changeSelect()">
+			           		<option value="병원" selected="selected">내 주변 병원</option>
+			           		<option value="소아청소년과">소아청소년과</option>
+			           		<option value="이비인후과">이비인후과</option>
+			           		<option value="산부인과">산부인과</option>
+			           		<option value="내과">내과</option>
+			           		<option value="피부과">피부과</option>
+			           		<option value="정형외과">정형외과</option>
+			           		<option value="치과">치과</option>
+			           		<option value="안과">안과</option>
+			           		<option value="응급실">응급실</option>
+			           </select>
+		                    <!-- 키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> -->
+		                    <button type="submit">검색하기</button> 
+		                </form>
+		            </div>
+		        </div>
+		        <hr>
+		        <ul id="placesList"></ul>
+		        <div id="pagination"></div>
+		    </div>
+		</div>
+   </section>             
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=505b2c52a62eb0c7e717c059e782deab&libraries=services"></script>
 <script>
@@ -417,7 +531,7 @@ function displayPagination(pagination) {
 // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
 // 인포윈도우에 장소명을 표시합니다
 function displayInfowindow(marker, title, posit) {
-    var content = '<div style="padding:5px;">'+title+'<br><a href="../Customer/hos_resform.do?hos_name='+title+'&cus_num=${cus_num}" style="color:blue" target="_blank">접수하기</a> <a href="https://map.kakao.com/link/to/'+title+','+posit.getLat()+','+posit.getLng()+'" style="color:blue" target="_blank">길찾기</a></div>';
+	 var content = '<div style="padding:5px;">'+title+'<br><a href="../Customer/hos_resform.do?hos_name='+title+'&cus_num=${cus_num}" style="color:blue" target="_blank">접수하기</a> <a href="https://map.kakao.com/link/to/'+title+','+posit.getLat()+','+posit.getLng()+'" style="color:blue" target="_blank">길찾기</a></div>';
     infowindow.setContent(content);
     infowindow.open(map, marker);
 }
@@ -429,5 +543,67 @@ function removeAllChildNods(el) {
     }
 }
 </script>
+
+ <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="col-md-8">
+                        <p class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> Design and Developed by <a href="mailto:amydreamsyou@gmail.com" target="_blank">Lee Min-hye</a>. <br> 
+                            Get More 
+                            <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">
+                                Free Bootstrap Templates
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Social Media -->
+                        <ul class="social">
+                            <li>
+                                <a href="http://wwww.fb.com/themefisher" class="Facebook">
+                                    <i class="ion-social-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://wwww.twitter.com/themefisher" class="Twitter">
+                                    <i class="ion-social-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="Linkedin">
+                                    <i class="ion-social-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://wwww.fb.com/themefisher" class="Google Plus">
+                                    <i class="ion-social-googleplus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+
+	<!-- Template Javascript Files
+	================================================== -->
+	<!-- jquery -->
+	<script src="../plugins/jQurey/jquery.min.js"></script>
+	<!-- Form Validation -->
+    <script src="../plugins/form-validation/jquery.form.js"></script> 
+    <script src="../plugins/form-validation/jquery.validate.min.js"></script>
+	<!-- owl carouserl js -->
+	<script src="../plugins/owl-carousel/owl.carousel.min.js"></script>
+	<!-- bootstrap js -->
+	<script src="../plugins/bootstrap/bootstrap.min.js"></script>
+	<!-- wow js -->
+	<script src="../plugins/wow-js/wow.min.js"></script>
+	<!-- slider js -->
+	<script src="../plugins/slider/slider.js"></script>
+	<!-- Fancybox -->
+	<script src="../plugins/facncybox/jquery.fancybox.js"></script>
+	<!-- template main js -->
+	<script src="../js/main.js"></script>
 </body>
 </html>

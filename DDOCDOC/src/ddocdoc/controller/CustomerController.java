@@ -31,6 +31,7 @@ import ddocdoc.action.JoinFormAction;
 import ddocdoc.action.LoginAction;
 import ddocdoc.action.LoginFormAction;
 import ddocdoc.action.LogoutAction;
+import ddocdoc.action.MapAction;
 import ddocdoc.action.MyPageFormAction;
 import ddocdoc.action.PayAction;
 import ddocdoc.action.PharResAction;
@@ -245,6 +246,13 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("pharResDetail.do")) {
     		action = new PharResDetailAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("map.do")) {
+    		action = new MapAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
