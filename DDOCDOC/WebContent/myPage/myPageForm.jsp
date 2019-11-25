@@ -90,7 +90,7 @@
 									<li><a href="resList.do">예약내역</a></li>
 								</ul>
 							</div></li>
-						<li><a href="/DDOCDOC/child.index.html">아이관리</a></li>
+						<li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name }">아이관리</a></li>
 						<li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
@@ -144,7 +144,7 @@
     Works Section Start
 ================================================== -->
 	<section class="works service-page"
-		style="margin-top: 70px; padding-left: 530px">
+		style="display: flex; justify-content: center;">
 
 		<div class="btn-group" role="group" aria-label="...">
 

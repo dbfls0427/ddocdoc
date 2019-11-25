@@ -90,7 +90,7 @@ hr {
 							<li><a href="resList.do">예약내역</a></li>
 						</ul>
 					</div></li>
-				<li><a href="/DDOCDOC/child.index.html">아이관리</a></li>
+				<li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name }">아이관리</a></li>
 				<li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
@@ -137,54 +137,58 @@ hr {
 	</div>
 	</section>
 	
-	<section class="company-description" id="wrapjoin" style="width:1000px; padding-left: 480px;">
-	<p class = "p">Info</p>
-	<table class="table table-condensed" align="center">
-  		<tr>
-  			<td>회원 아이디</td>
-  			<td>회원 이름</td>
-  			<td>회원 주소</td>
-  			<td>회원 이메일</td>
-  			<td>회원 생년월일</td>
-  		</tr>
-  		<tr>
-  			<td>${customer.cus_id }</td>
-  			<td>${customer.cus_name }</td>
-  			<td>${customer.cus_addr }</td>
-  			<td>${customer.cus_email }</td>
-  			<td>${customer.cus_birth }</td>
-  		</tr>
-  		
-	</table>
-	<hr>
+	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
+		<div>
+			<p class = "p">Info</p>
+			<table class="table table-condensed" align="center">
+		  		<tr>
+		  			<td>회원 아이디</td>
+		  			<td>회원 이름</td>
+		  			<td>회원 주소</td>
+		  			<td>회원 이메일</td>
+		  			<td>회원 생년월일</td>
+		  		</tr>
+		  		<tr>
+		  			<td>${customer.cus_id }</td>
+		  			<td>${customer.cus_name }</td>
+		  			<td>${customer.cus_addr }</td>
+		  			<td>${customer.cus_email }</td>
+		  			<td>${customer.cus_birth }</td>
+		  		</tr>
+		  		
+			</table>
+		<hr>
+		</div>
 	</section>
-	<section class="company-description" id="wrapjoin" style="width:1000px; padding-left: 480px;">
-	<textarea cols="71" rows="6" class = "autosize" onkeydown="resize(this)" onkeyup = "resize(this)" id = "led-text" charset = "UTF-8">고객 아이디 : ${customer.cus_id }     고객 이름 : ${customer.cus_name }       고객 주소 : ${customer.cus_addr }       고객 이메일 : ${customer.cus_email }     고객 생년월일 : ${customer.cus_birth }</textarea>
-		<button type = button  class="btn btn-primary" id = "led-button1" onclick="button1_click()" style="margin-left: 198px; margin-top: 20px;">QR코드 발급</button>
-		<div id = "qrcode" style = "width:100px; height:100px; margin-top:160px; margin-left: 198px"></div> 
-		<script>
-		var qrcode = new QRCode(document.getElementById("qrcode"),{height : 100, width : 100});
-	
-		function makeCode(){
-			var elText = document.getElementById("led-text");
-			if(!elText.value){
-				alert("Input a text");
-				elText.focus();
-				return;
-			}
-			alert(elText.value);
+	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
+		<div>
+			<textarea cols="71" rows="6" class = "autosize" onkeydown="resize(this)" onkeyup = "resize(this)" id = "led-text" charset = "UTF-8">고객 아이디 : ${customer.cus_id }     고객 이름 : ${customer.cus_name }       고객 주소 : ${customer.cus_addr }       고객 이메일 : ${customer.cus_email }     고객 생년월일 : ${customer.cus_birth }</textarea><br>
+				<button type = button  class="btn btn-primary" id = "led-button1" onclick="button1_click()" style="margin-left: 198px; margin-top: 20px;">QR코드 발급</button>
+				<div id = "qrcode" style = "width:100px; height:100px; margin-top:160px; margin-left: 198px"></div> 
+				<script>
+				var qrcode = new QRCode(document.getElementById("qrcode"),{height : 100, width : 100});
 			
-			qrcode.makeCode(elText.value);
-		}
-		function button1_click(){
-			makeCode();
-		}
-		function resize(obj){
-			obj.style.height = "1px";
-			obj.style.height = (12 + obj.scrollHeight) + "px";
-		}
-	
-	</script>
+				function makeCode(){
+					var elText = document.getElementById("led-text");
+					if(!elText.value){
+						alert("Input a text");
+						elText.focus();
+						return;
+					}
+					alert(elText.value);
+					
+					qrcode.makeCode(elText.value);
+				}
+				function button1_click(){
+					makeCode();
+				}
+				function resize(obj){
+					obj.style.height = "1px";
+					obj.style.height = (12 + obj.scrollHeight) + "px";
+				}
+			
+			</script>
+		</div>
 	</section>
 	
 	<footer id="footer">
