@@ -43,7 +43,7 @@
 			}
 			
 			#loginformdiv {
-				width: 60%; 
+				width: 40%; 
 				margin: 0 auto;
 			}
 			
@@ -52,7 +52,15 @@
 			}
 			
 			#btnsubWrap input {
-				width: 50%;
+				width: 40%;
+			}
+			
+			#wrapform2{
+				text-align: center;
+			}
+			
+			#wrapform2 input {
+				width: 40%;
 			}
         
         </style>
@@ -93,19 +101,10 @@
                             <li>
                                 <a href="../index.html" >Home</a>
                             </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="service.html">Service</a></li>
+                             <li><a href="/DDOCDOC/map/hosSearch.jsp">병원찾기</a></li>
+                            <li><a href="/DDOCDOC/child.index.html">아이관리</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="404.html">404 Page</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
                                         <li><a href="blog-fullwidth.html">Blog Full</a></li>
@@ -114,7 +113,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="Customer/loginForm.do">로그인</a></li>
+                            <li><a href="loginForm.do">로그인</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -168,14 +167,15 @@
 						</div>
 						
 						<div id="btnsubWrap">
-							<input type = "submit" value = "로그인"  class="btn btn-primary">
+							<input type = "submit" value = "로그인"  class="btn btn-primary btn-lg">
 							<hr>
 						</div>
 					</form>
-					
-					<form action="join.do" method = "post">
-						<input type = "submit" value = "회원가입" class="btn btn-default btn-lg active">
-					</form>
+					<div id="wrapform2">
+						<form action="join.do" method = "post">
+							<input type = "submit" value = "회원가입" class="btn btn-default active btn-lg">
+						</form>
+					</div>
 			  		
 			  		<!-- 
 					<form action="login.do" method = "post">
