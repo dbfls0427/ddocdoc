@@ -82,7 +82,7 @@ tr:nth-child(2n) {
                     <!-- logo -->
                     <div class="navbar-brand">
                         <a href="/DDOCDOC/Customer/success.do" >
-                            <img src="images/logo.png" alt="">
+                            <img src="../images/logo.png" alt="">
                         </a>
                     </div>
                     <!-- /logo -->
@@ -99,7 +99,7 @@ tr:nth-child(2n) {
                                 <div class="dropdown-menu">
                                     <ul>
                                         <li><a href="/DDOCDOC/Customer/map.do?cus_num=${customer.cus_num }">병원찾기</a></li>
-                                        <li><a href="resList.do">예약내역</a></li>
+                                        <li><a href="../Customer/resList.do">예약내역</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -116,11 +116,11 @@ tr:nth-child(2n) {
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${cus_name } 님 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="myPageForm.do">마이페이지</a></li>
+                                        <li><a href="../Customer/myPageForm.do">마이페이지</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="logout.do">로그아웃</a></li>
+                            <li><a href="../Customer/logout.do">로그아웃</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -153,7 +153,8 @@ tr:nth-child(2n) {
             </div>
         </section>
         
-        <section  class="company-description" style="display: flex; justify-content: center;">
+        <label style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 0; font-size: 16px;">아이의 이름을 눌러 건강피드를 관리해보세요!</label><br>
+        <section  class="company-description" style="display: flex; justify-content: center; margin-top: 15px;">
         	<div>
 	        	<p class="p">MyChild</p>
 					<table class="table table-hover" align="center" style="width: 400px; text-align: center; font-size: 17px; margin-bottom: 0;" id = "table1">
