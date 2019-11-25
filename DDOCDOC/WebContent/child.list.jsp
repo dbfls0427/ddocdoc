@@ -62,8 +62,15 @@
 tr:nth-child(2n) {
   				background-color: #FFFFA5;
 			}
+#intro{
+	font-family: 'Stylish', sans-serif;
+}
+#table1{
+font-family: 'Sunflower', sans-serif;
+}
 </style>       
-        
+<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">       
 </head>
 <body>
 <!--
@@ -156,15 +163,11 @@ tr:nth-child(2n) {
             </div>
         </section>
         
-        <label style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 0; font-size: 16px;">아이의 이름을 눌러 건강피드를 관리해보세요!</label><br>
+        <label id="intro" style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 0; font-size: 24px;">아이의 이름을 눌러 건강피드를 관리해보세요!</label><br>
         <section  class="company-description" style="display: flex; justify-content: center; margin-top: 15px;">
         	<div>
 	        	<p class="p">MyChild</p>
-					<table class="table table-hover" align="center" style="width: 400px; text-align: center; font-size: 17px; margin-bottom: 0;" id = "table1">
-						<tr>
-							<td style="text-align : center;">아이 이름</td>
-							<td style="text-align : center;">생년월일</td>
-						</tr>
+					<table class="table table-hover" align="center" style="width: 400px; text-align: center; font-size: 17px; margin-bottom: 0;font-weight: 600;" id = "table1">
 					<c:forEach var="ChildVO" items="${childList}" >
 						<tr>
 							<td style="text-align : center;"><a href="/DDOCDOC/child/childDetail.do?ch_num=${ChildVO.ch_num}">${ChildVO.ch_name }</a></td>
