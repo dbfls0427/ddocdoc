@@ -56,6 +56,9 @@
 	font-size: 26px;
 	color : #ffe307;
 }
+tr:nth-child(2n) {
+  				background-color: #FFFFA5;
+			}
 </style>       
         
 </head>
@@ -153,15 +156,15 @@
         <section  class="company-description" style="display: flex; justify-content: center;">
         	<div>
 	        	<p class="p">MyChild</p>
-					<table class="table table-condensed" align="center" style="width: 400px; text-align: center; font-size: 20px; margin-bottom: 0;">
+					<table class="table table-hover" align="center" style="width: 400px; text-align: center; font-size: 17px; margin-bottom: 0;" id = "table1">
 						<tr>
-							<td>아이 이름</td>
-							<td>생년월일</td>
+							<td style="text-align : center;">아이 이름</td>
+							<td style="text-align : center;">생년월일</td>
 						</tr>
 					<c:forEach var="ChildVO" items="${childList}" >
 						<tr>
-							<td><a href="/DDOCDOC/child/childDetail.do?ch_num=${ChildVO.ch_num}">${ChildVO.ch_name }</a></td>
-							<td>${ChildVO.ch_birth }</td>
+							<td style="text-align : center;"><a href="/DDOCDOC/child/childDetail.do?ch_num=${ChildVO.ch_num}">${ChildVO.ch_name }</a></td>
+							<td style="text-align : center;">${ChildVO.ch_birth }</td>
 						</tr>
 					</c:forEach>
 					
