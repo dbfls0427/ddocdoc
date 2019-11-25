@@ -57,7 +57,10 @@
   				background-color: #FFD819;
 			}
 			
-			
+			.aa{
+				text-decoration: none;
+				color: #FFFFFF;
+			}
 			
 	</style>
 
@@ -170,7 +173,7 @@
 				<td style="text-align : center;">${resVO.hos_res_num }</td>
 				<td style="text-align : center;"><a href = "detailRes.do?hos_res_num=${resVO.hos_res_num}">${hosName[status.index] }</td>
 				<td style="text-align : center;">${resVO.hos_res_date }</td>
-				<td style="text-align : center;"><button><a href = "presDetail.do?hos_res_num=${resVO.hos_res_num }&hos_num=${resVO.hos_num}">처방전 보기</a></button></td>
+				<td style="text-align : center;"><button class="btn btn-warning"><a class="aa" href = "presDetail.do?hos_res_num=${resVO.hos_res_num }&hos_num=${resVO.hos_num}">처방전 보기</a></button></td>
 				
 			</tr>
 		</c:forEach>

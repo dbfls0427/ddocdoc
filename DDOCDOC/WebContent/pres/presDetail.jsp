@@ -52,6 +52,7 @@
 	font-size: 26px;
 	color : #ffe307;
 	}
+	
 
 </style>
 
@@ -169,7 +170,8 @@
 			</table>
 		</div>
 		</div>
-		<div style="margin-left: 100px; border: 1; width: 400px" >
+		<div style="margin-left: 100px; border: 1; width: 400px; border-color: #ffe307;" class="panel panel-default" >
+		<div class="panel-body" id="div1">
 		<p class = "p">처방전 약 목록</p>
 		<br>
 		<c:forEach var="medicine" items="${list}" varStatus="status">
@@ -178,10 +180,34 @@
 		<hr>
 		<span>약 총 가격 : ${price }</span>
 		</div>
+		
+		</div>
+		
 	</section>
+
+	
 	
 	<section class="company-description" style="display: flex; justify-content: center;">
+		<div style="margin-left: 850px; margin-bottom: 100px">
+		<form action="payAction.do" method="post" style="display: flex; justify-content: center;">
+			<input type="hidden" value = "${pres.pres_num }" name = "pres_num"><br>
+			<select name = "pay_type" class="form-control">
+				<option value="카드">카드</option>
+				<option value="계좌이체">계좌이체</option>
+			</select>&nbsp&nbsp
+			<input type = "submit" value = "선 결제하기" onclick="check()" class="btn btn-warning">
+			<script type="text/javascript">
+			function check() {
+				alert("결제가 완료되었습니다.");
+			}
+			</script>
+	</form>
+	<form action="/DDOCDOC/map/pharSearch.jsp" method="post" style="float: right; margin-top: 10px">
+		<input type = "submit" value="약국예약" class="btn btn-warning">
+	</form>	
 		
+		
+		</div>
 	
 	</section>
 	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
