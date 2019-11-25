@@ -90,7 +90,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="/DDOCDOC/child.index.html?cus_name=${customer.cus_name } ">아이관리</a></li>
+                            <li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name } ">아이관리</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
