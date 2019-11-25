@@ -144,7 +144,7 @@
     Works Section Start
 ================================================== -->
 	<section class="works service-page"
-		style="margin-top: 80px; padding-left: 530px">
+		style="margin-top: 70px; padding-left: 530px">
 
 		<div class="btn-group" role="group" aria-label="...">
 

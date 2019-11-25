@@ -37,6 +37,20 @@
 <link rel="stylesheet" href="../css/style.css">
 <script type="text/javascript" src = "/DDOCDOC/js/jquery.min.js"></script>
 <script type="text/javascript" src = "/DDOCDOC/js/qrcode.js"></script>
+
+<style type="text/css">
+hr {
+  height: 1px;
+  background-color: #ffe307;
+}
+
+.p{
+	font-family: fantasy;
+	font-size: 26px;
+	color : #ffe307;
+}
+
+</style>
 </head>
 <body>
 
@@ -105,17 +119,17 @@
         ================================================== 
             TITLE: Global Page Section Start
         ================================================== -->
-	<section class="global-page-header">
+	<section class="global-page-header" style="background: #ffe307;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="block">
-					<h2>ADJUST</h2>
+					<h2>QR CODE</h2>
 					<ol class="breadcrumb">
 						<li><a href="success.do"> <i class="ion-ios-home"></i>
 								Home
 						</a></li>
-						<li class="active">ADJUST</li>
+						<li class="active">QR CODE</li>
 					</ol>
 				</div>
 			</div>
@@ -123,7 +137,55 @@
 	</div>
 	</section>
 	
+	<section class="company-description" id="wrapjoin" style="width:1000px; padding-left: 480px;">
+	<p class = "p">Info</p>
+	<table class="table table-condensed" align="center">
+  		<tr>
+  			<td>회원 아이디</td>
+  			<td>회원 이름</td>
+  			<td>회원 주소</td>
+  			<td>회원 이메일</td>
+  			<td>회원 생년월일</td>
+  		</tr>
+  		<tr>
+  			<td>${customer.cus_id }</td>
+  			<td>${customer.cus_name }</td>
+  			<td>${customer.cus_addr }</td>
+  			<td>${customer.cus_email }</td>
+  			<td>${customer.cus_birth }</td>
+  		</tr>
+  		
+	</table>
+	<hr>
+	</section>
+	<section class="company-description" id="wrapjoin" style="width:1000px; padding-left: 480px;">
+	<textarea cols="71" rows="6" class = "autosize" onkeydown="resize(this)" onkeyup = "resize(this)" id = "led-text" charset = "UTF-8">고객 아이디 : ${customer.cus_id }     고객 이름 : ${customer.cus_name }       고객 주소 : ${customer.cus_addr }       고객 이메일 : ${customer.cus_email }     고객 생년월일 : ${customer.cus_birth }</textarea>
+		<button type = button  class="btn btn-primary" id = "led-button1" onclick="button1_click()" style="margin-left: 198px; margin-top: 20px;">QR코드 발급</button>
+		<div id = "qrcode" style = "width:100px; height:100px; margin-top:160px; margin-left: 198px"></div> 
+		<script>
+		var qrcode = new QRCode(document.getElementById("qrcode"),{height : 100, width : 100});
 	
+		function makeCode(){
+			var elText = document.getElementById("led-text");
+			if(!elText.value){
+				alert("Input a text");
+				elText.focus();
+				return;
+			}
+			alert(elText.value);
+			
+			qrcode.makeCode(elText.value);
+		}
+		function button1_click(){
+			makeCode();
+		}
+		function resize(obj){
+			obj.style.height = "1px";
+			obj.style.height = (12 + obj.scrollHeight) + "px";
+		}
+	
+	</script>
+	</section>
 	
 	<footer id="footer">
 	<div class="container">
