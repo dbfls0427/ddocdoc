@@ -130,7 +130,7 @@
 	 
 		<form action="hos_res_action.do" method = "post" style="width: 35%;">
 			<label>진료 종류</label>
-			<select name="res_type">
+			<select name="res_type" class="form-control">
 				      <option value="일반진료">일반진료</option>
 				      <option value="수액">수액</option>
 			    </select>
