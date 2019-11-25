@@ -178,7 +178,7 @@
 			</div>
 			<hr>
 			<div class="wrapbtnform">
-				<input type="submit" class="btn btn-primary" value="수정">
+				<input type="submit" class="btn btn-warning" value="수정">
 			</div>
 		</form>
 

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html class="no-js">
     <head>
@@ -142,12 +143,12 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="block">
-					<h2>QR CODE</h2>
+					<h2>RESERVATION</h2>
 					<ol class="breadcrumb">
 						<li><a href="success.do"> <i class="ion-ios-home"></i>
 								Home
 						</a></li>
-						<li class="active">QR CODE</li>
+						<li class="active">RESERVATION</li>
 					</ol>
 				</div>
 			</div>
@@ -172,19 +173,20 @@
 			<tr>
 				<td style="text-align : center;">${resVO.hos_res_num }</td>
 				<td style="text-align : center;"><a href = "detailRes.do?hos_res_num=${resVO.hos_res_num}">${hosName[status.index] }</td>
-				<td style="text-align : center;">${resVO.hos_res_date }</td>
+				<td style="text-align : center;">${fn:substring(resVO.hos_res_date,0,10) }</td>
 				<td style="text-align : center;"><button class="btn btn-warning"><a class="aa" href = "presDetail.do?hos_res_num=${resVO.hos_res_num }&hos_num=${resVO.hos_num}">처방전 보기</a></button></td>
 				
 			</tr>
 		</c:forEach>
 			</table>
+			<br><br><br>
 			<hr>
 		</div>
 
 		
 		</section>
 		<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
-			<div style="width:440px;">
+			<div style="width:390px; margin-bottom: 80px">
 				<p class = "p">Pharmacy Reservation</p><br>
 				<table class="table table-hover" id = "table1">
 					<tr>
