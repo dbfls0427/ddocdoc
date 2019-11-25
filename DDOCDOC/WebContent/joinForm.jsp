@@ -111,9 +111,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="blog-fullwidth.html">Blog Full</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
+                                        <li><a href="detailCustomer.do">QR코드 발급</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -130,7 +128,7 @@
         ================================================== 
             TITLE: Global Page Section Start
         ================================================== -->
-        <section class="global-page-header">
+        <section class="global-page-header" style="background: #ffe307;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
