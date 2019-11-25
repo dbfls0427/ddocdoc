@@ -45,7 +45,7 @@
         <link rel="stylesheet" href="css/style.css">
         
  <style type="text/css">
- a:link { color: red; text-decoration: none;}
+ a:link { color: black; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
 /*  .kidsbtn{
  	font-family: 
@@ -96,15 +96,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">아이관리 <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="/DDOCDOC/child.index.jsp">아이 등록</a></li>
-                                        <li><a href="/DDOCDOC/child/childList.do">우리아이 리스트</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                           <li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name } ">아이관리</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
@@ -160,8 +152,8 @@
 	</section>
      	
 	<section class="company-description" style=" display: flex; justify-content: center; margin-bottom: 80px; margin-top: 40px;">
-		<button class="btn btn-warning btn-lg kidsbtn" style="margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do" style="color:#FFF;">아이등록</a><br></button>
-		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF;"><a href="child/childList.do">아이정보리스트</a></button>
+		<button class="btn btn-warning btn-lg kidsbtn" style="margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do?cus_name=${cus_name }" style="color:#FFF;">아이등록</a><br></button>
+		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF;"><a href="child/childList.do?cus_name=${cus_name }">아이정보리스트</a></button>
 	</section>
 
 

@@ -90,15 +90,7 @@
                                     </ul>
                                 </div>
                             </li>
-                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">아이관리 <span class="caret"></span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="/DDOCDOC/child.index.jsp">아이 등록</a></li>
-                                        <li><a href="/DDOCDOC/child/childList.do">우리아이 리스트</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                             <li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name } ">아이관리</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
