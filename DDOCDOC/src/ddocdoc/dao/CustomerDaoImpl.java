@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import ddocdoc.vo.ReviewVO;
 import ddocdoc.mapper.CustomerMapper;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
@@ -590,5 +591,123 @@ public class CustomerDaoImpl implements CustomerDao{
 		}
 		return count;
 	}
+	
+	//review create
+	@Override
+		public int reviewInsert(ReviewVO ReviewVO) {
+			System.out.println(ReviewVO);
+			int re = -1;
+			SqlSession sqlSession = getSqlSessionFactory().openSession();
+			
+			try {
+				System.out.println("ok");
+				re = sqlSession.getMapper(CustomerMapper.class).reviewInsert(ReviewVO);
+				
+				if(re>0) {
+					sqlSession.commit();
+					System.out.println("INSERT SUCCESS");
+				}else {
+					sqlSession.rollback();
+					System.out.println("INSERT FAIL");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(sqlSession != null) {
+					sqlSession.close();
+				}
+			}
+			return re;
+		}
+		
+		//review detail
+		@Override
+		public ReviewVO reviewDetail(String rv_num) {
+			SqlSession sqlSession = getSqlSessionFactory().openSession();
+			ReviewVO reviewvo = null;
+			try {
+				reviewvo = sqlSession.getMapper(CustomerMapper.class).reviewDetail(rv_num);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(sqlSession !=null) {
+					sqlSession.close();
+				}
+			}
+			return reviewvo;
+		}
+		
+		//review list
+		@Override
+		public List<ReviewVO> reviewList(String cus_num){
+			SqlSession sqlSession = getSqlSessionFactory().openSession();
+			List<ReviewVO> list = null;
+			
+			try {
+				list = sqlSession.getMapper(CustomerMapper.class).reviewList(cus_num);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(sqlSession != null) {
+					sqlSession.close();
+				}
+			}
+			return list;
+		}
+		
+		//review update
+		@Override
+		public int reviewUpdate(ReviewVO ReviewVO) {
+			int re =-1;
+			SqlSession sqlSession = getSqlSessionFactory().openSession();
+			
+			try {
+				re = sqlSession.getMapper(CustomerMapper.class).reviewUpdate(ReviewVO);
+				
+				if(re>0) {
+					sqlSession.commit();
+					System.out.println("UPDATE SUCCESS");
+				}else {
+					sqlSession.rollback();
+					System.out.println("UPDATE FAIL");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(sqlSession !=null) {
+					sqlSession.close();
+				}
+			}
+			
+			return re;
+		}
+		
+		
+		
+		//review delete
+		@Override
+		public int reviewDelete(String rv_num) {
+			int re = -1;
+			SqlSession sqlSession = getSqlSessionFactory().openSession();
+			
+			try {
+				re = sqlSession.getMapper(CustomerMapper.class).reviewDelete(rv_num);
+				
+				if(re>0) {
+					sqlSession.commit();
+					System.out.println("DELETE SUCCESS");
+				}else {
+					sqlSession.rollback();
+					System.out.println("DELETE FAIL");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(sqlSession != null) {
+					sqlSession.close();
+				}
+			}
+			return re;
+		}
 	
 }

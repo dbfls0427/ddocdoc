@@ -10,6 +10,7 @@ import ddocdoc.vo.PayVO;
 import ddocdoc.vo.PharResVO;
 import ddocdoc.vo.PresDetailVO;
 import ddocdoc.vo.PresVO;
+import ddocdoc.vo.ReviewVO;
 
 public interface CustomerMapper {
 	int insertCustomer(CustomerVO customer);
@@ -93,5 +94,20 @@ public interface CustomerMapper {
 	
 	// 약국 대기번호 조회
 	int detailPharWait(String phar_num);
+	
+	//review create
+	int reviewInsert(ReviewVO ReviewVO);
+		
+	//review detail
+	ReviewVO reviewDetail(String rv_num);
+		
+	//review info list
+	List<ReviewVO> reviewList(String cus_num);
+		
+	//review update
+	int reviewUpdate(ReviewVO ReviewVO);
+		
+	//review delete
+	int reviewDelete(String rv_num);
 	
 }

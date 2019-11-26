@@ -20,6 +20,7 @@
 		<typeAlias type="ddocdoc.vo.MedicineVO" alias="MedicineVO"/>
 		<typeAlias type="ddocdoc.vo.PayVO" alias="PayVO"/>
 		<typeAlias type="ddocdoc.vo.PharResVO" alias="PharResVO"/>
+		<typeAlias type="ddocdoc.vo.ReviewVO" alias="ReviewVO"/>
 	</typeAliases>
 	
 	<environments default="development">

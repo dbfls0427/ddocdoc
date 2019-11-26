@@ -176,6 +176,46 @@
 	select phar_wait from dd_pharmacy where phar_num = #{phar_num}
 	</select>
 		
+	<!--리뷰 등록-->
+	<insert id="reviewInsert" parameterType="ReviewVO">
+		insert into dd_review (rv_num, rv_title, rv_writer, rv_content, rv_date, rv_count, cus_num)
+		values (
+		'R00' || review_seq.nextval
+		, #{rv_title, jdbcType=VARCHAR}
+		, #{rv_writer, jdbcType=VARCHAR}
+		, #{rv_content, jdbcType=VARCHAR}
+		, sysdate
+		, 0 
+		, #{cus_num})
+	</insert>
+	
+	<!--리뷰 상세-->
+	<select id="reviewDetail" resultType="ReviewVO" parameterType="string">
+		select*from dd_review
+		where rv_num = #{rv_num}
+	</select>
+	
+	
+	<!--리뷰 리스트 -->
+	<select id="reviewList" resultType="ReviewVO" parameterType="String">
+		select*from dd_review
+		where cus_num=#{cus_num}
+	</select>
+	
+	<!--리뷰 수정  -->
+	<update id="reviewUpdate" parameterType="ReviewVO">
+		update dd_review
+		set rv_title = #{rv_title, jdbcType=VARCHAR}, rv_writer =#{rv_writer, jdbcType=VARCHAR}, rv_content = #{rv_content, jdbcType=VARCHAR}
+		where rv_num = #{rv_num}	
+	</update>
+	
+	<!--리뷰 삭제-->
+	<delete id="reviewDelete" parameterType="String">
+		delete from dd_review
+		where rv_num = #{rv_num}
+	</delete>
+		
+		
 </mapper>
 
 

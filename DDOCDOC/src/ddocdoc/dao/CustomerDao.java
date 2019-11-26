@@ -2,6 +2,7 @@ package ddocdoc.dao;
 
 import java.util.List;
 
+import ddocdoc.vo.ReviewVO;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
@@ -95,4 +96,19 @@ public interface CustomerDao {
 	
 	// 약국 대기번호 조회
 	public int detailPharWait(String phar_num);
+	
+	//review create
+	public int reviewInsert(ReviewVO ReviewVo);
+		
+	//review detail
+	public ReviewVO reviewDetail(String rv_num);
+		
+	//review list
+	public List<ReviewVO> reviewList(String cus_num);
+		
+	//review update
+	public int reviewUpdate(ReviewVO ReviewVO);
+		
+	//review delete
+	public int reviewDelete(String rv_num);
 }

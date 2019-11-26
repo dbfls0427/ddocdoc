@@ -10,37 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ddocdoc.action.Action;
-import ddocdoc.action.ActionForward;
-import ddocdoc.action.AdminModeAction;
-import ddocdoc.action.ChildInsertFormAction;
-import ddocdoc.action.ConfirmAction;
-import ddocdoc.action.ConfirmFormAction;
-import ddocdoc.action.CustomerDeleteAction;
-import ddocdoc.action.CustomerUpdateAction;
-import ddocdoc.action.CustomerUpdateFormAction;
-import ddocdoc.action.DetailCustomerAction;
-import ddocdoc.action.HospitalResAction;
-import ddocdoc.action.HospitalResDeleteAction;
-import ddocdoc.action.HospitalResDetailAction;
-import ddocdoc.action.HospitalResFormAction;
-import ddocdoc.action.HospitalResSmsAction;
-import ddocdoc.action.HospitalListAction;
-import ddocdoc.action.JoinAction;
-import ddocdoc.action.JoinFormAction;
-import ddocdoc.action.LoginAction;
-import ddocdoc.action.LoginFormAction;
-import ddocdoc.action.LoginSuccessAction;
-import ddocdoc.action.LogoutAction;
-import ddocdoc.action.MapAction;
-import ddocdoc.action.MyPageFormAction;
-import ddocdoc.action.PayAction;
-import ddocdoc.action.PharResAction;
-import ddocdoc.action.PharResDetailAction;
-import ddocdoc.action.PharResFormAction;
-import ddocdoc.action.PharmacyDetailAction;
-import ddocdoc.action.PresDetailAction;
-import ddocdoc.action.ResListAction;
+import ddocdoc.action.*;
+
+
 
 @WebServlet("/Customer/*")
 public class CustomerController extends HttpServlet {
@@ -266,7 +238,57 @@ public class CustomerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}
+    	}else if(command.equals("reviewInsertForm.do")) {
+			action = new ReviewInsertFormAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("reviewInsert.do")) {
+			System.out.println("aaa");
+			action = new ReviewInsertAction();
+			try {
+				forward = action.execute(request,response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("reviewList.do")) {
+			action = new ReviewListAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("reviewDetail.do")) {
+			action = new ReviewDetailAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("reviewUpdateForm.do")) {
+			action = new ReviewUpdateFormAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("reviewUpdate.do")){
+			action = new ReviewUpdateAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if (command.equals("reviewDelete.do")) {
+			action = new ReviewDeleteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
     	
     	
     	
