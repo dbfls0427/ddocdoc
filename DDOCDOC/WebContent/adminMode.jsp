@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,8 +17,7 @@
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 	
-<head>
-<meta charset="UTF-8">
+
 
 <style type="text/css">
 .bg-gradient-warning {
@@ -72,7 +70,7 @@
     <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminModeAction.do">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/DDOCDOC/Customer/adminModeAction.do">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -84,7 +82,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="adminModeAction.do">
+        <a class="nav-link" href="/DDOCDOC/Customer/adminModeAction.do">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -161,9 +159,9 @@
           </button>
 
           <!-- Topbar Search -->
-          <a href="/DDOCDOC/index.html" >
+          <span>
               <img src="../images/logo.png" alt="logo">
-          </a>
+          </span>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
