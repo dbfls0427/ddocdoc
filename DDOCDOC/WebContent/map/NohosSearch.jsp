@@ -103,10 +103,9 @@
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-                        <a href="index.html" >
-                            <img src="images/logo.png" alt="">
-                        </a>
-                    </div>
+					<a href="success.do"> <img src="../images/logo.png" alt="">
+					</a>
+				</div>
                     <!-- /logo -->
                 </div>
                 <!-- main menu -->
@@ -114,10 +113,10 @@
                     <div class="main-menu">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="index.html" >Home</a>
+                                <a href="../index.html" >Home</a>
                             </li>
-                            <li><a href="/DDOCDOC/map/hosSearch.jsp">병원찾기</a></li>
-                            <li><a href="child/childPleaseLogin.do">아이관리</a></li>
+                            <li><a href="/DDOCDOC/map/NohosSearch.jsp">병원찾기</a></li>
+                            <li><a href="../child/childPleaseLogin.do">아이관리</a></li>
                               <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
@@ -529,7 +528,7 @@ function displayPagination(pagination) {
 // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
 // 인포윈도우에 장소명을 표시합니다
 function displayInfowindow(marker, title, posit) {
-	 var content = '<div style="padding:5px;">'+title+'<br></div>';
+	 var content = '<div style="padding:5px;">'+title+'<br><a href="../Customer/hos_resform.do?hos_name='+title+'&cus_num=${cus_num}" style="color:blue" target="_blank">접수하기</a> <a href="https://map.kakao.com/link/to/'+title+','+posit.getLat()+','+posit.getLng()+'" style="color:blue" target="_blank">길찾기</a></div>';
     infowindow.setContent(content);
     infowindow.open(map, marker);
 }
