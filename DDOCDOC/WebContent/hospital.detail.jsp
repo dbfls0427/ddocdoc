@@ -227,12 +227,12 @@
 							<thead class="thead-dark">
 								<tr>
 									<th style="width: 90px;">병원번호</th>
-									<th style="width: 90px;">병원종류</th>
+									<th style="width: 100px;">병원종류</th>
 									<th style="width: 280px;">병원이름</th>
 									<th style="width: 160px;">병원Tel.</th>
 									<th style="width: 240px;">병원주소</th>
 									<th style="width: 90px;">운영시간</th>
-									<th>병원정보사항</th>
+									<th style="width: 640px;">병원정보사항</th>
 								</tr>
 							</thead>
 							<tbody>
