@@ -56,19 +56,9 @@
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-	                    키워드 : <select name="keyword" id="keyword" onchange="changeSelect()">
-	           		<option value="병원">내 주변 병원</option>
-	           		<option value="소아청소년과 " selected="selected">소아청소년과</option>
-	           		<option value="이비인후과">이비인후과</option>
-	           		<option value="산부인과">산부인과</option>
-	           		<option value="내과">내과</option>
-	           		<option value="피부과">피부과</option>
-	           		<option value="정형외과">정형외과</option>
-	           		<option value="치과">치과</option>
-	           		<option value="안과">안과</option>
-	           		<option value="응급실">응급실</option>
+	                    키워드 : <select name="keyword" id="keyword">
+	           		<option value="소아청소년과" selected="selected">내 주변 소아과</option>
 	           </select>
-                    <!-- 키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> -->
                     <button type="submit">검색하기</button> 
                 </form>
             </div>
@@ -101,8 +91,8 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 	       
 	       var lat = position.coords.latitude; // 위도
 	       var lon = position.coords.longitude; // 경도
-
 	       geocoder.coord2RegionCode(lon, lat, callback);
+	    
 	           
 	     });
 	   
@@ -121,55 +111,13 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 	var callback = function(result, status){
 	    if(status === daum.maps.services.Status.OK){
 	    	var select = document.getElementById("keyword");
-	    	if(select.options[select.selectedIndex].value == '병원'){
-		    	select.options[select.selectedIndex].value = result[0].address_name + " 병원";
+		    	select.options[select.selectedIndex].value = result[0].address_name + " 소아청소년과";
 		    	//addr 값 넣어주기
 		    	addr = result[0].address_name;
-	    	}else if(select.options[select.selectedIndex].value == '소아청소년과'){
-	    		select.options[select.selectedIndex].value = result[0].address_name + " 소아청소년과";
-	    	}else if(select.options[select.selectedIndex].value == '이비인후과'){
-	    		select.options[select.selectedIndex].value = result[0].address_name + " 이비인후과";
-	    	}else if(select.options[select.selectedIndex].value == '산부인과'){
-	    		select.options[select.selectedIndex].value = result[0].address_name + " 산부인과";
-	    	}
-	    	searchPlaces();
-	    	//alert("전체보기 value : "+select.options[select.selectedIndex].value);
-	        //alert("지역명 : " + result[0].address_name);
-	        
+		    	searchPlaces();
 	    }
 	};
 
-	
-function changeSelect(){
-	
-	var select = document.getElementById("keyword");
-	if(select.options[select.selectedIndex].value == '병원'){
-    	select.options[select.selectedIndex].value = addr + " 병원";
-    	//addr 값 넣어주기
-    	alert("change select에서 addr:" + addr);
-	}else if(select.options[select.selectedIndex].value == '소아청소년과'){
-		select.options[select.selectedIndex].value = addr + " 소아청소년과";
-	}else if(select.options[select.selectedIndex].value == '이비인후과'){
-		select.options[select.selectedIndex].value = addr + " 이비인후과";
-	}else if(select.options[select.selectedIndex].value == '산부인과'){
-		select.options[select.selectedIndex].value = addr + " 산부인과";
-	}else if(select.options[select.selectedIndex].value == '내과'){
-		select.options[select.selectedIndex].value = addr + " 내과";
-	}else if(select.options[select.selectedIndex].value == '피부과'){
-		select.options[select.selectedIndex].value = addr + " 피부과";
-	}else if(select.options[select.selectedIndex].value == '정형외과'){
-		select.options[select.selectedIndex].value = addr + " 정형외과";
-	}else if(select.options[select.selectedIndex].value == '치과'){
-		select.options[select.selectedIndex].value = addr + " 치과";
-	}else if(select.options[select.selectedIndex].value == '안과'){
-		select.options[select.selectedIndex].value = addr + " 안과";
-	}else if(select.options[select.selectedIndex].value == '응급실'){
-		select.options[select.selectedIndex].value = addr + " 응급실";
-	}
-	//alert("선택한 value : "+select.options[select.selectedIndex].value);
-    //alert("지역명 : " + result[0].address_name);
-	
-}
 
 
 
@@ -184,7 +132,8 @@ searchPlaces();
 
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
-
+	
+	
 	//HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 	if (navigator.geolocation) {
 	   
@@ -227,11 +176,6 @@ function searchPlaces() {
 	     });
 	   
 	};
-	
-	
-	
-	
-	
     var keyword = document.getElementById('keyword').value;
     
 
@@ -289,7 +233,7 @@ function displayPlaces(places) {
         var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
             marker = addMarker(placePosition, i), 
             itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
-		
+
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
         // LatLngBounds 객체에 좌표를 추가합니다
         bounds.extend(placePosition);
@@ -300,9 +244,7 @@ function displayPlaces(places) {
         (function(marker, title) {
             kakao.maps.event.addListener(marker, 'mouseover', function() {
             	var posit = marker.getPosition();
-            	//marker.getPosition();
-            	
-                displayInfowindow(marker, title, posit);
+                displayInfowindow(marker, title,posit);
             });
 
             kakao.maps.event.addListener(marker, 'mouseout', function() {
@@ -310,12 +252,11 @@ function displayPlaces(places) {
             });
 
             itemEl.onmouseover =  function () {
-            	var posit = marker.getPosition();
-                displayInfowindow(marker, title, posit);
+                displayInfowindow(marker, title);
             };
 
             itemEl.onmouseout =  function () {
-                //infowindow.close();
+                infowindow.close();
             };
         })(marker, places[i].place_name);
 
@@ -417,7 +358,8 @@ function displayPagination(pagination) {
 // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
 // 인포윈도우에 장소명을 표시합니다
 function displayInfowindow(marker, title, posit) {
-    var content = '<div style="padding:5px;">'+title+'<br><a href="../Customer/hos_resform.do?hos_name='+title+'&cus_num=${cus_num}" style="color:blue" target="_blank">접수하기</a> <a href="https://map.kakao.com/link/to/'+title+','+posit.getLat()+','+posit.getLng()+'" style="color:blue" target="_blank">길찾기</a></div>';
+	 var content = '<div style="padding:5px;">'+title+'<br><a href="../Customer/pharResForm.do?phar_name='+title+'" style="color:blue" target="_blank">접수하기</a> <a href="https://map.kakao.com/link/to/'+title+','+posit.getLat()+','+posit.getLng()+'" style="color:blue" target="_blank">길찾기</a></div>';
+	
     infowindow.setContent(content);
     infowindow.open(map, marker);
 }
