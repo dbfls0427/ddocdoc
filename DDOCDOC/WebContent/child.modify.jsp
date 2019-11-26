@@ -164,7 +164,7 @@
             </div>
         </section>
 
-		<section id="forming" class="company-description" style="display: flex; justify-content: center;margin-top: 40px;">
+		<section id="forming" class="company-description" style="display: flex; justify-content: center;margin-top: 40px; font-size: 20px; margin-bottom: 70px;">
 			<form action="childUpdate.do" method="post" style="width: 500px;">
 				<input type="hidden" name="cus_num" value="${customer.cus_num }"><br>
 				<input type="hidden" name="ch_num" value="${ch_num }"><br>

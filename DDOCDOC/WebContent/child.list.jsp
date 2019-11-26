@@ -63,12 +63,13 @@ tr:nth-child(2n) {
   				background-color: #FFFFA5;
 			}
 #intro{
-	font-family: 'Stylish', sans-serif;
+	font-family: 'Jua', sans-serif;
 }
 #table1{
 font-family: 'Sunflower', sans-serif;
 }
-</style>       
+</style>   
+ <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">    
 <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">       
 </head>

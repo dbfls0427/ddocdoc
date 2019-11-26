@@ -9,6 +9,9 @@ public class InjectInsertFormAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
 		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		
 		String ch_num = request.getParameter("ch_num");
 		String inj_content = request.getParameter("inj_content");
 		String inj_info_name = request.getParameter("inj_info_name");

@@ -13,6 +13,9 @@ public class InjectUpdateAction implements Action {
 		ActionForward forward = new ActionForward();
 		InjectService service = InjectServiceImpl.getInstance();
 		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		
 		request.setCharacterEncoding("utf-8");
 		 response.setContentType("text/html;charset=UTF-8");
 		 

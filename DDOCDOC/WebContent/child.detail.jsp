@@ -52,8 +52,14 @@
 	/* font-family: 'Do Hyeon', sans-serif; */
 	font-family: 'Jua', sans-serif;
 }
-
-
+.btn-default {
+ 	background-color: #fff;
+    border-color: #dc8d27;
+    border-width: 2px;
+ }
+.panel-default {
+    border-color: #544423;
+}
 </style>
 
 </head>
@@ -181,14 +187,14 @@
 				<input type="hidden" name="cus_name" value="${cus_name}">
 				<input type="hidden" name="ch_num" value="${childVO.ch_num}">
 				<input type="hidden" name="ch_name" value="${childVO.ch_name}">
-				<input type = "submit" value="키 관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 50px;">
+				<input type = "submit" value="키 관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 30px; width: 140px;">
 			</form>
 			
 			<form action="/DDOCDOC/Inject/InjectListAction.do" method="post">
 				<input type="hidden" name="cus_name" value="${cus_name}">
 				<input type="hidden" name="ch_num" value="${childVO.ch_num}">
 				<input type="hidden" name="ch_name" value="${childVO.ch_name}">
-				<input type = "submit" value="접종관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 50px;">
+				<input type = "submit" value="접종관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 20px; width: 140px;">
 			</form>
 		
 		</section>

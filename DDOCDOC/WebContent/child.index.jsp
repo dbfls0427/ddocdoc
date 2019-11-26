@@ -43,7 +43,9 @@
         <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css">
         <!-- template main css file -->
         <link rel="stylesheet" href="css/style.css">
-        
+<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">      
+ <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">       
  <style type="text/css">
  a:link { color: black; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
@@ -51,14 +53,20 @@
  	font-family: 
  } */
  #intro,#intro2{
- 	font-family: 'Stylish', sans-serif;
+ 	font-family: 'Jua', sans-serif;
  }
 /*  #intro2{
  	 font-family: 'Sunflower', sans-serif;
  } */
+ button{
+ 	width : 175px;
+ }
+ .btn-default {
+ 	background-color: #fff;
+    border-color: #dc8d27;
+    border-width: 2px;
+ }
 </style>
-<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">      
 </head>
 <body>
 
@@ -162,13 +170,13 @@
         </section>
         
 	<section  class="company-description">
-		<label id="intro" style="margin-left: 38%; font-size: 25px;">쑥쑥 크는 우리아이 , 우리아이의 건강피드를 관리할 수 있어요!</label><br><br>
+		<label id="intro" style="margin-left: 36%; font-size: 25px;">쑥쑥 크는 우리아이 , 우리아이의 건강피드를 관리할 수 있어요!</label><br><br>
         <img src="images/child.PNG" style="margin-left: 34%">
 	</section>
      	
 	<section id="intro2" class="company-description" style=" display: flex; justify-content: center; margin-bottom: 80px; margin-top: 40px;">
-		<button class="btn btn-warning btn-lg kidsbtn" style="margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do?cus_name=${cus_name }&cus_num=${cus_num}" style="color:#FFF; font-size: 25px;">아이등록</a><br></button>
-		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF;"><a href="child/childList.do?cus_name=${cus_name }&cus_num=${cus_num}" style="font-size: 25px;">아이정보리스트</a></button>
+		<button class="btn btn-default btn-lg kidsbtn" style="width: 175px; margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do?cus_name=${cus_name }&cus_num=${cus_num}" style=" font-size: 25px;">아이등록</a><br></button>
+		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF; width: 175px"><a href="child/childList.do?cus_name=${cus_name }&cus_num=${cus_num}" style="font-size: 25px;">아이정보리스트</a></button>
 	</section>
 
 

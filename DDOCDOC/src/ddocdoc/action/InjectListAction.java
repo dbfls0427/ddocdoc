@@ -18,8 +18,10 @@ public class InjectListAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
-		InjectService service = new InjectServiceImpl().getInstance();
+		InjectService service = InjectServiceImpl.getInstance();
 		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		//접종 추천내역
 		List<InjectInfoVO> list = service.selectInjInfo();
 		List<String> injList = service.selectInjList(request);
