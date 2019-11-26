@@ -8,7 +8,7 @@ import ddocdoc.vo.HospitalVO;
 
 public class LoginSession {
 
-	public static HttpSession loginSession;
+	public static HttpSession loginSession = null;
 	private static CustomerVO customer = null;
 	
 	public void sessionInsert(HttpServletRequest request, CustomerVO cus) {

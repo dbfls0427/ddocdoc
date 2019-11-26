@@ -20,7 +20,7 @@
 	</tr>
 	
 	<tr>
-		<td><b>${reviewvo.rv_num }</b></td>
+		<td>${reviewvo.rv_num }</td>
 		<td>${reviewvo.rv_title }</td>
 		<td>${reviewvo.rv_writer }</td>
 		<td>${reviewvo.rv_content }</td>

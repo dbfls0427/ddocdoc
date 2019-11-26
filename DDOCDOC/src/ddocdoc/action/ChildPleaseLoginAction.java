@@ -8,31 +8,28 @@ import javax.servlet.http.HttpServletResponse;
 import ddocdoc.loginSession.LoginSession;
 import ddocdoc.vo.CustomerVO;
 
-public class HospitalResFormAction implements Action {
+public class ChildPleaseLoginAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
-		String cusNum = request.getParameter("cus_num");
-		String hosName = request.getParameter("hos_name");
 		
 		
 		if(LoginSession.loginSession == null || LoginSession.loginSession.getAttribute("customer") == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('로그인이 필요합니다.'); location.href='loginForm.do';</script>");
+			out.println("<script>alert('로그인이 필요합니다.'); location.href='../Customer/loginForm.do';</script>");
 			return null;
 		}else {
-			request.setAttribute("cus_num", cusNum);
-			request.setAttribute("hos_name", hosName);
+			String cus_name = ((CustomerVO)LoginSession.loginSession.getAttribute("customer")).getCus_name();
+			request.setAttribute("cus_name", cus_name);
 			
-			forward.setPath("/hos_res/hos_res.jsp");
+			forward.setPath("/child.index.jsp?cus_name=" + cus_name);
 			forward.setRedirect(false);
 			
 			
 			return forward;
 		}
-		
 		
 	}
 

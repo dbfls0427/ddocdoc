@@ -16,8 +16,10 @@ import ddocdoc.action.ChildDetailAction;
 import ddocdoc.action.ChildInsertAction;
 import ddocdoc.action.ChildInsertFormAction;
 import ddocdoc.action.ChildListAction;
+import ddocdoc.action.ChildPleaseLoginAction;
 import ddocdoc.action.ChildUpdateAction;
 import ddocdoc.action.ChildUpdateFormAction;
+import ddocdoc.action.LoginFormAction;
 
 @WebServlet("/child/*")
 public class ChildController extends HttpServlet {
@@ -80,6 +82,13 @@ public class ChildController extends HttpServlet {
 			}
 		} else if(command.equals("childUpdate.do")) {
 			action = new ChildUpdateAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("childPleaseLogin.do")) {
+			action = new ChildPleaseLoginAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
