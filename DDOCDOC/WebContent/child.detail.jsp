@@ -50,10 +50,9 @@
 	 /* font-family: 'Jua', sans-serif;  */
 	 /* font-family: 'Sunflower', sans-serif;  */
 	/* font-family: 'Do Hyeon', sans-serif; */
-}
-#btn{
 	font-family: 'Jua', sans-serif;
 }
+
 
 </style>
 
@@ -167,7 +166,7 @@
         <section  class="company-description" style="margin-top: 0;">
 		 <div style="display: flex; justify-content: center; width: 500px; padding: 30px; margin-left: 37%;" class="panel panel-default">
 			 <img alt="" src="../images/dechild.jpg" style="width: 180px; height: 150px;">
-			  <div style="font-size: 25px; margin-left: 20px; font-weight: 600;" id="childIntro">
+			  <div style="font-size: 25px; margin-left: 20px; font-weight: 500;" id="childIntro">
 						이름 : ${childVO.ch_name} <br>
 						나이 : ${childVO.ch_age} <br>
 						생일 : ${childVO.ch_birth}<br>
