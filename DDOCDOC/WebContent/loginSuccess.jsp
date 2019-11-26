@@ -225,7 +225,7 @@ ${customer.cus_name }
                         <p>
                             Lorem ipsum dolor sit amet.
                         </p>
-                        <form action="/DDOCDOC/child.index.html" method = "post">
+                        <form action="/DDOCDOC/child.index.jsp" method = "post">
 							<input type = "submit" value="아이관리" class="btn btn-info">
 						</form>
                     </figcaption>
