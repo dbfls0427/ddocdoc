@@ -164,7 +164,10 @@
 				<label>나이</label><br>
 				<input type="text" name="ch_age" value="${childvo.ch_age }" class="form-control"><br>
 				<label>생년월일</label><br>
-				<input type="text" name="ch_birth" value="${childvo.ch_birth }" id="datepicker_kid2" class="form-control"><br>
+				<div style="display: flex">
+					<input type="text" name="ch_birth" value="${childvo.ch_birth }" id="datepicker_kid2" class="form-control"  style="width: 450px; margin-right: 10px;"><br>
+				</div>
+				<br>
 				<label>성별</label><br>
 				<input type="text" name="ch_gender" value="${childvo.ch_gender }" class="form-control"><br>
 				<input type="submit" value="저장" class="btn btn-warning">
@@ -174,7 +177,7 @@
 
 
 
-<script>
+<script type="text/javascript">
 var j = jQuery.noConflict();
 j(document).ready(function() {
            //모든 datepicker에 대한 공통 옵션 설정
@@ -202,6 +205,7 @@ j(document).ready(function() {
            
            //From의 초기값을 오늘 날짜로 설정
            j('#datepicker_kid2').datepicker('setDate', 'today');
+})
 </script>
 
 

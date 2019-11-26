@@ -53,8 +53,12 @@
  #intro{
  	font-family: 'Stylish', sans-serif;
  }
+ #intro2{
+ 	 font-family: 'Sunflower', sans-serif;
+ }
 </style>
 <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">      
 </head>
 <body>
 
@@ -153,7 +157,7 @@
         <img src="images/child.PNG" style="margin-left: 34%">
 	</section>
      	
-	<section id="intro" class="company-description" style=" display: flex; justify-content: center; margin-bottom: 80px; margin-top: 40px;">
+	<section id="intro2" class="company-description" style=" display: flex; justify-content: center; margin-bottom: 80px; margin-top: 40px;">
 		<button class="btn btn-warning btn-lg kidsbtn" style="margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do?cus_name=${cus_name }&cus_num=${cus_num}" style="color:#FFF; font-size: 25px;">아이등록</a><br></button>
 		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF;"><a href="child/childList.do?cus_name=${cus_name }&cus_num=${cus_num}" style="font-size: 25px;">아이정보리스트</a></button>
 	</section>

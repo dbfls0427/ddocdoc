@@ -155,7 +155,7 @@
 		<input type="text" name="ch_name" class="form-control"><br>
 		<label>나이</label><br>
 		<input type="text" name="ch_age" class="form-control"><br>
-		<label>생일</label><br>
+		<label>생년월일</label><br>
 		<div style="display: flex">
 			<input type="text" name="ch_birth" id="datepicker_kid" class="form-control" style="width: 450px; margin-right: 10px;"><br>
 		</div>

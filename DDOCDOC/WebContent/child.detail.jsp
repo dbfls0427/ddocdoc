@@ -42,13 +42,14 @@
         
         <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">      
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
-
+				<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
 <style type="text/css">
  a:link { color : black; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
 #childIntro, #btn{
 	 /* font-family: 'Jua', sans-serif;  */
-	font-family: 'Sunflower', sans-serif;
+	 font-family: 'Sunflower', sans-serif; 
+	/* font-family: 'Do Hyeon', sans-serif; */
 }
 
 
@@ -131,7 +132,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>아이등록</h2>
+                            <h2>아이관리</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="/DDOCDOC/Customer/success.do">
@@ -167,15 +168,17 @@
 		<section id="btn" class="company-description" style="display: flex; justify-content: center; margin-bottom: 80px; margin-top: 50px; margin-left: 30px;">
 		
 			<form action="/DDOCDOC/Height/HeightList.do" method="post">
+				<input type="hidden" name="cus_name" value="${cus_name}">
 				<input type="hidden" name="ch_num" value="${childVO.ch_num}">
 				<input type="hidden" name="ch_name" value="${childVO.ch_name}">
-				<input type = "submit" value="키 관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 50px; font-weight: 700">
+				<input type = "submit" value="키 관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 50px;">
 			</form>
 			
 			<form action="/DDOCDOC/Inject/InjectListAction.do" method="post">
+				<input type="hidden" name="cus_name" value="${cus_name}">
 				<input type="hidden" name="ch_num" value="${childVO.ch_num}">
 				<input type="hidden" name="ch_name" value="${childVO.ch_name}">
-				<input type = "submit" value="접종관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 50px; font-weight: 700">
+				<input type = "submit" value="접종관리" class="btn btn-default btn-lg" style="font-size: 30px; margin-right: 50px;">
 			</form>
 		
 		</section>

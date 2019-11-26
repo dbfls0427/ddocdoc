@@ -164,7 +164,7 @@ font-family: 'Sunflower', sans-serif;
         </section>
         
         <label id="intro" style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 0; font-size: 24px;">아이의 이름을 눌러 건강피드를 관리해보세요!</label><br>
-        <section  class="company-description" style="display: flex; justify-content: center; margin-top: 15px;">
+        <section  class="company-description" style="display: flex; justify-content: center; margin-top: 15px; margin-bottom: 80px;">
         	<div>
 	        	<p class="p">MyChild</p>
 					<table class="table table-hover" align="center" style="width: 400px; text-align: center; font-size: 17px; margin-bottom: 0;font-weight: 600;" id = "table1">
