@@ -103,7 +103,7 @@
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-					<a href="success.do"> <img src="../images/logo.png" alt="">
+					<a href="../index.html"> <img src="../images/logo.png" alt="">
 					</a>
 				</div>
                     <!-- /logo -->
@@ -121,11 +121,11 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="Customer/detailCustomer.do">QR코드 발급</a></li>
+                                        <li><a href="../Customer/detailCustomer.do">QR코드 발급</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="Customer/loginForm.do">로그인</a></li>
+                            <li><a href="../Customer/loginForm.do">로그인</a></li>
                         </ul>
                     </div>
                 </nav>
