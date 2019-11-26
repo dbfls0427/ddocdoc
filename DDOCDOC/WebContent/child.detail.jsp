@@ -48,10 +48,12 @@
  a:visited { color: black; text-decoration: none;}
 #childIntro, #btn{
 	 /* font-family: 'Jua', sans-serif;  */
-	 font-family: 'Sunflower', sans-serif; 
+	 /* font-family: 'Sunflower', sans-serif;  */
 	/* font-family: 'Do Hyeon', sans-serif; */
 }
-
+#btn{
+	font-family: 'Jua', sans-serif;
+}
 
 </style>
 

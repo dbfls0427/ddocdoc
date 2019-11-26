@@ -50,12 +50,12 @@
 /*  .kidsbtn{
  	font-family: 
  } */
- #intro{
+ #intro,#intro2{
  	font-family: 'Stylish', sans-serif;
  }
- #intro2{
+/*  #intro2{
  	 font-family: 'Sunflower', sans-serif;
- }
+ } */
 </style>
 <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
  <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">      
