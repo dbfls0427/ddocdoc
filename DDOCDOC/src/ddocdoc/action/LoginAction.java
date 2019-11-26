@@ -1,5 +1,7 @@
 package ddocdoc.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,16 +33,18 @@ public class LoginAction implements Action {
 				request.setAttribute("customer", (CustomerVO)LoginSession.loginSession.getAttribute("customer"));
 				forward.setPath("adminModeAction.do");
 				forward.setRedirect(true);
+				return forward;
 			}
 		} else {
-			forward.setPath("/loginForm.jsp");
-			System.out.println("로그인 실패");
-			forward.setRedirect(false);
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('아이디와 비밀번호가 틀립니다.'); location.href='loginForm.do';</script>");
+			return null;
 		}
 		
-		
-		
 		return forward;
+		
+		
 	}
 
 }

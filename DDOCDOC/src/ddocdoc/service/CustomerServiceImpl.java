@@ -330,4 +330,10 @@ public class CustomerServiceImpl implements CustomerService {
 	public int detailHits(String rv_num) {
 		return dao.detailHits(rv_num);
 	}
+	
+	// 예약 접수 확인
+	@Override
+	public String checkResAcpt(String hos_res_num) {
+		return dao.checkResAcpt(hos_res_num);
+	}
 }

@@ -1,5 +1,7 @@
 package ddocdoc.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,7 +23,6 @@ public class HospitalResAction implements Action {
 		String hos_name = request.getParameter("hos_name");
 		String cus_num = request.getParameter("cus_num");
 		
-		System.out.println("HospitalResAction 에서 " + hos_name);
 		
 		String hos_num = sc.selectHosNum(hos_name);
 		
@@ -32,21 +33,27 @@ public class HospitalResAction implements Action {
 		res.setHos_res_date(request.getParameter("res_date"));
 		res.setHos_res_time(request.getParameter("res_time"));
 		res.setHos_acpt("예약 접수 대기 중");
-		System.out.println("cus");
 		res.setCus_num(cus_num);
 		res.setHos_num(hos_num);
-		
 		int re = sc.insertHospitalRes(res);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("<script>alert('예약이 완료되었습니다.'); location.href='success.do';</script>");
+		return null;
 		
 		
-		forward.setPath("/loginSuccess.jsp");
-		forward.setRedirect(false);
 		
 		
 		
-		
-		
-		return forward;
+		/*
+		 * forward.setPath("/loginSuccess.jsp"); forward.setRedirect(false);
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * return forward;
+		 */
 	}
 
 }

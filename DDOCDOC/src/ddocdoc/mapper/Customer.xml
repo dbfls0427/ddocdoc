@@ -226,6 +226,12 @@
 	<select id="detailHits" parameterType="String" resultType="int">
 		select rv_count from dd_review where rv_num=#{rv_num}
 	</select>
+	
+	<!-- 예약 접수 확인 -->
+	<select id="checkResAcpt" parameterType="String" resultType="String">
+		select hos_res_acpt from dd_hos_res where hos_res_num=#{hos_res_num}
+	</select>
+		
 		
 </mapper>
 

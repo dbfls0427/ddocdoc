@@ -116,4 +116,7 @@ public interface CustomerMapper {
 	// 게시글 조회 수 조회
 	int detailHits(String rv_num);
 	
+	// 예약 접수 확인
+	String checkResAcpt(String hos_res_num);
+	
 }

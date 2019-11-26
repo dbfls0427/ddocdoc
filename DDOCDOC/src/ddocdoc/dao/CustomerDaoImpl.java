@@ -250,6 +250,9 @@ public class CustomerDaoImpl implements CustomerDao{
 		int count = 0;
 		try {
 			count = session.getMapper(CustomerMapper.class).detailWait(hos_res_num);
+			if(count == 0) {
+				return 0;
+			}
 			System.out.println("다오에서 : " + count);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -748,6 +751,23 @@ public class CustomerDaoImpl implements CustomerDao{
 				}
 			}
 			return count;
+		}
+		
+		// 예약 접수 확인
+		@Override
+		public String checkResAcpt(String hos_res_num) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			String check = null;
+			try {
+				check = session.getMapper(CustomerMapper.class).checkResAcpt(hos_res_num);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(session != null) {
+					session.close();
+				}
+			}
+			return check;
 		}
 	
 }
