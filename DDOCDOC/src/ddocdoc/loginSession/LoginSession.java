@@ -10,11 +10,21 @@ public class LoginSession {
 
 	public static HttpSession loginSession = null;
 	private static CustomerVO customer = null;
+	public static boolean confirm = false;
 	
 	public void sessionInsert(HttpServletRequest request, CustomerVO cus) {
 		loginSession = request.getSession();
 		customer = cus;
 		loginSession.setAttribute("customer", customer);
 	}
+
+	public static boolean isConfirm() {
+		return confirm;
+	}
+
+	public static void setConfirm(boolean confirm) {
+		LoginSession.confirm = confirm;
+	}
+	
 	
 }

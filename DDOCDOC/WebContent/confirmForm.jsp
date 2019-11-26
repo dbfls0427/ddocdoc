@@ -15,12 +15,12 @@
 
 </head>
 <body>
-	<form action="Customer/confirm.do" method = "post">
+	<form action="Customer/confirmaction.do" method = "post">
 	<input type = "submit" value = "인증번호 발급"> 
 	</form>
 	
 	
-	<form action="confirmaction.do" method = "post">
+	<form action="confirm.do" method = "post">
 		<input type = "text" name = "confirm">
 		<input type = "submit" value = "인증하기">
 	

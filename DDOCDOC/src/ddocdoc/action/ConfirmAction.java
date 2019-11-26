@@ -5,31 +5,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.service.CustomerService;
 import ddocdoc.service.CustomerServiceImpl;
+import ddocdoc.vo.ConfirmVO;
 
 public class ConfirmAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
+		CustomerService sc = CustomerServiceImpl.getInstance();
 		
-		String confirm = request.getParameter("confirm");
+		sc.confirmNumber();
 		
-		if(CustomerServiceImpl.confirm.getConfirmNum().equals(confirm)) {
-			CustomerServiceImpl.confirm.setCheck(true);
-		}
-		
-		if(CustomerServiceImpl.confirm.isCheck()) {
-			System.out.println("confirm 성공");
-			request.setAttribute("confirm", CustomerServiceImpl.confirm);
-			forward.setPath("/confirmForm.jsp");
-			forward.setRedirect(false);
-		}else{
-			System.out.println("confirm 실패");
-			request.setAttribute("confirm", CustomerServiceImpl.confirm);
-			forward.setPath("/confirmForm.jsp");
-			forward.setRedirect(false);
-		}
-		
+		forward.setPath("/confirmForm.jsp");
+		forward.setRedirect(false);
 		
 		return forward;
 	}

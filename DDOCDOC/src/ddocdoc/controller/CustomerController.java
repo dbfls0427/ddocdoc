@@ -77,7 +77,7 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("confirm.do")) {
     		System.out.println("controller confirm");
-    		action = new ConfirmFormAction();
+    		action = new ConfirmRealAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

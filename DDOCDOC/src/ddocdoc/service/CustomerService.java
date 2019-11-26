@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import ddocdoc.vo.ConfirmVO;
 import ddocdoc.vo.CustomerVO;
 import ddocdoc.vo.HospitalResVO;
 import ddocdoc.vo.HospitalVO;
@@ -22,7 +23,10 @@ public interface CustomerService {
 
 	// 인증번호
 	public void confirmNumber();
-
+	
+	// get confirm
+	public ConfirmVO getConfirm();
+	
 	// 대기번호 인증
 	public void hospitalResSms(int count);
 

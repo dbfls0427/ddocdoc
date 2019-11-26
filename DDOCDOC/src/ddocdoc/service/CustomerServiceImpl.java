@@ -26,8 +26,10 @@ import ddocdoc.service.Coolsms;
 public class CustomerServiceImpl implements CustomerService {
 	private static CustomerServiceImpl sc = new CustomerServiceImpl();
 	private static CustomerDao dao;
-	LoginSession session = new LoginSession(); // 로그인 세션 객체 생성
-	public static ConfirmVO confirm;
+	LoginSession session;// 로그인 세션 객체 생성
+	ConfirmVO confirm = null;
+	String confirmNum;
+
 	public static boolean check = true;
 
 	public static CustomerServiceImpl getInstance() {
@@ -51,6 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
 		CustomerVO customer = dao.loginCustomer(login);
 
 		if (customer != null) {
+			session = new LoginSession();
 			session.sessionInsert(request, customer);
 		} else {
 			return null;
@@ -71,12 +74,17 @@ public class CustomerServiceImpl implements CustomerService {
 			numStr += ran;
 		}
 
-		System.out.println("서비스에서" + numStr);
 		sendSMS(numStr, "01087327595");
-
+		confirmNum = numStr;
 		confirm = new ConfirmVO();
-		confirm.setConfirmNum(numStr);
-
+		confirm.setConfirmNum(confirmNum);
+	}
+	
+	// get confirm
+	@Override
+	public ConfirmVO getConfirm(){
+		
+		return confirm;
 	}
 
 	// 대기번호 문자 인증
