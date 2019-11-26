@@ -212,77 +212,89 @@
         </nav>
         <!-- End of Topbar -->
         
-        <div id="wrapContent" style="padding: 15px 0 20px 50px;">
-	        <!-- Content Row -->
-	          <div class="row">
-	          	<h3>처방전 등록</h3>
-	          </div>
-	          
-			<div class="row">
-				<!-- DataTales Example -->
-				<div class="card shadow mb-4" style="width:30%;">
-					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-primary">약 리스트</h6>
-					</div>
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table table-sm">
-								<thead>
-									<tr>
-										<th scope="col">#약번호</th>
-										<th scope="col">약이름</th>
-									</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="med" items="${medicinevo }">
-										<tr>
-											<td>${med.med_num }</td>
-											<td>${med.med_name }</td>
-										</tr>
-										</c:forEach>
-								</tbody>
-							</table>
+        <div id="wrapContent" style="padding:0 10px;">
+        	<div style="padding: 15px 0 20px 50px;">
+		        <!-- Content Row -->
+				<div class="row">
+					<h3>처방전 등록</h3>
+				</div>
+		          
+				<div class="row">
+					<!-- DataTales Example -->
+					<div class="card shadow mb-4" style="width:30%;">
+						<div class="card-header py-3">
+							<h6 class="m-0 font-weight-bold text-primary">약 리스트</h6>
 						</div>
-					</div>
-	       		</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-sm">
+									<thead>
+										<tr>
+											<th scope="col">#약번호</th>
+											<th scope="col">약이름</th>
+										</tr>
+										</thead>
+										<tbody>
+											<c:forEach var="med" items="${medicinevo }">
+											<tr>
+												<td>${med.med_num }</td>
+												<td>${med.med_name }</td>
+											</tr>
+											</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</div>
+		       		</div>
+				</div> <!-- //row -->
+        	
+        	</div>
+			<hr>
+			
+
+
+			<div style="padding-left:40px;">
+				<h3 style="margin:30px 0 20px;">현재 처방전 약 등록 목록</h3>
+				<c:forEach var="medicine" items="${list}" varStatus="status">
+					<ul class="list-group list-group-flush" style="width:30%;">
+						<li class="list-group-item">${medicine.med_num } &nbsp&nbsp ${medName[status.index] }</li>
+					</ul>
+					 <!-- 
+					<table class="table table-bordered" style="width:30%;">
+						<tr style="background-color:#fff;">
+							<td scope="col">${medicine.med_num }</td>
+							<td scope="col">${medName[status.index] }</td>
+						</tr>
+					</table>
+						 -->
+				</c:forEach>
+				
+				<form action="/DDOCDOC/hospital/medInsert.do" method="post">
+					<input type = "hidden" name = "hos_res_num" value = "${hos_res_num }">
+					<input type = "hidden" name = "pres_num" value = "${pres_num}">		      
+					<div class="alert alert-warning" role="alert" style="width:30%;background-color: #fdf3d880;margin-top: 20px;">
+					
+						<table border="1">
+							<thead>
+								<tr>
+									<th scope="col">#약 번호 입력</th>
+									<th scope="col">약수량</th>
+									<th scope="col">추가</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><input type="text" name="med_num" placeholder="약 번호를 입력해주세요" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"></th>
+									<td><input type="text" name="med_count" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"></td>
+									<td><input type="submit" value="약 추가" class="btn btn-warning btn-sm"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!-- // alert alert-warning -->
+				</form> 
 			</div>
 		</div><!-- //wrapContent -->
-        
-
-
-
-<h1>약이름</h1>
-<c:forEach var="med" items="${medicinevo }">
-<span>${med.med_num }</span>&nbsp &nbsp<span>${med.med_name }</span><br>
-</c:forEach>
-
-<hr>
-<h1>현재 처방전 약 등록 목록</h1>
-<c:forEach var="medicine" items="${list}" varStatus="status">
-	<span>${medicine.med_num } &nbsp ${medName[status.index] }</span><br>
-</c:forEach>
-
-<br>
-<form action="/DDOCDOC/hospital/medInsert.do" method="post">
-	${hos_res_num }
-	<input type = "hidden" name = "hos_res_num" value = "${hos_res_num }">
-	<input type = "hidden" name = "pres_num" value = "${pres_num}">
-	
-	<table border="1">
-		<tr>
-			<td>약 번호 입력</td>
-			<td>약수량</td>
-			<td>추가</td>
-		</tr>
-		<tr>
-			<td><input type="text" name="med_num" placeholder="약 번호를 입력해주세요"></td>
-			<td><input type="text" name="med_count"></td>
-			<td><input type="submit" value="약 추가"></td>
-		</tr>
-	</table>
-	
-</form>
-
+		
 
 
 <!-- 
