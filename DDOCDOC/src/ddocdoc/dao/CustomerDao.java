@@ -111,4 +111,10 @@ public interface CustomerDao {
 		
 	//review delete
 	public int reviewDelete(String rv_num);
+	
+	// 조회 수 증가
+	public int increaseHits(String rv_num);
+	
+	// 게시글 조회 수 조회
+	public int detailHits(String rv_num);
 }

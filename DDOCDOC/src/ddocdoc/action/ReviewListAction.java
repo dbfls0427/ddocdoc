@@ -21,7 +21,10 @@ public class ReviewListAction implements Action {
 		String cus_num = ((CustomerVO)LoginSession.loginSession.getAttribute("customer")).getCus_num();
 		List<ReviewVO> list = service.reviewList(cus_num);
 		
+		
+		
 		request.setAttribute("list", list);
+		request.setAttribute("cus_name", ((CustomerVO)LoginSession.loginSession.getAttribute("customer")).getCus_name());
 		forward.setPath("/review/review_list.jsp");
 		forward.setRedirect(false);
 		

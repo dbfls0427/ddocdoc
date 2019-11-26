@@ -13,10 +13,11 @@ public class ReviewInsertAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		CustomerService service = CustomerServiceImpl.getInstance();
-		
-		service.reviewInsert(request);
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		
+		service.reviewInsert(request);
+		
 		
 		forward.setPath("reviewList.do");
 		forward.setRedirect(true);

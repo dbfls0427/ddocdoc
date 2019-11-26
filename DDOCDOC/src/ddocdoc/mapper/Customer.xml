@@ -216,6 +216,17 @@
 	</delete>
 		
 		
+	<!-- 조회 수 증가 -->
+	<update id="increaseHits" parameterType="String" >
+		update dd_review set rv_count = rv_count +1
+		where rv_num = #{rv_num}
+	</update>
+	
+	<!-- 게시글 조회 수 조회 -->
+	<select id="detailHits" parameterType="String" resultType="int">
+		select rv_count from dd_review where rv_num=#{rv_num}
+	</select>
+		
 </mapper>
 
 

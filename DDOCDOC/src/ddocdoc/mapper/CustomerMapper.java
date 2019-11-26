@@ -110,4 +110,10 @@ public interface CustomerMapper {
 	//review delete
 	int reviewDelete(String rv_num);
 	
+	// 조회 수 증가
+	int increaseHits(String rv_num);
+	
+	// 게시글 조회 수 조회
+	int detailHits(String rv_num);
+	
 }

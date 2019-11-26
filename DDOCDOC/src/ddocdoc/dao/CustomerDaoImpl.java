@@ -709,5 +709,45 @@ public class CustomerDaoImpl implements CustomerDao{
 			}
 			return re;
 		}
+		
+		
+		// 조회 수 증가
+		@Override
+		public int increaseHits(String rv_num) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			try {
+				re = session.getMapper(CustomerMapper.class).increaseHits(rv_num);
+				if(re>0) {
+					session.commit();
+				}else {
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(session != null) {
+					session.close();
+				}
+			}
+			return re;
+		}
+		
+		// 게시글 조회 수 조회
+		@Override
+		public int detailHits(String rv_num) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int count = 0;
+			try {
+				count = session.getMapper(CustomerMapper.class).detailHits(rv_num);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(session != null) {
+					session.close();
+				}
+			}
+			return count;
+		}
 	
 }

@@ -15,9 +15,12 @@
 <table border="1">
 
 	<tr>
-		<td>후기 번호</td>
-		<td>후기 제목</td>
-		<td>후기 작성자</td>
+		<td>글 번호</td>
+		<td>제목</td>
+		<td>작성자</td>
+		<td>작성일</td>
+		<td>조회수</td>
+		
 	</tr>
 	
 	<c:forEach var="reviewvo" items="${list }">
@@ -25,7 +28,9 @@
 			<tr>
 			<td>${reviewvo.rv_num }</td>
 			<td><a href="reviewDetail.do?seq=${reviewvo.rv_num }">${reviewvo.rv_title }</a></td>
-			<td>${reviewvo.rv_writer }</td>
+			<td>${cus_name }</td>
+			<td>${reviewvo.rv_date }</td>
+			<td>${reviewvo.rv_count }</td>
 	</c:forEach>
 
 

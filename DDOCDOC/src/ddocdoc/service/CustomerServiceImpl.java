@@ -279,7 +279,7 @@ public class CustomerServiceImpl implements CustomerService {
 		ReviewVO ReviewVO = new ReviewVO();
 
 		ReviewVO.setRv_title(request.getParameter("rv_title"));
-		ReviewVO.setRv_writer(request.getParameter("rv_writer"));
+		ReviewVO.setRv_writer(((CustomerVO)LoginSession.loginSession.getAttribute("customer")).getCus_name());
 		ReviewVO.setRv_content(request.getParameter("rv_content"));
 		ReviewVO.setCus_num(cus_num);
 
@@ -307,7 +307,7 @@ public class CustomerServiceImpl implements CustomerService {
 		ReviewVO reviewvo = new ReviewVO();
 		reviewvo.setRv_num(request.getParameter("rv_num"));
 		reviewvo.setRv_title(request.getParameter("rv_title"));
-		reviewvo.setRv_writer(request.getParameter("rv_writer"));
+		reviewvo.setRv_writer(((CustomerVO)LoginSession.loginSession.getAttribute("customer")).getCus_name());
 		reviewvo.setRv_content(request.getParameter("rv_content"));
 		int re = dao.reviewUpdate(reviewvo);
 		return re;
@@ -317,5 +317,17 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public int reviewDelete(String rv_num) {
 		return dao.reviewDelete(rv_num);
+	}
+	
+	// 조회 수 증가
+	@Override
+	public int increaseHits(String rv_num) {
+		return dao.increaseHits(rv_num);
+	}
+	
+	// 게시글 조회 수 조회
+	@Override
+	public int detailHits(String rv_num) {
+		return dao.detailHits(rv_num);
 	}
 }

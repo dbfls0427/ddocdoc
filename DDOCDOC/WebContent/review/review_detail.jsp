@@ -17,7 +17,6 @@
 		<td>내용</td>
 		<td>날짜</td>
 		<td>조회수</td>
-		<td>고객번호</td>
 	</tr>
 	
 	<tr>
@@ -27,7 +26,6 @@
 		<td>${reviewvo.rv_content }</td>
 		<td>${reviewvo.rv_date }</td>
 		<td>${reviewvo.rv_count }</td>
-		<td>${coustomer.cus_num }</td>
 	</tr>
 
 </table>

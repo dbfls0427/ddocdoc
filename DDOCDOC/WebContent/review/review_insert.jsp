@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 	<!-- cus_num request.setattribute해서 받아오기 -->
 	
 	리뷰제목<input type="text" name="rv_title"><br>
-	작성자<input type="text" name="rv_writer"><br>
+	작성자 : ${cus_name }<br>
 	내용<textarea rows="5" cols="13" name="rv_content"></textarea>
 	
 <!-- 	날짜<input type="date" id='currentDate' name="rv_date"><br>  -->

@@ -15,6 +15,7 @@ public class ReviewDetailAction implements Action {
 		CustomerService service = CustomerServiceImpl.getInstance();
 		
 		String rv_num = request.getParameter("seq");
+		int re = service.increaseHits(rv_num);
 		
 		ReviewVO reviewvo = service.reviewDetail(rv_num);
 		
