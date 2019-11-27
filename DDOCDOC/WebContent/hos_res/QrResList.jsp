@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+<link rel="icon" href="../favicon.ico">
 <title>똑닥-어드민모드</title>
 
   <!-- Custom fonts for this template-->
