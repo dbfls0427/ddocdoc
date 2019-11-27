@@ -220,14 +220,12 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-			<hr>
-        	<a href="/DDOCDOC/hospital/hospitalInsertForm.do" class="btn btn-secondary" role="button">병원정보 입력</a><br>
           </div>
           
           <!-- Content Row -->
-          <div class="row">
+          <div class="row" style="display: flex;justify-content: space-between;padding-bottom: 20px;">
           	<h3>병원정보 목록</h3>
+        	<a href="/DDOCDOC/hospital/hospitalInsertForm.do" class="btn btn-secondary" role="button">병원정보 입력</a><br>
           </div>
           
           <div class="row">
