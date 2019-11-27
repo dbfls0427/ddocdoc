@@ -50,7 +50,6 @@
 	.p{
 	font-family: fantasy;
 	font-size: 26px;
-	color : #ffe307;
 	}
 	
 

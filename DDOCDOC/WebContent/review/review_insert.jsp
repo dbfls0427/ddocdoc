@@ -155,7 +155,7 @@
 
 		<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
         	<div style="width: 600px">
-	        	<form action="joinAction.do" method = "post">
+	        	<form action="reviewInsert.do" method = "post">
 	        		<div class="form-group">
 						<label>리뷰제목</label>
 						<input type = "text" name="rv_title" class="form-control input-lg" placeholder="제목을 입력해주세요.">

@@ -166,11 +166,12 @@
 	<div id="joinformdiv">
 		<form action="reviewUpdate.do" method="post">
 			<div class="form-group">
+			<input type = "hidden" name = "rv_num" value="${reviewvo.rv_num }">
 				<label>제목</label> <input type="text"
-					class="form-control input-lg" value="${reviewvo.rv_num}" name="rv_num">
+					class="form-control input-lg" value="${reviewvo.rv_title}" name="rv_title">
 			</div>
 			<div class="form-group">
-				<label>내용</label> 내용<textarea row="5" cols="82" name="rv_content">${reviewvo.rv_content }</textarea>
+				<label>내용</label><textarea row="5" cols="82" name="rv_content">${reviewvo.rv_content }</textarea>
 			</div>
 			<hr>
 			<div class="wrapbtnform">

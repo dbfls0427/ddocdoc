@@ -9,7 +9,7 @@
 <body>
 <h1>약국 정보 수정</h1>
 <form action="/DDOCDOC/pharmacy/pharmacyUpdate.do" method="post">
-	약국번호<input type="text" value="${pharmacyvo.phar_num}" name="phar_num"><br>
+	<input type="hidden" value="${pharmacyvo.phar_num}" name="phar_num"><br>
 
 	약국이름 <input type="text" value="${pharmacyvo.phar_name}" name="phar_name"><br>
 	약국전화번호 <input type="text" value="${pharmacyvo.phar_tel}" name="phar_tel"><br>

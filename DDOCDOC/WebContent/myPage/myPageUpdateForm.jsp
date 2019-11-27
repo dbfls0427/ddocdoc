@@ -167,23 +167,23 @@
 			</div>
 			<div class="form-group">
 				<label>PW</label> <input type="text" name="cus_pw"
-					class="form-control input-lg" placeholder="Passward">
+					class="form-control input-lg" placeholder="Passward" value=${customer.cus_pw }>
 			</div>
 			<div class="form-group">
 				<label>이름</label> <input type="text" name="cus_name"
-					class="form-control input-lg" placeholder="이름">
+					class="form-control input-lg" placeholder="이름" value=${customer.cus_name }>
 			</div>
 			<div class="form-group">
 				<label>주소</label> <input type="text" name="cus_addr"
-					class="form-control input-lg" placeholder="주소">
+					class="form-control input-lg" placeholder="주소" value=${customer.cus_addr }>
 			</div>
 			<div class="form-group">
 				<label>이메일</label> <input type="text" name="cus_email"
-					class="form-control input-lg" placeholder="이메일">
+					class="form-control input-lg" placeholder="이메일" value=${customer.cus_email }>
 			</div>
 			<div class="form-group">
 				<label>생년월일</label> <input type="text" name="cus_birth"
-					class="form-control input-lg" placeholder="생년월일">
+					class="form-control input-lg" placeholder="생년월일" value=${customer.cus_birth }>
 			</div>
 			<hr>
 			<div class="wrapbtnform">
