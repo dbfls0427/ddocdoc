@@ -51,6 +51,10 @@
 	#forming{
 		font-family: 'Jua', sans-serif;
 	}
+	img{
+		    height: 32px;
+    		margin-left: 5px;
+	}
 </style>
 
 <title>똑닥</title>
@@ -155,7 +159,7 @@
                 </div>
             </div>
         </section>
-<section id="forming"  class="company-description" style="display: flex; justify-content: center; margin-bottom: 50px;">
+<section id="forming"  class="company-description" style="display: flex; justify-content: center; margin-bottom: 50px;font-size: 18px;">
 
 	<form action="/DDOCDOC/child/childInsert.do" method="post" style="width: 450px;">
 		<input type="hidden" name = "cus_name" value="${cus_name }">
@@ -171,7 +175,9 @@
 		<br>
 		<label>성별</label><br>
 		<input type="text" name="ch_gender" class="form-control" placeholder="남/여"><br>
-		<input type="submit" value="저장" class="btn btn-warning">
+		<div style="display: flex; justify-content: center">
+			<input type="submit" value="저장" class="btn btn-warning btn-lg">
+		</div>
 	</form>
 
 </section>
