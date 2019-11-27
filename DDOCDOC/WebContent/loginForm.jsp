@@ -102,7 +102,7 @@
                                 <a href="../index.html" >Home</a>
                             </li>
                              <li><a href="/DDOCDOC/map/NohosSearch.jsp">병원찾기</a></li>
-                            <li><a href="child/childPleaseLogin.do">아이관리</a></li>
+                            <li><a href="../child/childPleaseLogin.do">아이관리</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
