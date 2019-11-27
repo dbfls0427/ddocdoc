@@ -146,7 +146,8 @@ hr {
 	</div>
 	</section>
 	
-	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
+	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center; margin-bottom: 60px;">
+	
 		<div>
 			<p class = "p">Info</p>
 			<table class="table table-condensed" align="center" style="font-size: 18px;">
@@ -168,15 +169,14 @@ hr {
 			</table>
 			
 		<hr>
-		</div>
-	</section>
-	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
-		<div>
-			<textarea cols="71" rows="6" class = "autosize" onkeydown="resize(this)" onkeyup = "resize(this)" id = "led-text" charset = "UTF-8">${customer.cus_num},${customer.cus_id },${customer.cus_name },${customer.cus_addr },${customer.cus_email },${customer.cus_birth }</textarea><br>
+		<br>
+			<textarea cols="71" rows="6" class = "autosize" onkeydown="resize(this)" onkeyup = "resize(this)" id = "led-text" charset = "UTF-8" style="margin-left: 30px;">${customer.cus_num},${customer.cus_id },${customer.cus_name },${customer.cus_addr },${customer.cus_email },${customer.cus_birth }</textarea><br>
 				<button type = button  class="btn btn-warning btn-lg" id = "led-button1" onclick="button1_click()" style="margin-left: 198px; margin-top: 20px;">QR코드 발급</button>
-				<div id = "qrcode" style = "width:100px; height:100px; margin-top:160px; margin-left: 198px"></div> 
+		</div>
+	
+		<div id = "qrcode" style = "width:200px; height:200px; margin-top:160px; margin-left: 198px"></div> 
 				<script>
-				var qrcode = new QRCode(document.getElementById("qrcode"),{height : 100, width : 100});
+				var qrcode = new QRCode(document.getElementById("qrcode"),{height : 150, width : 150});
 			
 				function makeCode(){
 					var elText = document.getElementById("led-text");
@@ -198,8 +198,7 @@ hr {
 				}
 			
 			</script>
-		</div>
-	</section>
+		</section>
 	
 	<footer id="footer">
 	<div class="container">
