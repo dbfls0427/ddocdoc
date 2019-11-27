@@ -50,8 +50,13 @@
 	.p{
 	font-family: fantasy;
 	font-size: 26px;
+	color : #ffe307;
 	}
 	
+	.pz{
+		font-weight: bold;
+		font-size: 26px;
+	}
 
 </style>
 
@@ -180,7 +185,7 @@
 		</div>
 		<div style="margin-left: 100px; border: 1; width: 400px; border-color: #ffe307;" class="panel panel-default" >
 		<div class="panel-body" id="div1">
-		<p class = "p">처방전 약 목록</p>
+		<p class = "pz">처방전 약 목록</p>
 		<br>
 		<c:forEach var="medicine" items="${list}" varStatus="status">
 		<span>${medicine.med_num } &nbsp ${list2[status.index] }</span><br>
