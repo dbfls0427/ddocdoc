@@ -103,6 +103,7 @@
             <h6 class="collapse-header">병원정보:</h6>
             <a class="collapse-item" href="/DDOCDOC/hospital/hospitalList.do?customer=${customer }">병원목록</a>
             <a class="collapse-item" href="/DDOCDOC/hospital/hospitalInsertForm.do">병원정보입력</a>
+            <a class="collapse-item" href="/DDOCDOC/QRCode.jsp">QR CODE</a>
           </div>
         </div>
       </li>

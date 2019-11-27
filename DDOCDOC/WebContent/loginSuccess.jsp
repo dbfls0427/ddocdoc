@@ -178,7 +178,8 @@ ${customer.cus_name }
             <div class="col-sm-3">
                  <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                     <div class="img-wrapper">
-                        <img src="../images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" >
+                        <!--  <img src="../images/portfolio/item-1.jpg" class="img-responsive" alt="this is a title" > -->
+                        <img src="../images/portfolio/info.jpg" class="img-responsive" alt="this is a information" style="width: 262.5px; height: 175px;">
                     </div>
                     <figcaption>
                         <h4>
@@ -197,7 +198,8 @@ ${customer.cus_name }
             <div class="col-sm-3">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                     <div class="img-wrapper">
-                        <img src="../images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" >
+                        <!-- <img src="../images/portfolio/item-2.jpg" class="img-responsive" alt="this is a title" > -->
+                        <img src="../images/portfolio/schedule.jpg" class="img-responsive" alt="this is a schedule">
                     </div>
                     <figcaption>
                         <h4>
@@ -216,7 +218,8 @@ ${customer.cus_name }
             <div class="col-sm-3">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                     <div class="img-wrapper">
-                        <img src="../images/portfolio/item-3.jpg" class="img-responsive" alt="" >
+                       <!-- <img src="../images/portfolio/item-3.jpg" class="img-responsive" alt="" > -->
+                        <img src="../images/portfolio/child.jpg" class="img-responsive" alt="child care" >
                     </div>
                     <figcaption>
                         <h4>
@@ -235,7 +238,8 @@ ${customer.cus_name }
             <div class="col-sm-3">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
                     <div class="img-wrapper">
-                        <img src="../images/portfolio/item-4.jpg" class="img-responsive" alt="" >
+                         <!--<img src="../images/portfolio/item-4.jpg" class="img-responsive" alt="" >-->
+                        <img src="../images/portfolio/mypage.jpg" class="img-responsive" alt="mypage" >
                     </div>
                     <figcaption>
                         <h4>
