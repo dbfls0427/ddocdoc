@@ -58,6 +58,10 @@
 	width:60%;
 }
 
+#phartable {
+	width: 20%;
+}
+
 </style>
 	
 </head>
@@ -218,13 +222,14 @@
         </nav>
         <!-- End of Topbar -->
 
-
+ <!-- Begin Page Content -->
+        <div class="container-fluid">
 
 
 <h1>약국 목록</h1>
 <a href="/DDOCDOC/pharmacy/pharmacyInsertForm.do">약국정보 입력</a><br>
 
-<table border="1">
+<table class="table" id="phartable">
 
 	<tr>
 		<td>약국번호</td>
@@ -241,7 +246,7 @@
 
 </table>
 
-
+</div>
 	
 	 <!-- Footer -->
       <footer class="sticky-footer bg-white">
