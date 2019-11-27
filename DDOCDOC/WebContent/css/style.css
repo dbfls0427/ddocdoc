@@ -302,7 +302,8 @@ a:hover {
 }
 
 #hero-area {
-  background: url("../images/slider.jpg") no-repeat 50%;
+/*    background: url("../images/slider.jpg") no-repeat 50%; */
+  background: url("../images/slider3.jpg") no-repeat 50%;
   background-size: cover;
   background-attachment: fixed;
   padding: 230px 0;
@@ -314,7 +315,8 @@ a:hover {
 #hero-area:before {
   content: '';
   z-index: 9;
-  background: rgba(255, 255, 255, 0.78);
+ /* background: rgba(255, 255, 255, 0.78);*/
+  background:  rgba(255, 255, 255, 0.69);
   position: absolute;
   top: 0;
   left: 0;
@@ -338,11 +340,13 @@ a:hover {
 
 #hero-area h2 {
   font-size: 18px;
-  font-weight: 300;
+/*  font-weight: 300; */
+  font-weight: 600;
   margin-bottom: 38px;
   line-height: 27px;
   text-transform: uppercase;
-  color: #666;
+ /*  color: #666; */
+  color: #585858;;
   font-family: 'Roboto', sans-serif;
   margin-top: 25px;
 }
