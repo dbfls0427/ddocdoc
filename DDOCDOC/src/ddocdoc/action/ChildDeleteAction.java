@@ -16,8 +16,11 @@ public class ChildDeleteAction implements Action {
 		String ch_num = request.getParameter("ch_num");
 		service.deleteChild(ch_num);
 		
-		forward.setPath("/DDOCDOC/child/childList.do");
-		forward.setRedirect(true);
+		String cus_name = request.getParameter("cus_name");
+		request.setAttribute("cus_name", cus_name);
+		
+		forward.setPath("childList.do");
+		forward.setRedirect(false);
 		
 		return forward;
 	}

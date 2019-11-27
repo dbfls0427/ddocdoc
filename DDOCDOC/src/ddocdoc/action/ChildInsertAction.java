@@ -20,12 +20,13 @@ public class ChildInsertAction implements Action {
 		//jsp에서이름받아오기 위해
 		String cus_name = request.getParameter("cus_name");
 		request.setAttribute("cus_name", cus_name);
+		System.out.println("차일드등록 고객이름: " +cus_name);
 		
 		String cus_num = request.getParameter("cus_num");
 		request.setAttribute("cus_num", cus_num);
 		
-		forward.setRedirect(true);
-		forward.setPath("/DDOCDOC/child/childList.do");
+		forward.setRedirect(false);
+		forward.setPath("childList.do");
 		
 		return forward;
 	}

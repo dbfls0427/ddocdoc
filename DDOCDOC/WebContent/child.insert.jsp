@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%
+	String cus_name = request.getParameter("cus_name");
+	request.setAttribute("cus_name", cus_name);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -166,13 +169,12 @@
 		<input type="hidden" name="cus_num" value="${customer.cus_num }"><br>
 		<label>아이이름</label><br>
 		<input type="text" name="ch_name" class="form-control"><br>
-		<label>나이</label><br>
-		<input type="text" name="ch_age" class="form-control"><br>
 		<label>생년월일</label><br>
 		<div style="display: flex">
 			<input type="text" name="ch_birth" id="datepicker_kid" class="form-control" style="width: 450px; margin-right: 10px;"><br>
-		</div>
-		<br>
+		</div><br>
+		<label>나이</label><br>
+		<input type="text" name="ch_age" class="form-control"><br>
 		<label>성별</label><br>
 		<input type="text" name="ch_gender" class="form-control" placeholder="남/여"><br>
 		<div style="display: flex; justify-content: center">
@@ -201,8 +203,8 @@ j(document).ready(function() {
                ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
                ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
                ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-               ,minDate: "-1M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-               ,maxDate: "+1M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                    
+               ,minDate: "-1Y" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+               ,maxDate: "+1Y" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                    
            });
 
            //input을 datepicker로 선언

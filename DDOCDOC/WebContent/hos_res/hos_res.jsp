@@ -190,8 +190,9 @@
 			    </select><br>
 			<input type = "hidden" name = "cus_num" value = ${cus_num }><br>
 			<input type = "hidden" name = "hos_name" value = ${hos_name }><br>
-		
-			<input type = "submit" value = "예약" class="btn btn-warning btn-lg">
+			<div style="display: flex; justify-content: center;">
+				<input type = "submit" value = "예약" class="btn btn-warning btn-lg">
+			</div>
 		</form>
 	 
 	 </section>

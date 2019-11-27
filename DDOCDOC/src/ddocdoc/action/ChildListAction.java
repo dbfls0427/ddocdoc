@@ -28,7 +28,11 @@ public class ChildListAction implements Action {
 		request.setAttribute("cus_num", cus_num);
 		request.setAttribute("childList", list);
 		
+		String cus_name = request.getParameter("cus_name");
+		request.setAttribute("cus_name", cus_name);
+		
 		System.out.println("cus_num__childLIstAction 에서3: "+cus_num);
+		System.out.println("리스트액션에서 고객이름:" + cus_name);
 		forward.setRedirect(false);
 		forward.setPath("/child.list.jsp");
 		

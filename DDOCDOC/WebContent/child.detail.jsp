@@ -166,9 +166,9 @@
         </section>
         
 		<section id="btn" class="company-description" style="display: flex; justify-content: flex-end; padding-right: 700px; margin-top: 60px; margin-bottom: 0;">
-			<button class="btn btn-default"><a href="/DDOCDOC/child/childList.do" style="font-size: 18px;">목록으로 돌아가기</a></button>&nbsp
+			<button class="btn btn-default"><a href="/DDOCDOC/child/childList.do?cus_name=${cus_name }" style="font-size: 18px;">목록으로 돌아가기</a></button>&nbsp
 			<button class="btn btn-default"><a href="/DDOCDOC/child/childUpdateForm.do?ch_num=${childVO.ch_num}&cus_name=${cus_name }" style="font-size: 18px;">수정</a></button>&nbsp
-			<button class="btn btn-default"><a href="/DDOCDOC/child/childDelete.do?ch_num=${childVO.ch_num}" style="font-size: 18px;">삭제</a></button>
+			<button class="btn btn-default"><a href="/DDOCDOC/child/childDelete.do?ch_num=${childVO.ch_num}&cus_name=${cus_name }" style="font-size: 18px;">삭제</a></button>
 		</section>
 		<br>
         <section  class="company-description" style="margin-top: 0;">
