@@ -21,6 +21,6 @@
 	&nbsp;&nbsp;<input type="submit" value="저장">    
 	<br><br><br><a href="/DDOCDOC/pharmacy/pharmacyList.do">목록</a> <br>
 </form>
-
+<br>
 </body>
 </html>

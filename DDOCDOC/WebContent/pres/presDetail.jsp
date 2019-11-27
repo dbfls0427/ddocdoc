@@ -193,7 +193,7 @@
 		
 	</section>
 	
-	<br>
+	<b></b>
 	
 	
 	<section class="company-description" style="display: flex; justify-content: center;">
