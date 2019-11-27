@@ -53,6 +53,14 @@
 	font-family: 'Sunflower', sans-serif;
 }
 
+ .btn-default{
+ 	border-color: #e68f1f;
+    border-width: 2px;
+ }
+ 
+ .panel-default {
+    border-color: #48310c;
+}
 
 </style>
 

@@ -59,6 +59,10 @@
  button{
  	width : 175px;
  }
+ .btn-default{
+ 	border-color: #e68f1f;
+    border-width: 2px;
+ }
 
 </style>
 </head>
