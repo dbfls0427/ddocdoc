@@ -170,9 +170,9 @@ ${customer.cus_name }
 <section class="works service-page" style="margin-top:80px;">
     <div class="container">
     <h1>환영합니다!   ${customer.cus_name }님</h1>
-        <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Some Of Our Features Works</h2>
+        <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Convenient useful better</h2>
             <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">
-                Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+               국내 NO.1 의료 플랫폼 똑닥
             </p>
         <div class="row">
             <div class="col-sm-3">
@@ -183,12 +183,13 @@ ${customer.cus_name }
                     </div>
                     <figcaption>
                         <h4>
-                         	회원 상세정보
+                         	병원 예약/접수
                         </h4>
                         <p>
-                            Redesigne UI Concept
+                           	 병원 방문 후 기다림은 끝<br>
+                         	온라인 접수 후, 시간에 맞춰 방문
                         </p>
-                        <form action="detailCustomer.do" method = "post">
+                        <form action="map.do" method = "post">
 							<input type = "submit" value="회원 상세정보" class="btn btn-primary">
 						</form>
                     </figcaption>
@@ -203,10 +204,10 @@ ${customer.cus_name }
                     </div>
                     <figcaption>
                         <h4>
-                         	예약 내역
+                         	진료 대기현황판
                         </h4>
                         <p>
-                            Lorem ipsum dolor sit.
+                          	 어느 곳에서도 편하게 진료 순번을 확인하세요
                         </p>
                         <form action="resList.do" method = "post">
 							<input type = "submit" value = "예약 내역" class="btn btn-success">
@@ -223,10 +224,10 @@ ${customer.cus_name }
                     </div>
                     <figcaption>
                         <h4>
-                         	 아이관리
+                         	 아이건강피드
                         </h4>
                         <p>
-                            Lorem ipsum dolor sit amet.
+                           	 우리아이의 성장,진료기록을 똑닥 건강피드에서 관리하세요
                         </p>
                         <form action="/DDOCDOC/child.index.jsp" method = "post">
 							<input type = "submit" value="아이관리" class="btn btn-info">
@@ -246,7 +247,8 @@ ${customer.cus_name }
                            	 마이페이지
                         </h4>
                         <p>
-                            Lorem ipsum dolor.
+                           	나의 똑닥 등록 정보와<br>
+                           	현재 예약상황을 확인하세요
                         </p>
                         <form action="myPageForm.do" method="post">
 							<input type = "submit" value = "마이페이지" class="btn btn-warning">

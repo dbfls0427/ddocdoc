@@ -80,7 +80,7 @@
                     <!-- logo -->
                     <div class="navbar-brand">
                         <a href="/DDOCDOC/Customer/success.do" >
-                            <img src="images/logo.png" alt="">
+                            <img src="../images/logo.png" alt="">
                         </a>
                     </div>
                     <!-- /logo -->
