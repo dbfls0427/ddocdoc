@@ -133,7 +133,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>LOGIN</h2>
+                            <h2>JOIN</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="../index.html">
@@ -141,7 +141,7 @@
                                         Home
                                     </a>
                                 </li>
-                                <li class="active">LOGIN</li>
+                                <li class="active">JOIN</li>
                             </ol>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
 					</div>
 					<hr>
 					<div class="wrapbtnform">
-						<input type = "submit" class="btn btn-primary" value = "가입">
+						<input type = "submit" class="btn btn-warning" value = "가입">
 					</div>
 				</form>
 				

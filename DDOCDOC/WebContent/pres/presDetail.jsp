@@ -210,10 +210,7 @@
 		</div>
 	
 	</section>
-	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
-	
-		</section>
-	
+
 	<footer id="footer">
 	<div class="container">
 		<div class="col-md-8">

@@ -12,7 +12,7 @@ public class ReviewInsertFormAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
 		
-		
+		request.setAttribute("customer", (CustomerVO)LoginSession.loginSession.getAttribute("customer"));
 		request.setAttribute("cus_name", ((CustomerVO)LoginSession.loginSession.getAttribute("customer")).getCus_name());
 		forward.setRedirect(false);
 		forward.setPath("/review/review_insert.jsp");
