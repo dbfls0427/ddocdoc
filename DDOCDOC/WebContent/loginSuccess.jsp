@@ -190,7 +190,7 @@ ${customer.cus_name }
                          	온라인 접수 후, 시간에 맞춰 방문
                         </p>
                         <form action="map.do" method = "post">
-							<input type = "submit" value="회원 상세정보" class="btn btn-primary">
+							<input type = "submit" value="병원예약하기" class="btn btn-primary">
 						</form>
                     </figcaption>
                 </figure>
@@ -229,7 +229,7 @@ ${customer.cus_name }
                         <p>
                            	 우리아이의 성장,진료기록을 똑닥 건강피드에서 관리하세요
                         </p>
-                        <form action="/DDOCDOC/child.index.jsp" method = "post">
+                        <form action="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name }" method = "post">
 							<input type = "submit" value="아이관리" class="btn btn-info">
 						</form>
                     </figcaption>
