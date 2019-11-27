@@ -240,23 +240,23 @@
 						</div>
 					    <div class="form-group">
 					    	<label>병원이름</label>
-					    	<input type="text" name="hos_name" class="form-control" placeholder="병원이름">
+					    	<input type="text" name="hos_name" class="form-control" placeholder="병원이름" value="${ hospitalvo.hos_name}">
 					  	</div>
 					  	<div class="form-group">
 					    	<label>병원전화번호</label>
-					    	<input type="text" name="hos_tel" class="form-control" placeholder="병원전화번호">
+					    	<input type="text" name="hos_tel" class="form-control" placeholder="병원전화번호" value="${hospitalvo.hos_tel }">
 					  	</div>
 					  	<div class="form-group">
 					    	<label>병원주소</label>
-					    	<input type="text" name="hos_addr" class="form-control" placeholder="병원주소">
+					    	<input type="text" name="hos_addr" class="form-control" placeholder="병원주소" value="${hospitalvo.hos_addr }">
 					  	</div>
 					  	<div class="form-group">
 					    	<label>운영시간</label>
-					    	<input type="text" name="hos_time" class="form-control" placeholder="운영시간">
+					    	<input type="text" name="hos_time" class="form-control" placeholder="운영시간" value="${hospitalvo.hos_time }">
 					  	</div>
 					  	<div class="form-group">
 					    <label for="exampleTextarea">병원정보사항</label>
-						    <textarea class="form-control" rows="3" name="hos_info"></textarea>
+						    <textarea class="form-control" rows="3" name="hos_info">${hospitalvo.hos_info}</textarea>
 						  </div>
 						<div style="display:flex;justify-content:center;">
 							<input type="submit" value="저장" class="btn btn-primary" style="width:25%;">
