@@ -39,10 +39,10 @@
         <link rel="stylesheet" href="../plugins/facncybox/jquery.fancybox.css">
         <!-- template main css file -->
         <link rel="stylesheet" href="../css/style.css">
-        
+        <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">      
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
-				<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
 <style type="text/css">
  a:link { color : black; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
@@ -50,16 +50,10 @@
 	 /* font-family: 'Jua', sans-serif;  */
 	 /* font-family: 'Sunflower', sans-serif;  */
 	/* font-family: 'Do Hyeon', sans-serif; */
-	font-family: 'Jua', sans-serif;
+	font-family: 'Sunflower', sans-serif;
 }
-.btn-default {
- 	background-color: #fff;
-    border-color: #dc8d27;
-    border-width: 2px;
- }
-.panel-default {
-    border-color: #544423;
-}
+
+
 </style>
 
 </head>

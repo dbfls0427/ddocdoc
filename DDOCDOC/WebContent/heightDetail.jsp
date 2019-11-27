@@ -47,11 +47,14 @@
 
 	<style type="text/css">
 		#btn{
-			font-family: 'Sunflower', sans-serif;
+			font-family: 'Jua', sans-serif;
 		}
 		
 		a:link { color : black; text-decoration: none;}
 	 	a:visited { color: black; text-decoration: none;}
+	 	#intro2{
+	 		font-family: 'Sunflower', sans-serif;
+	 	}
 	
 	</style>
 </head>
@@ -156,11 +159,11 @@
             </div>
         </section>
 
-	<section id="btn" class="company-description" style=" display: flex; justify-content: center; font-size: 20px">
+	<section  class="company-description" style=" display: flex; justify-content: center; font-size: 20px">
 		<div>
-			<label style="margin-left: 50px">${ch_name } 님의 키가 무럭무럭 자라는 중!</label><br>
+			<label id="intro2" style="margin-left: 50px; font-size: 25px;">${ch_name } 님의 키가 무럭무럭 자라는 중!</label><br>
 			<img src="../images/heightchild.jpg"><br>
-			<label style="margin-left: 30%; margin-top: 30px; font-size: 30px;"> ${height.he_height } cm</label>
+			<label id="btn" style="margin-left: 30%; margin-top: 30px; font-size: 30px;"> ${height.he_height } cm</label>
 		</div>
 	</section>
 	<section id="btn" class="company-description" style="display: flex; justify-content: center; margin-top: 10px; margin-right: 20px; margin-bottom: 40px;">

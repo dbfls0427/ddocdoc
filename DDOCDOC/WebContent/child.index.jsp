@@ -49,23 +49,17 @@
  <style type="text/css">
  a:link { color: black; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
-/*  .kidsbtn{
- 	font-family: 
- } */
+
  #intro,#intro2{
- 	font-family: 'Jua', sans-serif;
+ 	font-family: 'Stylish', sans-serif;
  }
 /*  #intro2{
- 	 font-family: 'Sunflower', sans-serif;
+ 	 font-family: 'Stylish', sans-serif;
  } */
  button{
  	width : 175px;
  }
- .btn-default {
- 	background-color: #fff;
-    border-color: #dc8d27;
-    border-width: 2px;
- }
+
 </style>
 </head>
 <body>
@@ -175,8 +169,8 @@
 	</section>
      	
 	<section id="intro2" class="company-description" style=" display: flex; justify-content: center; margin-bottom: 80px; margin-top: 40px;">
-		<button class="btn btn-default btn-lg kidsbtn" style="width: 175px; margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do?cus_name=${cus_name }&cus_num=${cus_num}" style=" font-size: 25px;">아이등록</a><br></button>
-		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF; width: 175px"><a href="child/childList.do?cus_name=${cus_name }&cus_num=${cus_num}" style="font-size: 25px;">아이정보리스트</a></button>
+		<button class="btn btn-default btn-lg kidsbtn" style="width: 175px; margin-right: 30px; font-size: 18px; font-weight: 600;"><a href="child/childInsertForm.do?cus_name=${cus_name }&cus_num=${cus_num}" style=" font-size: 23px;">아이등록</a><br></button>
+		<button class="btn btn-default btn-lg kidsbtn" style="font-size: 18px; font-weight: 600; color: #FFF; width: 175px"><a href="child/childList.do?cus_name=${cus_name }&cus_num=${cus_num}" style="font-size: 23px;">아이정보리스트</a></button>
 	</section>
 
 

@@ -104,6 +104,9 @@ response.setContentType("text/html;charset=UTF-8");
  	#intro{
  		font-family: 'Jua', sans-serif;
  	}
+ 	#sun{
+ 		font-family: 'Sunflower', sans-serif;
+ 	}
  	
  </style>
 <meta charset="UTF-8">
@@ -212,15 +215,14 @@ response.setContentType("text/html;charset=UTF-8");
 	<section id="btn" class="company-description" style="margin-bottom: 0; display: flex; justify-content: center">
 		<button class="btn btn-default btn-lg"><a href="../map/injSearch.jsp?cus_name=${cus_name }" id="childHo">가까운 소아과 예약하기</a></button>
 	</section>
-	<section id="btn" class="company-description" style="margin-top: 10px; display: flex; justify-content: center; font-weight: 500; font-size: 25px; margin-top: 30px;">
-		<label style="padding: 8px">접종률</label>&nbsp<label style="color: #6472dc;font-size: 35px;">${percent }</label><br>
+	<section class="company-description" style="margin-top: 10px; display: flex; justify-content: center; font-weight: 500; font-size: 25px; margin-top: 30px;">
+		<label id="sun" style="padding: 8px ">접종률</label>&nbsp<label id="btn" style="color: #6472dc;font-size: 35px;">${percent }</label><br>
 	</section>	
 		<div id="chart_div"></div>
-	
-			<label id="intro" style="display: flex; justify-content: center; margin-top: 50px; font-size: 25px; margin-bottom: 0;">미완료/접종완료 버튼을 눌러 접종기록을 관리하세요!</label>
+			<label id="sun" style="display: flex; justify-content: center; margin-top: 50px; font-size: 25px; margin-bottom: 0;">미접종/접종완료 버튼을 눌러 접종기록을 관리하세요!</label>
 			<section id="btn" class="company-description" style="display: flex; justify-content: center; margin-top: 20px;">
 				<div>
-				<table style="font-size: 25px;" class = "table table-hover">
+				<table style="font-size: 22px;" class = "table table-hover">
 				<c:forEach var="list" items="${list }">
 					<tr>
 						<td colspan="2" style="text-align : center;">${list.inj_info_name }</td>

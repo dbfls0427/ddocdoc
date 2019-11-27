@@ -140,7 +140,7 @@
             </div>
         </section>
 
-	 <section class="company-description" style="margin-top: 50px; display: flex; justify-content: center;">
+	 <section class="company-description" style="margin-top: 50px; display: flex; justify-content: center; margin-bottom: 60px;">
 	 
 		<form action="hos_res_action.do" method = "post" style="width: 35%;">
 			<label>진료 종류</label>
@@ -182,7 +182,7 @@
 			<input type = "hidden" name = "cus_num" value = ${cus_num }><br>
 			<input type = "hidden" name = "hos_name" value = ${hos_name }><br>
 		
-			<input type = "submit" value = "예약" class="btn btn-info">
+			<input type = "submit" value = "예약" class="btn btn-warning btn-lg">
 		</form>
 	 
 	 </section>

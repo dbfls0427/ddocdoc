@@ -174,8 +174,11 @@
 	 a:link { color : black; text-decoration: none;}
 	 a:visited { color: black; text-decoration: none;}
  	#btn{
- 		 font-family: 'Sunflower', sans-serif;
+ 		 font-family: 'Jua', sans-serif;
  		/* font-family: 'Do Hyeon', sans-serif; */
+ 	}
+ 	#sun{
+ 		font-family: 'Do Hyeon', sans-serif;
  	}
  </style>
 <meta charset="UTF-8">
@@ -287,8 +290,8 @@
 	<section id="btn" class="company-description" style="margin-top: 10px; display: flex; justify-content: center; font-weight: 600;">
 		
 		<div style="width:500px;">
-			<table class="table table-hover" id="table1">
-				<tr style="font-weight: 600;">
+			<table class="table table-hover" id="sun" style="font-size: 18px;">
+				<tr>
 					<td style="text-align : center;">등록한 키</td>
 					<td style="text-align : center;">등록 날짜</td>
 				</tr>
@@ -303,7 +306,7 @@
 		
 	</section>
 	
-	<section id="btn" class="company-description" style="display: flex; justify-content: center; margin-bottom: 100px;">
+	<section id="btn" class="company-description" style="display: flex; justify-content: center; margin-bottom: 100px; font-size: 16px;">
 		<div class="panel panel-default"  style="margin-right: 80px;">
 			<div id="line_top_x" class="panel-body"></div>
 		</div>

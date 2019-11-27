@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+   String cus_name = request.getParameter("cus_name");
+	request.setAttribute("cus_name", cus_name);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -146,7 +150,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>아이등록</h2>
+                            <h2>접종기록</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="/DDOCDOC/Customer/success.do">

@@ -63,7 +63,7 @@ tr:nth-child(2n) {
   				background-color: #FFFFA5;
 			}
 #intro{
-	font-family: 'Jua', sans-serif;
+	font-family: 'Stylish', sans-serif;
 }
 #table1{
 font-family: 'Sunflower', sans-serif;
@@ -177,7 +177,7 @@ font-family: 'Sunflower', sans-serif;
         <section  class="company-description" style="display: flex; justify-content: center; margin-top: 15px; margin-bottom: 80px;">
         	<div>
 	        	<p class="p">MyChild</p>
-					<table class="table table-hover" align="center" style="width: 400px; text-align: center; font-size: 17px; margin-bottom: 0;font-weight: 600;" id = "table1">
+					<table class="table table-hover" align="center" style="width: 400px; text-align: center; font-size: 20px; margin-bottom: 0;font-weight: 600;" id = "table1">
 					<c:forEach var="ChildVO" items="${childList}" >
 						<tr>
 							<td style="text-align : center;"><a href="/DDOCDOC/child/childDetail.do?ch_num=${ChildVO.ch_num}&cus_name=${cus_name}">${ChildVO.ch_name }</a></td>
