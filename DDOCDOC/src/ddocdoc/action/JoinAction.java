@@ -34,6 +34,7 @@ public class JoinAction implements Action {
 				customer.setCus_email(request.getParameter("joinEmail"));
 				
 				int re = sc.insertCustomer(customer);
+				sc.getConfirm().setFinalCheck(false);
 				forward.setPath("loginForm.do");
 				forward.setRedirect(true);
 				

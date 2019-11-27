@@ -769,5 +769,23 @@ public class CustomerDaoImpl implements CustomerDao{
 			}
 			return check;
 		}
+		
+		
+		// 회원 상세정보
+		@Override
+		public CustomerVO customerDetail(String cus_num) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			CustomerVO cus = null;
+			try {
+				cus = session.getMapper(CustomerMapper.class).customerDetail(cus_num);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(session != null) {
+					session.close();
+				}
+			}
+			return cus;
+		}
 	
 }

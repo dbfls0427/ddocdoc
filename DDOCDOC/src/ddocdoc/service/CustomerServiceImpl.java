@@ -344,4 +344,10 @@ public class CustomerServiceImpl implements CustomerService {
 	public String checkResAcpt(String hos_res_num) {
 		return dao.checkResAcpt(hos_res_num);
 	}
+	
+	// 회원 상세정보
+	@Override
+	public CustomerVO customerDetail(String cus_num) {
+		return dao.customerDetail(cus_num);
+	}
 }

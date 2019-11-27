@@ -30,6 +30,7 @@ public class ConfirmRealAction implements Action {
 		}
 		
 		if(confirm.isCheck()) {
+			
 			request.setAttribute("confirm", confirm);
 			forward.setPath("/confirmForm.jsp");
 			forward.setRedirect(false);

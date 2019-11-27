@@ -163,7 +163,7 @@ hr {
 	</section>
 	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
 		<div>
-			<textarea cols="71" rows="6" class = "autosize" onkeydown="resize(this)" onkeyup = "resize(this)" id = "led-text" charset = "UTF-8">고객 아이디 : ${customer.cus_id }     고객 이름 : ${customer.cus_name }       고객 주소 : ${customer.cus_addr }       고객 이메일 : ${customer.cus_email }     고객 생년월일 : ${customer.cus_birth }</textarea><br>
+			<textarea cols="71" rows="6" class = "autosize" onkeydown="resize(this)" onkeyup = "resize(this)" id = "led-text" charset = "UTF-8">${customer.cus_num},${customer.cus_id },${customer.cus_name },${customer.cus_addr },${customer.cus_email },${customer.cus_birth }</textarea><br>
 				<button type = button  class="btn btn-warning" id = "led-button1" onclick="button1_click()" style="margin-left: 198px; margin-top: 20px;">QR코드 발급</button>
 				<div id = "qrcode" style = "width:100px; height:100px; margin-top:160px; margin-left: 198px"></div> 
 				<script>

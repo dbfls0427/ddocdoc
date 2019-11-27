@@ -131,4 +131,7 @@ public interface CustomerService {
 	
 	// 예약 접수 확인
 	public String checkResAcpt(String hos_res_num);
+	
+	// 회원 상세정보
+	public CustomerVO customerDetail(String cus_num);
 }

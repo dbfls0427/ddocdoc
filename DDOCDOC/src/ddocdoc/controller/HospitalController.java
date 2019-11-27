@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import ddocdoc.action.Action;
 import ddocdoc.action.ActionForward;
+import ddocdoc.action.AdminRes;
+import ddocdoc.action.AdminResList;
 import ddocdoc.action.HospitalBooleanAction;
 import ddocdoc.action.HospitalDeleteAction;
 import ddocdoc.action.HospitalInsertAction;
@@ -113,6 +115,20 @@ public class HospitalController extends HttpServlet {
 			}
 		}else if(command.equals("presInsert.do")) {
 			action = new PresInsertAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("adminResList.do")) {
+			action = new AdminResList();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("adminRes.do")) {
+			action = new AdminRes();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
