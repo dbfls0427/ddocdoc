@@ -86,6 +86,8 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		return confirm;
 	}
+	
+	
 
 	// 대기번호 문자 인증
 	@Override

@@ -176,10 +176,6 @@
 						<label>생년월일</label>
 						<input type = "text" name = "joinBirth" class="form-control input-lg" placeholder="생년월일">
 					</div>
-					<div class="form-group">
-						<label>인증번호</label>
-						<input type = "text" name = "confirmNum" class="form-control input-lg" placeholder="인증번호">
-					</div>
 					<div class="wrapbtnform">
 						<a class="btn btn-default active" href="javascript:joinMember()">인증번호</a>
 					</div>

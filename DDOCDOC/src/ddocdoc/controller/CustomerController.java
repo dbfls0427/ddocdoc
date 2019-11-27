@@ -40,9 +40,12 @@ public class CustomerController extends HttpServlet {
 			}
     	}else if(command.equals("joinAction.do")) {
     		action = new JoinAction();
+    		
     		try {
 				forward = action.execute(request, response);
+				System.out.println("¡∂¿Œ±Ó¡ˆø»");
 			} catch (Exception e) {
+				System.out.println("ø°∑Ø∂‰");
 				e.printStackTrace();
 			}
     	}else if(command.equals("login.do")) {

@@ -20,12 +20,15 @@ public class JoinAction implements Action {
 		 request.setCharacterEncoding("UTF-8");
 		 response.setContentType("text/html;charset=UTF-8");
 		 
-		 if(sc.getConfirm()==null) {
+		 
+		 System.out.println("여기까지 오나?");
+		 
+		 if(sc.getConfirm() == null || !sc.getConfirm().isFinalCheck()) {
 			 response.setContentType("text/html; charset=UTF-8");
 				PrintWriter out = response.getWriter();
 				out.println("<script>alert('인증번호 인증이 안되었습니다. 본인인증을 진행해주세요.'); location.href='join.do';</script>");
 				return null;
-		 }else if(sc.getConfirm().isFinalCheck()){
+		 }else{
 			 CustomerVO customer = new CustomerVO();
 				customer.setCus_id(request.getParameter("joinID"));
 				customer.setCus_pw(request.getParameter("joinPW"));
@@ -42,7 +45,6 @@ public class JoinAction implements Action {
 				return forward;
 		 }
 		 
-		 return forward;
 		
 		
 		
