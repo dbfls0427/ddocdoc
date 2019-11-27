@@ -151,7 +151,7 @@
 
 	 <section class="company-description" style="margin-top: 50px; display: flex; justify-content: center; margin-bottom: 60px;">
 	 
-		<form action="hos_res_action.do" method = "post" style="width: 35%;">
+		<form action="hos_res_action.do" method = "post" style="width: 35%;font-size: 17px;">
 			<label>진료 종류</label>
 			<select name="res_type" class="form-control">
 				      <option value="일반진료">일반진료</option>

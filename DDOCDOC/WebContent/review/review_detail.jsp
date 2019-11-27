@@ -176,7 +176,7 @@
 		<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
         	<div>
 	        	<p class = "p">Detail</p>
-			<table class="table table-condensed" align="center">
+			<table class="table table-condensed" align="center" style="font-size: 18px;">
 		  		<tr>
 					<td>리뷰번호</td>
 					<td>리뷰제목</td>
