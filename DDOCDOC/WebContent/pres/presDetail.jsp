@@ -192,7 +192,8 @@
 		</div>
 		
 	</section>
-
+	
+	<br>
 	
 	
 	<section class="company-description" style="display: flex; justify-content: center;">

@@ -178,11 +178,11 @@
 				<input type="submit" class="btn btn-warning" value="수정">
 			</div>
 		</form>
-
+		
 
 	</div>
 	</section>
-
+	<b></b>
 
 	<!--
             ==================================================
