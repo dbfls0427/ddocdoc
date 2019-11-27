@@ -55,7 +55,7 @@
 	
 	.pz{
 		font-weight: bold;
-		font-size: 26px;
+		font-size: 28px;
 	}
 
 </style>
@@ -160,7 +160,7 @@
 		<p class = "p">Detail</p>
 		<br>
 		<div>
-			<table class="table table-condensed" align="center">
+			<table class="table table-condensed" align="center" style="font-size: 16px;">
 				  <tr>
 					<td>처방전번호</td>
 					<td>발급일</td>
@@ -184,7 +184,7 @@
 		</div>
 		</div>
 		<div style="margin-left: 100px; border: 1; width: 400px; border-color: #ffe307;" class="panel panel-default" >
-		<div class="panel-body" id="div1">
+		<div class="panel-body" id="div1" style="font-size: 18px;">
 		<p class = "pz">처방전 약 목록</p>
 		<br>
 		<c:forEach var="medicine" items="${list}" varStatus="status">
@@ -205,11 +205,11 @@
 		<div style="margin-left: 850px; margin-bottom: 100px">
 		<form action="payAction.do" method="post" style="display: flex; justify-content: center;">
 			<input type="hidden" value = "${pres.pres_num }" name = "pres_num"><br>
-			<select name = "pay_type" class="form-control">
+			<select name = "pay_type" class="form-control" style="margin-top: 5px;">
 				<option value="카드">카드</option>
 				<option value="계좌이체">계좌이체</option>
 			</select>&nbsp&nbsp
-			<input type = "submit" value = "선 결제하기" onclick="check()" class="btn btn-warning">
+			<input type = "submit" value = "선 결제하기" onclick="check()" class="btn btn-warning btn-lg">
 			<script type="text/javascript">
 			function check() {
 				alert("결제가 완료되었습니다.");
@@ -217,7 +217,7 @@
 			</script>
 	</form>
 	<form action="/DDOCDOC/map/pharSearch.jsp" method="post" style="float: right; margin-top: 10px">
-		<input type = "submit" value="약국예약" class="btn btn-warning">
+		<input type = "submit" value="약국예약" class="btn btn-warning btn-lg">
 	</form>	
 		
 		

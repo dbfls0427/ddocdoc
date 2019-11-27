@@ -175,7 +175,7 @@
 		
 		
 	</section>
-	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
+	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 30px;">
 	<div style="margin-left: 50px">
 	<button type="button" class="btn btn-warning"><a href = "deleteRes.do?hos_res_num=${res.hos_res_num }&hos_num=${res.hos_num}">예약취소</a></button> &nbsp&nbsp&nbsp&nbsp
 	<button type="button" class="btn btn-warning"><a href = "resWaitSms.do?count=${count}&hos_res_num=${res.hos_res_num}">대기 번호 문자로 받기</a></button>

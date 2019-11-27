@@ -149,7 +149,7 @@ hr {
 	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
 		<div>
 			<p class = "p">Info</p>
-			<table class="table table-condensed" align="center">
+			<table class="table table-condensed" align="center" style="font-size: 18px;">
 		  		<tr>
 		  			<td>회원 아이디</td>
 		  			<td>회원 이름</td>
@@ -173,7 +173,7 @@ hr {
 	<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
 		<div>
 			<textarea cols="71" rows="6" class = "autosize" onkeydown="resize(this)" onkeyup = "resize(this)" id = "led-text" charset = "UTF-8">${customer.cus_num},${customer.cus_id },${customer.cus_name },${customer.cus_addr },${customer.cus_email },${customer.cus_birth }</textarea><br>
-				<button type = button  class="btn btn-warning" id = "led-button1" onclick="button1_click()" style="margin-left: 198px; margin-top: 20px;">QR코드 발급</button>
+				<button type = button  class="btn btn-warning btn-lg" id = "led-button1" onclick="button1_click()" style="margin-left: 198px; margin-top: 20px;">QR코드 발급</button>
 				<div id = "qrcode" style = "width:100px; height:100px; margin-top:160px; margin-left: 198px"></div> 
 				<script>
 				var qrcode = new QRCode(document.getElementById("qrcode"),{height : 100, width : 100});

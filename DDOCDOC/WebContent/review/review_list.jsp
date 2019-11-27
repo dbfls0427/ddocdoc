@@ -169,7 +169,7 @@
 
 			<div>
 			<p class = "p">Review List</p><br>
-			<table class="table table-hover" id = "table1">
+			<table class="table table-hover" id = "table1" style="font-size: 18px;">
 		<tr>
 			<td style="text-align : center;">글 번호</td>
 			<td style="text-align : center;">제목</td>

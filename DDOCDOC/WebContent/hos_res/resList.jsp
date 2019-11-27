@@ -169,7 +169,7 @@
 
 			<div>
 			<p class = "p">Hospital Reservation</p><br>
-			<table class="table table-hover" id = "table1">
+			<table class="table table-hover" id = "table1" style="font-size: 18px;">
 		<tr>
 			<td style="text-align : center;">예약번호</td>
 			<td style="text-align : center;">병원이름</td>
@@ -197,7 +197,7 @@
 		<section class="company-description" id="wrapjoin" style="display: flex; justify-content: center;">
 			<div style="width:390px; margin-bottom: 80px">
 				<p class = "p">Pharmacy Reservation</p><br>
-				<table class="table table-hover" id = "table1">
+				<table class="table table-hover" id = "table1" style="font-size: 18px;">
 					<tr>
 						<td style="text-align : center;">예약번호</td>
 						<td style="text-align : center;">약국이름</td>
