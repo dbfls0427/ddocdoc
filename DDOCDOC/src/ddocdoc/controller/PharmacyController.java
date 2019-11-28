@@ -92,7 +92,7 @@ public class PharmacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		System.out.println("delet됨!");
+    		System.out.println("delete됨!");
     }
     	
     	if(forward != null) {

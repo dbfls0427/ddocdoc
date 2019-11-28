@@ -14,6 +14,8 @@
 		<typeAlias type="ddocdoc.vo.HospitalResVO" alias="HospitalResVO"/>
 		<typeAlias type="ddocdoc.vo.HospitalWaitVO" alias="HospitalWaitVO"/>
 		<typeAlias type="ddocdoc.vo.PharmacyVO" alias="PharmacyVO"/>
+		<typeAlias type="ddocdoc.vo.ReviewVO" alias="ReviewVO"/>
+		
 	</typeAliases>
 	
 	<environments default="development">
@@ -22,7 +24,7 @@
 			<dataSource type="JNDI">
 				<property name="data_source" value="java:comp/env/jdbc/oracle"/>
 				<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
-				<property name="username" value="ddocdoc"/>
+				<property name="username" value="koland"/>
 				<property name="password" value="1234"/>
 			</dataSource>
 		</environment>		
@@ -35,6 +37,7 @@
 		<mapper resource="ddocdoc/mapper/ChildHeight.xml"/>
 		<mapper resource="ddocdoc/mapper/Child.xml"/>
 		<mapper resource="ddocdoc/mapper/Pharmacy.xml"/>
+		<mapper resource="ddocdoc/mapper/Review.xml"/>
       <mapper resource="ddocdoc/mapper/Hospital.xml"/>
 
 	</mappers>

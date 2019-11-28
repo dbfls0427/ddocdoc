@@ -33,6 +33,7 @@ public class PharmacyDaoImpl implements PharmacyDao{
 	
 	//pharmacy create
 	public int pharmacyInsert(PharmacyVO PharmacyVO) {
+		System.out.println(PharmacyVO);
 		int re = -1;
 		SqlSession sqlSession = getSqlSessionFactory().openSession(); //sql session��ü ����
 		
