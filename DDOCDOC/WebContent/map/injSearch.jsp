@@ -106,7 +106,7 @@
 			<nav class="collapse navbar-collapse navbar-right" role="navigation">
 				<div class="main-menu">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="success.do">Home</a></li>
+						<li><a href="../Customer/success.do">Home</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">병원찾기 <span class="caret"></span></a>
 							<div class="dropdown-menu">
