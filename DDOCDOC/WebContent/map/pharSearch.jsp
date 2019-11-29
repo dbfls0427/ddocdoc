@@ -159,7 +159,7 @@
                             <h2 style="font-size: 35px;">가까운 약국찾기</h2>
                             <ol class="breadcrumb">
                                 <li>
-                                    <a href="../index.html">
+                                    <a href="../Customer/success.do">
                                         <i class="ion-ios-home"></i>
                                         Home
                                     </a>
