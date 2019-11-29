@@ -108,8 +108,8 @@
 							data-toggle="dropdown">병원찾기 <span class="caret"></span></a>
 							<div class="dropdown-menu">
 								<ul>
-									<li><a href="map.do?cus_num=${customer.cus_num }">병원찾기</a></li>
-									<li><a href="resList.do">예약내역</a></li>
+									<li><a href="../Customer/map.do?cus_num=${customer.cus_num }">병원찾기</a></li>
+									<li><a href="../Customer/resList.do">예약내역</a></li>
 								</ul>
 							</div></li>
 						<li><a href="/DDOCDOC/child.index.jsp?cus_name=${customer.cus_name }&cus_num=${customer.cus_num }">아이관리</a></li>
@@ -117,7 +117,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QR코드 <span class="caret"></span></a>
                                 <div class="dropdown-menu">
                                     <ul>
-                                        <li><a href="detailCustomer.do">QR코드 발급</a></li>
+                                        <li><a href="../Customer/detailCustomer.do">QR코드 발급</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -135,7 +135,7 @@
 								class="caret"></span></a>
 							<div class="dropdown-menu">
 								<ul>
-									<li><a href="myPageForm.do">마이페이지</a></li>
+									<li><a href="../Customer/myPageForm.do">마이페이지</a></li>
 								</ul>
 							</div></li>
 						<li><a href="logout.do">로그아웃</a></li>

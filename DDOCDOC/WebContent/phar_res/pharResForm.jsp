@@ -168,7 +168,7 @@
 			</div>
 			<br>
 			<div>
-				<label>진료시간</label>&nbsp&nbsp<select name="phar_res_time" class="form-control">
+				<label>방문 시간</label>&nbsp&nbsp<select name="phar_res_time" class="form-control">
 					      <option value="09:00">09:00</option>
 					      <option value="09:30">09:30</option>
 					      <option value="10:00">10:00</option>
